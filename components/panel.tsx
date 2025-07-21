@@ -29,15 +29,14 @@ export default function Panel() {
             <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-3.png" />
             <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-2.png" />
         </div>
-        <div>
-            <img className="mt-2 w-[100px] h-8 rounded-full" src="/panel/review/Line-arrow.svg" />
+        <div className="absolute inset-0 -z-10 bg-[url('/panel/bg-image/bg1.png')] bg-cover bg-center opacity-30" />
         </div>
       </div>
     </div>
     
     {/* bg image */}
 
-    <div className=""></div>
+    <div className="bg-[url('/panel/bg-image/bg1.png')] w-full h-full object-cover"></div>
 
   </div>
 
