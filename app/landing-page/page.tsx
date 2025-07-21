@@ -1,7 +1,8 @@
-import Card from "@/components/card";
-import FlashLight from "@/components/flash";
-import TopNavBar from "@/components/navigation";
-import Panel from "@/components/panel";
+import Card from "@/app/landing-page/components/card";
+import FlashLight from "@/app/landing-page/components/flash";
+
+import Panel from "@/app/landing-page/components/panel";
+import TopNavBar from "@/global-component/navigation";
 
 export default function Home() {
   return (
