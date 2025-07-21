@@ -9,14 +9,33 @@ const config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)"],
-        mono: ["var(--font-mono)"],
+     colors: {
+        darkblue: "#070045",
+        blueCustom: '#2A2AFF',
+        vilot: '#6A0DAD',
       },
+
+      fontFamily: {
+      sans: ["var(--font-sans)", "Tusker Grotesk", "sans-serif"],
+      mono: ["var(--font-mono)", "monospace"],
+      tusker: ["Tusker Grotesk", "sans-serif"],
+      gilroy: ["Gilroy-Bold", "sans-serif"],
+    },
+
+    dropShadow: {
+        'multi-layer': [
+          '0px -0.977px 1.955px rgba(0, 0, 0, 0.10)',
+          '0px -3.909px 3.909px rgba(0, 0, 0, 0.09)',
+          '0px -8.795px 5.864px rgba(0, 0, 0, 0.05)',
+          '0px -15.636px 6.841px rgba(0, 0, 0, 0.01)',
+          '0px -25.409px 6.841px rgba(0, 0, 0, 0.00)',
+        ]
+
     },
   },
   darkMode: "class",
   plugins: [heroui()],
+},
 }
 
 module.exports = config;
