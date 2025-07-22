@@ -1,8 +1,11 @@
+
 import Card from "@/app/landing-page/components/card";
 import FlashLight from "@/app/landing-page/components/flash";
 
 import Panel from "@/app/landing-page/components/panel";
 import TopNavBar from "@/global-component/navigation";
+import DropDown from "./components/dropdown";
+import { use } from "react";
 
 export default function Home() {
   return (
@@ -20,14 +23,14 @@ export default function Home() {
       </div>
       {/* about */}
       <div className="mt-7">
-        <div className="text-[50px] font-gilroy font-bold text-vilot">About US</div>
+        <div className="text-[50px] font-gilroy font-bold text-vilottext">About US</div>
         <div className="flex flex-row items-center justify-between">
           {/* gif */}
-          <div className="w-600px h-370px bg-orange-500">\
+          <div className="w-600px h-370px ">\
             <img
-            src="/animations/shine.gif"
+            src="/landing/group-a.svg"
             alt="Shining animation"
-            className="w-64 h-64 object-contain rounded-lg shadow-lg"
+            className="w-full h-full object-contain "
             />
           </div>
 
@@ -49,14 +52,20 @@ export default function Home() {
       </div>
 
       <div>
-        <div className="text-[58px] font-bold text-gray-900 mb-12 text-start">services</div>
+        <div className="text-vilottext mt-4 text-[58px] font-bold text-gray-900 mb-12 text-start">services</div>
         <Card />
 
       </div>
 
       <div>
-        <div className="text-[58px] font-bold text-gray-900 mb-12 text-start">Our Works</div>
+        <div className="text-vilottext mt-4 text-[58px] font-bold text-gray-900 mb-12 text-start">Our Works</div>
         <Panel/>
+
+      </div>
+
+      <div>
+        <div className="text-vilottext mt-4 text-[58px] font-bold text-gray-900 mb-12 text-start">WhyChoose Us?</div>
+        <DropDown/>
 
       </div>
 

@@ -1,21 +1,26 @@
 export default function Panel() {
   return (
-    <div className="flex w-full h-[500px] rounded-[20px] overflow-hidden">
+    <div className="flex items-center-safe justify-center">
+    <div className="flex w-[1367px] h-[600px] rounded-[20px] overflow-hidden ">
       {/* Panel 1 */}
-      <div className="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-in-out bg-[#a75e1b] flex flex-col items-start justify-between text-white p-6 cursor-pointer leading-[71.2px]">
-        <h2 className="text-[58px] font-bold z-10">01</h2>
+    <div className="group relative flex-1 hover:flex-[54%] transition-all duration-500 ease-in-out bg-orangecustom flex flex-col items-start justify-between text-white p-6 cursor-pointer leading-[71.2px] overflow-hidden">
 
-        {/* Center Image */}
-        <div className="absolute inset-0 flex items-start justify-start z-10 opacity-30 transition-all duration-700 ease-in-out group-hover:items-center group-hover:justify-center">
+      {/* Number and Content Wrapper */}
+      <div className="max-w-[360px] z-10">
+        <h2 className="text-[58px] font-bold mb-7">01</h2>
+
+        {/* Robot Image (center before hover, left on hover) */}
+        <div className="absolute inset-0 flex items-end justify-center group-hover:justify-center pl-0 group-hover:pl-36 transition-all duration-700 ease-in-out z-0">
           <img
             src="/panel/center-image/01.svg"
             alt="Robot"
-            className="w-[287px] h-[509px] object-cover mix-blend-overlay transition-all duration-700"
+            className="w-[287px] h-[509px] object-cover mix-blend-overlay"
+            loading="lazy"
           />
         </div>
 
-        {/* Panel Content */}
-        <div className="z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        {/* Text Content */}
+        <div className="flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           <h3 className="text-[40px] leading-[40px] font-bold">
             JuzAI Powered Intelligence Document Management
           </h3>
@@ -23,46 +28,246 @@ export default function Panel() {
             Lorem ipsum dolor sit amet consectetur. Ac aliquam tellus tristique imperdiet in vitae elit platea ullamcorper. Curabitur malesuada feugiat in morbi faucibus proin ipsum tellus a. Euismod eget odio eu ac aliquam. Nisl bibendum tellus ipsum lectus ut odio ut lorem donec. Maecenas diam amet at sapien. Nulla eu leo venenatis ultrices. Ornare sem velit auctor.
           </p>
 
+          {/* Review Section */}
           <p className="mt-4 text-[16px] leading-4">Creators</p>
-
-          {/* Creators Avatars */}
-          <div className="flex flex-row gap-3 mt-2">
-            <div className="flex -space-x-2">
+          <div className="flex items-center gap-3">
+            <div className="mt-2 flex -space-x-2">
               <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-1.png" alt="Creator 1" />
               <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-4.png" alt="Creator 2" />
               <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-3.png" alt="Creator 3" />
               <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-2.png" alt="Creator 4" />
             </div>
+            <div>
+              <img className="mt-2 w-[100px] h-8" src="/panel/review/Line-arrow.svg" alt="Arrow" />
+            </div>
           </div>
         </div>
-
-        {/* Background image */}
-        <div className="absolute inset-0 -z-10 bg-[url('/panel/bg-image/bg1.png')] bg-cover bg-center opacity-30" />
       </div>
+
+      {/* Background Image */}
+      <div>
+        <img
+          src="/panel/bg-image/bg1.png"
+          alt="Background"
+          className="absolute bottom-0 right-0 w-[375px] h-[600px] object-cover mix-blend-overlay opacity-0 group-hover:opacity-100 transition-all duration-700 z-0"
+          loading="lazy"
+        />
+      </div>
+</div>
+
 
       {/* Panel 2 */}
-      <div className="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-in-out bg-[#4b1d10] flex items-center justify-center cursor-pointer">
-        <h2 className="text-5xl font-bold text-white z-10">02</h2>
-        <img src="/images/vending.png" alt="Vending" className="absolute bottom-0 object-contain h-full z-0" />
+      <div className="group relative flex-1 hover:flex-[54%] transition-all duration-500 ease-in-out bg-browncustom flex flex-col items-start justify-between text-white p-6 cursor-pointer leading-[71.2px] overflow-hidden">
+
+      {/* Number and Content Wrapper */}
+      <div className="max-w-[360px] z-10">
+        <h2 className="text-[58px] font-bold mb-7">02</h2>
+
+        {/* Robot Image (center before hover, left on hover) */}
+        <div className="absolute inset-0 flex items-end justify-center group-hover:justify-center pl-0 group-hover:pl-36 transition-all duration-700 ease-in-out z-0">
+          <img
+            src="/panel/center-image/02.svg"
+            alt="image2"
+            className="w-[287px] h-[509px] object-cover mix-blend-overlay"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Text Content */}
+        <div className="flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 className="text-[40px] leading-[40px] font-bold">
+            JuzAI Powered Intelligence Document Management
+          </h3>
+          <p className="text-[16px] leading-5 mt-4">
+            Lorem ipsum dolor sit amet consectetur. Ac aliquam tellus tristique imperdiet in vitae elit platea ullamcorper. Curabitur malesuada feugiat in morbi faucibus proin ipsum tellus a. Euismod eget odio eu ac aliquam. Nisl bibendum tellus ipsum lectus ut odio ut lorem donec. Maecenas diam amet at sapien. Nulla eu leo venenatis ultrices. Ornare sem velit auctor.
+          </p>
+
+          {/* Review Section */}
+          <p className="mt-4 text-[16px] leading-4">Creators</p>
+          <div className="flex items-center gap-3">
+            <div className="mt-2 flex -space-x-2">
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-1.png" alt="Creator 1" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-4.png" alt="Creator 2" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-3.png" alt="Creator 3" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-2.png" alt="Creator 4" />
+            </div>
+            <div>
+              <img className="mt-2 w-[100px] h-8" src="/panel/review/Line-arrow.svg" alt="Arrow" />
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Background Image */}
+      <div>
+        <img
+          src="/panel/bg-image/bg2.png"
+          alt="Background"
+          className="absolute bottom-0 right-0 w-[375px] h-[600px] object-cover mix-blend-overlay opacity-0 group-hover:opacity-100 transition-all duration-700 z-0"
+          loading="lazy"
+        />
+      </div>
+</div>
 
       {/* Panel 3 */}
-      <div className="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-in-out bg-[#cc2c5b] flex items-center justify-center cursor-pointer">
-        <h2 className="text-5xl font-bold text-white z-10">03</h2>
-        <img src="/images/girl.png" alt="Girl" className="absolute bottom-0 object-contain h-full z-0" />
+      <div className="group relative flex-1 hover:flex-[54%] transition-all duration-500 ease-in-out bg-pinkcustom flex flex-col items-start justify-between text-white p-6 cursor-pointer leading-[71.2px] overflow-hidden">
+
+      {/* Number and Content Wrapper */}
+      <div className="max-w-[360px] z-10">
+        <h2 className="text-[58px] font-bold mb-7">03</h2>
+
+        {/* Robot Image (center before hover, left on hover) */}
+        <div className="absolute inset-0 flex items-end justify-center group-hover:justify-center pl-0 group-hover:pl-36 transition-all duration-700 ease-in-out z-0">
+          <img
+            src="/panel/center-image/03.png"
+            alt="image3"
+            className="max-w-[287px] h-[509px] object-cover mix-blend-overlay"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Text Content */}
+        <div className="flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 className="text-[40px] leading-[40px] font-bold">
+            JuzAI Powered Intelligence Document Management
+          </h3>
+          <p className="text-[16px] leading-5 mt-4">
+            Lorem ipsum dolor sit amet consectetur. Ac aliquam tellus tristique imperdiet in vitae elit platea ullamcorper. Curabitur malesuada feugiat in morbi faucibus proin ipsum tellus a. Euismod eget odio eu ac aliquam. Nisl bibendum tellus ipsum lectus ut odio ut lorem donec. Maecenas diam amet at sapien. Nulla eu leo venenatis ultrices. Ornare sem velit auctor.
+          </p>
+
+          {/* Review Section */}
+          <p className="mt-4 text-[16px] leading-4">Creators</p>
+          <div className="flex items-center gap-3">
+            <div className="mt-2 flex -space-x-2">
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-1.png" alt="Creator 1" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-4.png" alt="Creator 2" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-3.png" alt="Creator 3" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-2.png" alt="Creator 4" />
+            </div>
+            <div>
+              <img className="mt-2 w-[100px] h-8" src="/panel/review/Line-arrow.svg" alt="Arrow" />
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Background Image */}
+      <div>
+        <img
+          src="/panel/bg-image/bg3.png"
+          alt="Background"
+          className="absolute bottom-0 right-0 w-[375px] h-[600px] object-cover mix-blend-overlay opacity-0 group-hover:opacity-100 transition-all duration-700 z-0"
+          loading="lazy"
+        />
+      </div>
+</div>
 
       {/* Panel 4 */}
-      <div className="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-in-out bg-[#c69525] flex items-center justify-center cursor-pointer">
-        <h2 className="text-5xl font-bold text-white z-10">04</h2>
-        <img src="/images/boy.png" alt="Boy" className="absolute bottom-0 object-contain h-full z-0" />
+     <div className="group relative flex-1 hover:flex-[54%] transition-all duration-500 ease-in-out bg-yellowcustom flex flex-col items-start justify-between text-white p-6 cursor-pointer leading-[71.2px] overflow-hidden">
+
+      {/* Number and Content Wrapper */}
+      <div className="max-w-[360px] z-10">
+        <h2 className="text-[58px] font-bold mb-7">04</h2>
+
+        {/* Robot Image (center before hover, left on hover) */}
+        <div className="absolute inset-0 flex items-end justify-center group-hover:justify-center pl-0 group-hover:pl-36 transition-all duration-700 ease-in-out z-0">
+          <img
+            src="/panel/center-image/04.svg"
+            alt="image4"
+            className="w-[287px] h-[509px] object-cover mix-blend-overlay"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Text Content */}
+        <div className="flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 className="text-[40px] leading-[40px] font-bold">
+            JuzAI Powered Intelligence Document Management
+          </h3>
+          <p className="text-[16px] leading-5 mt-4">
+            Lorem ipsum dolor sit amet consectetur. Ac aliquam tellus tristique imperdiet in vitae elit platea ullamcorper. Curabitur malesuada feugiat in morbi faucibus proin ipsum tellus a. Euismod eget odio eu ac aliquam. Nisl bibendum tellus ipsum lectus ut odio ut lorem donec. Maecenas diam amet at sapien. Nulla eu leo venenatis ultrices. Ornare sem velit auctor.
+          </p>
+
+          {/* Review Section */}
+          <p className="mt-4 text-[16px] leading-4">Creators</p>
+          <div className="flex items-center gap-3">
+            <div className="mt-2 flex -space-x-2">
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-1.png" alt="Creator 1" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-4.png" alt="Creator 2" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-3.png" alt="Creator 3" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-2.png" alt="Creator 4" />
+            </div>
+            <div>
+              <img className="mt-2 w-[100px] h-8" src="/panel/review/Line-arrow.svg" alt="Arrow" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Panel 5 */}
-      <div className="group relative flex-1 hover:flex-[4] transition-all duration-500 ease-in-out bg-[#9d55cd] flex items-center justify-center cursor-pointer">
-        <h2 className="text-5xl font-bold text-white z-10">05</h2>
-        <img src="/images/doctor.png" alt="Doctor" className="absolute bottom-0 object-contain h-full z-0" />
+      {/* Background Image */}
+      <div>
+        <img
+          src="/panel/bg-image/bg4.png"
+          alt="Background"
+          className="absolute bottom-0 right-0 w-[375px] h-[600px] object-cover mix-blend-overlay opacity-0 group-hover:opacity-100 transition-all duration-700 z-0"
+          loading="lazy"
+        />
       </div>
+</div>
+
+      {/* Panel 5 */}
+      <div className="group relative flex-1 hover:flex-[54%] transition-all duration-500 ease-in-out bg-vilotcustom flex flex-col items-start justify-between text-white p-6 cursor-pointer leading-[71.2px] overflow-hidden">
+
+      {/* Number and Content Wrapper */}
+      <div className="max-w-[360px] z-10">
+        <h2 className="text-[58px] font-bold mb-7">05</h2>
+
+        {/* Robot Image (center before hover, left on hover) */}
+        <div className="absolute inset-0 flex items-end justify-center group-hover:justify-center pl-0 group-hover:pl-36 transition-all duration-700 ease-in-out z-0">
+          <img
+            src="/panel/center-image/05.svg"
+            alt="image5"
+            className="w-[287px] h-[509px] object-cover mix-blend-overlay"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Text Content */}
+        <div className="flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 className="text-[40px] leading-[40px] font-bold">
+            JuzAI Powered Intelligence Document Management
+          </h3>
+          <p className="text-[16px] leading-5 mt-4">
+            Lorem ipsum dolor sit amet consectetur. Ac aliquam tellus tristique imperdiet in vitae elit platea ullamcorper. Curabitur malesuada feugiat in morbi faucibus proin ipsum tellus a. Euismod eget odio eu ac aliquam. Nisl bibendum tellus ipsum lectus ut odio ut lorem donec. Maecenas diam amet at sapien. Nulla eu leo venenatis ultrices. Ornare sem velit auctor.
+          </p>
+
+          {/* Review Section */}
+          <p className="mt-4 text-[16px] leading-4">Creators</p>
+          <div className="flex items-center gap-3">
+            <div className="mt-2 flex -space-x-2">
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-1.png" alt="Creator 1" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-4.png" alt="Creator 2" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-3.png" alt="Creator 3" />
+              <img className="w-8 h-8 rounded-full" src="/panel/review/Ellipse-2.png" alt="Creator 4" />
+            </div>
+            <div>
+              <img className="mt-2 w-[100px] h-8" src="/panel/review/Line-arrow.svg" alt="Arrow" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Background Image */}
+      <div>
+        <img
+          src="/panel/bg-image/bg5.png"
+          alt="Background"
+          className="absolute bottom-0 right-0 w-[375px] h-[600px] object-cover mix-blend-overlay opacity-0 group-hover:opacity-100 transition-all duration-700 z-0"
+          loading="lazy"
+        />
+      </div>
+</div>
+    </div>
     </div>
   );
 }

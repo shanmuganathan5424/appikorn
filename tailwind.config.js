@@ -12,7 +12,13 @@ const config = {
      colors: {
         darkblue: "#070045",
         blueCustom: '#2A2AFF',
-        vilot: '#6A0DAD',
+        vilottext: '#6A0DAD',
+        orangecustom: '#AF6C2F',
+        browncustom: '#6E250A',
+        pinkcustom: '#C9153E',
+        yellowcustom: '#B78A23',
+        vilotcustom: '#A858D2',
+      dart_vilot: '',
       },
 
       fontFamily: {
