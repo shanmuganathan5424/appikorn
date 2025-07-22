@@ -1,36 +1,116 @@
+"use client";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import React from "react";
-import Page1 from "../../../public/photo1.jpg";
+import Photo1 from "@/public/offer-content/photo1.jpg"; // Replace with your images
+import Photo2 from "@/public/offer-content/photo2.jpg"; // Replace with your images
+import Photo3 from "@/public/offer-content/photo3.jpg"; // Replace with your images
+import Photo4 from "@/public/offer-content/photo4.jpg"; // Replace with your images
+import Photo5 from "@/public/offer-content/photo5.jpg"; // Replace with your images
+import Photo6 from "@/public/offer-content/photo6.jpg"; // Replace with your images
+import Photo7 from "@/public/offer-content/photo7.jpg"; // Replace with your images
 
-const OfferInAppikorn = () => {
+const cards = [
+  {
+    image: Photo1,
+    title: "Embedded Design",
+    text: "Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl id penatibus massa. At sit eget dapibus porta cras arcu vitae. Sed semper auctor vivamus malesuada. Tempus bibendum tincidunt lorem et nunc urna. Lacus facilisi.Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl ",
+  },
+  {
+    image: Photo2,
+    title: "UI/UX Design",
+    text: "Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl id penatibus massa. At sit eget dapibus porta cras arcu vitae. Sed semper auctor vivamus malesuada. Tempus bibendum tincidunt lorem et nunc urna. Lacus facilisi.Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl ",
+  },
+  {
+    image: Photo3,
+    title: "Product Design",
+    text: "Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl id penatibus massa. At sit eget dapibus porta cras arcu vitae. Sed semper auctor vivamus malesuada. Tempus bibendum tincidunt lorem et nunc urna. Lacus facilisi.Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl ",
+  },
+  {
+    image: Photo4,
+    title: "QA Testing",
+    text: "Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl id penatibus massa. At sit eget dapibus porta cras arcu vitae. Sed semper auctor vivamus malesuada. Tempus bibendum tincidunt lorem et nunc urna. Lacus facilisi.Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl ",
+  },
+  {
+    image: Photo5,
+    title: "Customer Support",
+    text: "Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl id penatibus massa. At sit eget dapibus porta cras arcu vitae. Sed semper auctor vivamus malesuada. Tempus bibendum tincidunt lorem et nunc urna. Lacus facilisi.Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl ",
+  },
+  {
+    image: Photo6,
+    title: "Tech Support",
+    text: "Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl id penatibus massa. At sit eget dapibus porta cras arcu vitae. Sed semper auctor vivamus malesuada. Tempus bibendum tincidunt lorem et nunc urna. Lacus facilisi.Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl ",
+  },
+  {
+    image: Photo7,
+    title: "User Research",
+    text: "Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl id penatibus massa. At sit eget dapibus porta cras arcu vitae. Sed semper auctor vivamus malesuada. Tempus bibendum tincidunt lorem et nunc urna. Lacus facilisi.Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A elementum rhoncus nisl ",
+  },
+];
+
+export default function OfferInAppikorn() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % cards.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentCard = cards[index];
+
   return (
     <>
-      <div className="bg-white py-20 place-items-center flex">
-        <div className="w-[688px] h-[600px] bg-indigo-300 rounded-lt-2xl rounded-lb-2xl">
-          <Image
-            className="w-[688px] h-[600px]"
-            src={Page1}
-            alt="Photo1"
-          ></Image>
+      <div className="py-20">
+        <div className="pb-20 text-purple1 font-bold leading-[71.22px] tracking-[-0.49px]">
+          <h1 className="text-[58px]">What We Offer in Appikorn</h1>
         </div>
+        <div className="bg-[#F8F8FF] flex items-center justify-center">
+          <div className="h-[660px] w-[1550px] flex rounded-2xl shadow-xl items-center justify-center overflow-hidden">
+            {/* Left Column (Image) */}
+            <div className="relative w-1/2 h-[660px] overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`img-${index}`}
+                  initial={{ y: -640 }}
+                  animate={{ y: 0 }}
+                  exit={{ y: 640 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={currentCard.image}
+                    alt={currentCard.title}
+                    className="w-full h-full object-cover rounded-tl-2xl rounded-bl-2xl"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-        <div className="w-[688px] h-[600px] bg-white text-black rounded-rt-2xl rounded-rb-2xl">
-          <h1 className="h-[72] w-[400] text-bold text-[48px]">
-            Embedded Design
-          </h1>
-          <p className="text-[24px] pt-20">
-            Lorem ipsum dolor sit amet consectetur. Vitae justo nullam eleifend
-            dui nibh in ac velit egestas. Libero et massa donec ullamcorper. A
-            elementum rhoncus nisl id penatibus massa. At sit eget dapibus porta
-            cras arcu vitae. Sed semper auctor vivamus malesuada. Tempus
-            bibendum tincidunt lorem et nunc urna. Lacus facilisi.Lorem ipsum
-            dolor sit amet consectetur. Vitae justo nullam eleifend dui nibh in
-            ac velit egestas. Libero et massa donec ullamcorper.
-          </p>
+            {/* Right Column (Text) */}
+            <div className="relative w-1/2 h-[660px] overflow-hidden bg-white rounded-tr-2xl rounded-br-2xl">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`text-${index}`}
+                  initial={{ y: 640 }}
+                  animate={{ y: 0 }}
+                  exit={{ y: -640 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  className="absolute inset-0 p-10 flex flex-col justify-center text-black"
+                >
+                  <h1 className="text-[48px] font-bold mb-6 leading-snug">
+                    {currentCard.title}
+                  </h1>
+                  <p className="text-[24px] leading-relaxed">
+                    {currentCard.text}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </div>
     </>
   );
-};
-
-export default OfferInAppikorn;
+}

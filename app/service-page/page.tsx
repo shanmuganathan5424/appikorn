@@ -2,15 +2,26 @@ import Footer from "@/global-component/footer";
 import React from "react";
 import EmbeddedDesign from "./component/embedded_design";
 import OfferInAppikorn from "./component/offer_in_appikorn";
+import Card from "./component/card";
+import FirstContainer from "./component/first_container";
 
 const ServicePage = () => {
   return (
-    <div className="px-25">
-      <h1>Service Page</h1>
-      <OfferInAppikorn />
-      <EmbeddedDesign />
-      <Footer />
-    </div>
+    <>
+      <div className="">
+        <div className="bg-white">
+          <FirstContainer />
+        </div>
+        <div className="bg-[#F8F8FF] px-15">
+          <Card />
+          <OfferInAppikorn />
+          <EmbeddedDesign />
+        </div>
+        <div>
+          <Footer />
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -1,8 +1,10 @@
 const EmbeddedDesign = () => {
   return (
     <>
-      <div className="bg-[#F8F8FF] text-black px-25 py-20">
-        <h1 className="text-purple1 text-[58px] pb-10">Embedded Design</h1>
+      <div className="bg-[#F8F8FF] text-black py-30">
+        <h1 className="text-purple1 text-[58px] pb-10 font-bold leading-[71.22px] tracking-[-0.49px]">
+          Embedded Design
+        </h1>
         <div className="px-2 font-normal">
           <p className="text-[24px] leading-[45px] text-justify">
             Lorem ipsum dolor sit amet consectetur. Id aliquam etiam at mauris
