@@ -16,7 +16,7 @@ const config = {
         base: ["18px", "30px"], // size + line-height
       },
       colors: {
-        darkblue: "#070045",
+        darkblue: "#6A0DAD",
         blueCustom: "#2A2AFF",
         vilot: "#6A0DAD",
         dark_purple: "#5D5A88",
@@ -30,7 +30,9 @@ const config = {
         pinkcustom: "#C9153E",
         yellowcustom: "#B78A23",
         vilotcustom: "#A858D2",
-        dart_vilot: "",
+        dartvilot: "#89006C",
+        greencustom: "#239E05",
+        overallbg: "#F9F9FF",
       },
 
       fontFamily: {
@@ -38,6 +40,7 @@ const config = {
         mono: ["var(--font-mono)", "monospace"],
         tusker: ["Tusker Grotesk", "sans-serif"],
         gilroy: ["Gilroy-Bold", "sans-serif"],
+        anton: ["Impact"],
       },
 
       dropShadow: {

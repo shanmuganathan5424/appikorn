@@ -33,7 +33,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <body>
         <Providers>
-          <div className="min-w-[1440px] mx-6">
+          <div className="min-w-[1440px] ">
             <main> { children}</main>
             <footer className="w-full flex items-center justify-center py-3">
               {/* Footer content here */}

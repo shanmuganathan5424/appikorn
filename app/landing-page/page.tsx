@@ -1,30 +1,22 @@
 
 import Card from "@/app/landing-page/components/card";
-import FlashLight from "@/app/landing-page/components/flash";
 
 import Panel from "@/app/landing-page/components/panel";
 import TopNavBar from "@/global-component/navigation";
-import DropDown from "./components/dropdown";
-import { use } from "react";
+
+import SmartCard from "./components/dropdown";
+import Footer from "@/global-component/footer";
+import Animate from "./components/animation-page";
 
 export default function Home() {
   return (
-    <section >
-      <div className="mx-0 relative bg-darkblue w-full h-[1024px] flex flex-col items-center" >
-
-        <TopNavBar />
-
-        <div className="text-center text-[215px] font-sans font-bold bg-[linear-gradient(to_top,_#FFF5F5,_#2A2AFF)] bg-clip-text text-transparent tracking-[7px]">
-          APPIKORN
-        </div>
-
-        <div className="absolute bottom-4"><img src="/landing/landing_image.png" alt="landing" width={1200} height={750}  /></div>
-
-      </div>
+    <section  className="bg-overallbg w-full h-[1024px]">
+      <Animate/>
       {/* about */}
+      <div className="px-8">
       <div className="mt-7">
         <div className="text-[50px] font-gilroy font-bold text-vilottext">About US</div>
-        <div className="flex flex-row items-center justify-between">
+        <div className="flex flex-row items-center justify-between px-4">
           {/* gif */}
           <div className="w-600px h-370px ">\
             <img
@@ -51,22 +43,24 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
-        <div className="text-vilottext mt-4 text-[58px] font-bold text-gray-900 mb-12 text-start">services</div>
+      <div className="mb-12">
+        <div className="text-black mt-4 text-[58px] font-bold  mb-12 text-start">services</div>
         <Card />
 
       </div>
 
-      <div>
-        <div className="text-vilottext mt-4 text-[58px] font-bold text-gray-900 mb-12 text-start">Our Works</div>
+      <div className="mb-12">
+        <div className="text-vilottext mt-4 text-[58px] font-bold  mb-12 text-start">Our Works</div>
         <Panel/>
 
       </div>
 
-      <div>
-        <div className="text-vilottext mt-4 text-[58px] font-bold text-gray-900 mb-12 text-start">WhyChoose Us?</div>
-        <DropDown/>
+      <div className="mb-60">
+        <div className="text-vilottext mt-4 text-[58px] font-bold  mb-12 text-start">WhyChoose Us?</div>
+        <SmartCard/>
 
+      </div>
+      <Footer />
       </div>
 
     </section>

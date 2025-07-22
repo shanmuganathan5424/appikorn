@@ -1,93 +1,94 @@
 import Image from "next/image";
-import AppikornImage from "../public/footer-icons/appikorn-logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AppikornImage from "../public/footer-icons/LOGO.svg";
 import Instagram from "../public/socialMediaIcons/Instagram.svg";
 import LinkedIn from "../public/socialMediaIcons/LinkedIn.svg";
-import {
-  faLinkedin,
-  faWhatsapp,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+import WhatsApp from "../public/socialMediaIcons/whatsapp.svg";
 
 export default function Footer() {
   return (
-    <>
-      <div className="bg-white h-144 text-black px-25">
-        {/* Upper Footer */}
-        <div className="grid grid-cols-4  pt-15 pb-15">
-          {/* 1st Column */}
-          <div className="flex flex-col space-y-3">
-            <Image
-              src={AppikornImage}
-              alt="Appikorn Icon"
-              height={71.38532257080078}
-              width={135.6885223388672}
-            ></Image>
-            <p className=" text-head_grey text-[18px]">
-              Lorem ipsum dolor sit amet consectetur dolol drakgonil adipiscing
-              elit aliquam mauris
-            </p>
-            <input
-              type="text"
-              className="w-[419px] h-[66px] rounded-full border-none outline-none focus:border-none focus:outline-none bg-light_blue pl-5 text-head_grey"
-              placeholder="Enter your email"
-            />
-            <button className="bg-dark_purple rounded-full p-3 w-[170px] h-[66px] text-white text-bold">
-              Contact Us
-            </button>
-          </div>
-          {/* Column 2 */}
-          <div className="flex-col place-items-center">
-            <p className="text-dark_purple text-bold text-xl">Services</p>
-            <div className="pt-3 pl-32 text-[18px]">
-              <p className="text-base text-head_grey ">Cloud service</p>
-              <p className="text-base text-head_grey">UI/UX Design</p>
-              <p className="text-base text-head_grey">Product Design</p>
-              <p className="text-base text-head_grey">QA & Testing</p>
-              <p className="text-base text-head_grey">Web Development</p>
-              <p className="text-base text-head_grey">VR/AR Technology</p>
-              <p className="text-base text-head_grey">
-                Android / IOS application
-              </p>
-              <p className="text-base text-head_grey">Automations</p>
-            </div>
-          </div>
-          {/* Column 3 */}
-          <div className="flex-col place-items-center">
-            <p className="text-dark_purple text-bold text-xl">Company</p>
-            <div className="pt-3 pl-3 text-[18px]">
-              <p className="text-base text-head_grey">About</p>
-              <p className="text-base text-head_grey">Contact us</p>
-              <p className="text-base text-head_grey">Help Center</p>
-            </div>
-          </div>
-          {/* Column 4 */}
-          <div className="flex-col place-items-center">
-            <p className="text-dark_purple text-bold text-xl">Follow Us</p>
-            <div className="flex pt-3 space-x-2">
-              <Image
-                src={LinkedIn}
-                height={36}
-                width={36}
-                alt="LinkedIn Logo"
-              />
-              <Image
-                src={Instagram}
-                height={36}
-                width={36}
-                alt="Instagram Logo"
-              />
-            </div>
+    <footer className="bg-white px-6 md:px-24 py-4 text-black">
+      {/* Upper Section */}
+      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12">
+        {/* Column 1 - Logo & Subscription */}
+        <div className="w-full lg:w-[350px] flex flex-col space-y-4">
+          <Image src={AppikornImage} alt="Appikorn Logo" width={140} height={70} />
+          <p className="text-head_grey text-[16px] leading-relaxed">
+            Lorem ipsum dolor sit amet consectetur dolol drakgonil adipiscing elit aliquam mauris
+          </p>
+          <input
+            type="text"
+            placeholder="Enter your email"
+            className="w-full h-[50px] rounded-full bg-light_blue pl-5 text-[16px] text-head_grey font-semibold"
+          />
+          <button className="bg-dark_purple rounded-full h-[50px] w-[150px] text-white font-semibold">
+            Contact us
+          </button>
+        </div>
+
+        {/* Column 2 - Services */}
+        <div className="min-w-[180px]">
+          <p className="text-dark_purple font-bold text-xl mb-4">Services</p>
+          <div className="space-y-2 text-[16px] text-head_grey">
+            <p>Cloud service</p>
+            <p>UI/UX Design</p>
+            <p>Product Design</p>
+            <p>QA & Testing</p>
+            <p>Web Development</p>
+            <p>VR/AR Technology</p>
+            <p>Android / IOS application</p>
+            <p>Automations</p>
           </div>
         </div>
-        <div className="bg-gray-200 h-0.25 w-320 mx-auto"></div>
-        {/* Lower Footer */}
-        <div className="place-items-end text-head_grey text-[18px]">
-          <p className="pr-20 pt-5">
-            Copyright © 2025 Appikorn consultancy | All Rights Reserved
-          </p>
+
+        {/* Column 3 - Company */}
+        <div className="min-w-[150px]">
+          <p className="text-dark_purple font-bold text-xl mb-4">Company</p>
+          <div className="space-y-2 text-[16px] text-head_grey">
+            <p>About</p>
+            <p>Contact us</p>
+            <p>Help Center</p>
+          </div>
+        </div>
+
+        {/* Column 4 - Instagram Grid */}
+        <div>
+          <p className="text-dark_purple font-bold text-xl mb-4">Follow on Instagram</p>
+          <div className="grid grid-cols-2 gap-[10px]">
+            {[
+              "/footer-icons/local-image/local-img1.png",
+              "/footer-icons/local-image/local-img2.png",
+              "/footer-icons/local-image/local-img3.png",
+              "/footer-icons/local-image/local-img4.png",
+            ].map((src, index) => (
+              <div
+                key={index}
+                className="w-[110px] h-[110px] overflow-hidden rounded-[10px]"
+              >
+                <img
+                  src={src}
+                  alt={`insta${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </>
+
+      {/* Divider */}
+      <div className="border-t border-gray-200 my-8 w-full"></div>
+
+      {/* Lower Section */}
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-head_grey text-[16px]">
+        <p className="text-center md:text-left">
+          © 2025 Appikorn Consultancy | All Rights Reserved
+        </p>
+        <div className="flex space-x-4">
+          <Image src={Instagram} width={36} height={36} alt="Instagram" />
+          <Image src={LinkedIn} width={36} height={36} alt="LinkedIn" />
+          <Image src={WhatsApp} width={36} height={36} alt="WhatsApp" />
+        </div>
+      </div>
+    </footer>
   );
 }
