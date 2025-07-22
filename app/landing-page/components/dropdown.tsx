@@ -1,134 +1,63 @@
+import SmartCard from "./smartc-card";
+
 export default function DropDown() {
+  const cardData = [
+    {
+      title: "Fast Working Process",
+      img: "/dropdown-image/01.png",
+      bg: "bg-pinkcustom",
+      lines: [
+        "Streamlined processes for rapid results. Efficiency that accelerates your success.",
+        "Streamlined processes for rapid results. Efficiency that accelerates your success.",
+        "Streamlined processes for rapid results. Efficiency that accelerates your success.",
+        "Streamlined processes for rapid results. Efficiency that accelerates your success."
+      ]
+    },
+    {
+      title: "Dedicated Team",
+      img: "/dropdown-image/02.png",
+      bg: "bg-vilotcustom",
+      lines: [
+        "Your dedicated team of experts, committed to realizing your vision.",
+        "Together, we'll achieve your goals with precision and care.",
+        "Your dedicated team of experts, committed to realizing your vision.",
+        "Together, we'll achieve your goals with precision and care."
+      ]
+    },
+    {
+      title: "24 / 7 Support",
+      img: "/dropdown-image/03.png",
+      bg: "bg-greencustom",
+      lines: [
+        "Round-the-clock support for your peace of mind. We're here whenever you need us, day or night.",
+        "Round-the-clock support for your peace of mind. We're here whenever you need us, day or night.",
+        "Round-the-clock support for your peace of mind. We're here whenever you need us, day or night.",
+        "Round-the-clock support for your peace of mind. We're here whenever you need us, day or night."
+      ]
+    },
+    {
+      title: "Fast Working Process",
+      img: "/dropdown-image/04.png",
+      bg: "bg-dartvilot",
+      lines: [
+        "Your dedicated team of experts, committed to realizing your vision.",
+        "Together, we'll achieve your goals with precision and care.",
+        "Your dedicated team of experts, committed to realizing your vision.",
+        "Together, we'll achieve your goals with precision and care."
+      ]
+    }
+  ];
+
   return (
-    <div className="w-full h-[850] flex flex-row items-center justify-center gap-8 px-4 flex-wrap">
-        {/* Column 1 */}
-        <div className="w-[450px] h-[850px] flex flex-col gap-4 overflow-hidden transition-all duration-500">
-        {/* Card 1 */}
-        <div className="flex-1 hover:flex-[4] transition-all duration-500 bg-[#239E05] rounded-xl overflow-hidden flex flex-col">
-            {/* Text Section */}
-            <div className="p-6 text-white flex-1 transition-all duration-500 overflow-hidden">
-            <h2 className="text-lg font-semibold mb-2">Fast Working Process</h2>
-            <p className="line-clamp-1 group-hover:line-clamp-none transition-all duration-500">
-                Streamlined processes for rapid results. Efficiency that accelerates your success.
-            </p>
-            <p className="hidden group-hover:block">
-                Streamlined processes for rapid results. Efficiency that accelerates your success.
-            </p>
-            <p className="hidden group-hover:block">
-                Streamlined processes for rapid results. Efficiency that accelerates your success.
-            </p>
-            <p className="hidden group-hover:block">
-                Streamlined processes for rapid results. Efficiency that accelerates your success.
-            </p>
-            </div>
-
-            {/* Image Section */}
-            <div className="h-[120px] flex-shrink-0 transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-4">
-        <img
-            src="/dropdown-image/03.png"
-            alt="Card 1"
-            className="w-full h-full object-contain"
-            loading="lazy"
-        />
-        </div>
-        </div>
-
-        {/* Card 2 */}
-        <div className="flex-1 hover:flex-[4] transition-all duration-500 bg-[#89006C] rounded-xl overflow-hidden flex flex-col">
-            {/* Text Section */}
-            <div className="p-6 text-white flex-1 transition-all duration-500 overflow-hidden">
-            <h2 className="text-lg font-semibold mb-2">Team Collaboration</h2>
-            <p className="line-clamp-1 group-hover:line-clamp-none transition-all duration-500">
-                Your dedicated team of experts, committed to realizing your vision.
-            </p>
-            <p className="hidden group-hover:block">
-                Together, we'll achieve your goals with precision and care.
-            </p>
-            <p className="hidden group-hover:block">
-                Together, we'll achieve your goals with precision and care.
-            </p>
-            <p className="hidden group-hover:block">
-                Together, we'll achieve your goals with precision and care.
-            </p>
-            </div>
-
-            {/* Image Section */}
-            <div className="h-[120px] flex-shrink-0 transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-4">
-        <img
-            src="/dropdown-image/03.png"
-            alt="Card 1"
-            className="w-full h-full object-contain"
-            loading="lazy"
-        />
-        </div>
-        </div>
-        </div>
-
-
-        {/* Column 2 */}
-        <div className="w-[450px] h-[850px] flex flex-col gap-4 overflow-hidden transition-all duration-500">
-        {/* Card 1 */}
-        <div className="flex-1 hover:flex-[4] transition-all duration-500 bg-[#239E05] rounded-xl overflow-hidden flex flex-col">
-            {/* Text Section */}
-            <div className="p-6 text-white flex-1 transition-all duration-500 overflow-hidden">
-            <h2 className="text-lg font-semibold mb-2">Fast Working Process</h2>
-            <p className="line-clamp-1 group-hover:line-clamp-none transition-all duration-500">
-                Streamlined processes for rapid results. Efficiency that accelerates your success.
-            </p>
-            <p className="hidden group-hover:block">
-                Streamlined processes for rapid results. Efficiency that accelerates your success.
-            </p>
-            <p className="hidden group-hover:block">
-                Streamlined processes for rapid results. Efficiency that accelerates your success.
-            </p>
-            <p className="hidden group-hover:block">
-                Streamlined processes for rapid results. Efficiency that accelerates your success.
-            </p>
-            </div>
-
-            {/* Image Section */}
-            <div className="h-[120px] flex-shrink-0 transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-4">
-        <img
-            src="/dropdown-image/03.png"
-            alt="Card 1"
-            className="w-full h-full object-contain"
-            loading="lazy"
-        />
-        </div>
-        </div>
-
-        {/* Card 2 */}
-        <div className="flex-1 hover:flex-[4] transition-all duration-500 bg-[#89006C] rounded-xl overflow-hidden flex flex-col">
-            {/* Text Section */}
-            <div className="p-6 text-white flex-1 transition-all duration-500 overflow-hidden">
-            <h2 className="text-lg font-semibold mb-2">Team Collaboration</h2>
-            <p className="line-clamp-1 group-hover:line-clamp-none transition-all duration-500">
-                Your dedicated team of experts, committed to realizing your vision.
-            </p>
-            <p className="hidden group-hover:block">
-                Together, we'll achieve your goals with precision and care.
-            </p>
-            <p className="hidden group-hover:block">
-                Together, we'll achieve your goals with precision and care.
-            </p>
-            <p className="hidden group-hover:block">
-                Together, we'll achieve your goals with precision and care.
-            </p>
-            </div>
-
-            {/* Image Section */}
-            <div className="h-[120px] flex-shrink-0 transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-4">
-        <img
-            src="/dropdown-image/03.png"
-            alt="Card 1"
-            className="w-full h-full object-contain"
-            loading="lazy"
-        />
-        </div>
-        </div>
-</div>
-</div>
-
-
+    <div className="w-full min-h-[850px] flex flex-row items-center justify-center gap-8 px-4 flex-wrap">
+      <div className="w-[450px] h-[850px] flex flex-col gap-4 overflow-hidden transition-all duration-500">
+        <SmartCard {...cardData[0]} />
+        <SmartCard {...cardData[1]} />
+      </div>
+      <div className="w-[450px] h-[850px] flex flex-col gap-4 overflow-hidden transition-all duration-500">
+        <SmartCard {...cardData[2]} />
+        <SmartCard {...cardData[3]} />
+      </div>
+    </div>
   );
 }
