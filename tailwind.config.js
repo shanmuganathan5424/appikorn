@@ -17,12 +17,23 @@ const config = {
       },
       colors: {
         darkblue: "#070045",
+<<<<<<< HEAD
         blueCustom: "#2A2AFF",
         vilot: "#6A0DAD",
         dark_purple: "#5D5A88",
         light_blue: "#F9F9FF",
         head_grey: "#9795B5",
         purple1: "#6A0DAD",
+=======
+        blueCustom: '#2A2AFF',
+        vilottext: '#6A0DAD',
+        orangecustom: '#AF6C2F',
+        browncustom: '#6E250A',
+        pinkcustom: '#C9153E',
+        yellowcustom: '#B78A23',
+        vilotcustom: '#A858D2',
+      dart_vilot: '',
+>>>>>>> 9a89ce48882f41b81d0b87bc3fa074c284150bfb
       },
 
       fontFamily: {
