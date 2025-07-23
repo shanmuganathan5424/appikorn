@@ -5,7 +5,6 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 
-
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -33,8 +32,8 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <body>
         <Providers>
-          <div className="min-w-[1440px] ">
-            <main> { children}</main>
+          <div className="">
+            <main> {children}</main>
             <footer className="w-full flex items-center justify-center py-3">
               {/* Footer content here */}
             </footer>

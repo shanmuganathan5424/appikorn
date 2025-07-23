@@ -9,22 +9,20 @@ import TopNavBar from "@/global-component/navigation";
 const ServicePage = () => {
   return (
     <>
-      <div className="mx-auto bg-white">
+      <div className="mx-auto bg-white max-w-custom">
         <div className="bg-purple1 text-white">
           <TopNavBar />
         </div>
 
-        <div className="bg-white">
+        {/* <div className="bg-white">
           <FirstContainer />
-        </div>
+        </div> */}
         <div className="bg-[#F8F8FF] px-15">
           <Card />
           <OfferInAppikorn />
           <EmbeddedDesign />
         </div>
-        <div>
-          <Footer />
-        </div>
+        <div>{/* <Footer /> */}</div>
       </div>
     </>
   );

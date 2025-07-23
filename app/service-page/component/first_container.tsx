@@ -72,7 +72,7 @@ export default function FirstContainer() {
             <p>Appikorn</p>
           </div>
           <div className="flex flex-row space-x-8 text-[#FFD700] text-[20px]">
-            <div className="flex flex-row space-x-2">
+            <div className="flex flex-row items-center justify-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-6 h-6"
@@ -89,7 +89,7 @@ export default function FirstContainer() {
               </svg>
               <p> Agile Delivery</p>
             </div>
-            <div className="flex flex-row space-x-2">
+            <div className="flex flex-row items-center justify-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-6 h-6"
@@ -124,7 +124,7 @@ export default function FirstContainer() {
           initial={{ opacity: 0, y: 60 }}
           animate={badgeInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="absolute bottom-12 left-65"
+          className="absolute bottom-12 left-68"
         >
           <div className="bg-white w-[974px] h-[92px] rounded-full text-black flex flex-row items-center justify-center">
             <div className="w-[200px] flex items-center justify-center space-x-4">

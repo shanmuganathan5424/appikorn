@@ -12,8 +12,12 @@ const config = {
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],
       },
+
       fontSize: {
         base: ["18px", "30px"], // size + line-height
+      },
+      maxWidth: {
+        custom: "1440px",
       },
       colors: {
         darkblue: "#6A0DAD",
@@ -55,6 +59,13 @@ const config = {
       textAlign: {
         justify: "justify",
       },
+    },
+    screens: {
+      small: "425px", // Add this if you want a custom breakpoint
+      sm: "600px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
     darkMode: "class",
     plugins: [heroui()],
