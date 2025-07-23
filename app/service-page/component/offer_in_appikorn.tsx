@@ -101,9 +101,7 @@ export default function OfferInAppikorn() {
                 <h1 className="text-[48px] font-bold mb-6 leading-snug">
                   {currentCard.title}
                 </h1>
-                <p className="text-[24px] leading-relaxed">
-                  {currentCard.text}
-                </p>
+                <p className="text-[24px] leading-[48px]">{currentCard.text}</p>
               </motion.div>
             </AnimatePresence>
           </div>
