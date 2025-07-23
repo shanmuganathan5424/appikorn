@@ -49,7 +49,7 @@ export default function DropDown() {
   ];
 
   return (
-    <div className="w-full min-h-[850px] flex flex-row items-center justify-center gap-8 px-4 flex-wrap">
+    <div className="w-full min-h-[850px] flex flex-row items-center justify-center gap-8 px-4 flex-wrap py-6">
       <div className="w-[450px] h-[850px] flex flex-col gap-4 overflow-hidden transition-all duration-500">
         <SmartCard {...cardData[0]} />
         <SmartCard {...cardData[1]} />

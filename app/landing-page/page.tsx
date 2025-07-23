@@ -2,11 +2,11 @@
 import Card from "@/app/landing-page/components/card";
 
 import Panel from "@/app/landing-page/components/panel";
-import TopNavBar from "@/global-component/navigation";
 
 import SmartCard from "./components/dropdown";
-import Footer from "@/global-component/footer";
+
 import Animate from "./components/animation-page";
+import DropDown from "./components/dropdown";
 
 export default function Home() {
   return (
@@ -18,13 +18,14 @@ export default function Home() {
         <div className="text-[50px] font-gilroy font-bold text-vilottext">About US</div>
         <div className="flex flex-row items-center justify-between px-4">
           {/* gif */}
-          <div className="w-600px h-370px ">\
-            <img
-            src="/landing/group-a.svg"
+          <div className="w-[600px] h-[370px]">
+          <img
+            src="/gif/gif-landing.gif" // <-- replace with your actual GIF path
             alt="Shining animation"
-            className="w-full h-full object-contain "
-            />
-          </div>
+            className="w-full h-full object-contain"
+          />
+        </div>
+
 
           {/* content */}
           <div className="w-[616.47px] text-end">
@@ -56,8 +57,8 @@ export default function Home() {
       </div>
 
       <div className="mb-60">
-        <div className="text-vilottext mt-4 text-[58px] font-bold  mb-12 text-start">WhyChoose Us?</div>
-        <SmartCard/>
+        <div className="text-vilottext mt-4 text-[58px] font-bold   text-start">WhyChoose Us?</div>
+        <DropDown/>
 
       </div>
       
