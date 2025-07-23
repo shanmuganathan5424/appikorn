@@ -1,4 +1,4 @@
-
+"use client";
 import Card from "@/app/landing-page/components/card";
 
 import Panel from "@/app/landing-page/components/panel";
@@ -60,7 +60,7 @@ export default function Home() {
         <SmartCard/>
 
       </div>
-      <Footer />
+      
       </div>
 
     </section>

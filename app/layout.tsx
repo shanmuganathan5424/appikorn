@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
+import Footer from "@/global-component/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -30,23 +31,17 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-<<<<<<< HEAD
-      <body className="bg-white max-w-[1440px] min-h-screen flex items-center justify-center overflow-x-hidden mx-auto">
-  <Providers>{children}</Providers>
-</body>
-
-=======
-      <body>
-        <Providers>
-          <div className="">
-            <main> {children}</main>
-            <footer className="w-full flex items-center justify-center py-3">
-              {/* Footer content here */}
-            </footer>
-          </div>
-        </Providers>
-      </body>
->>>>>>> f0588877d697509c3a20e08d56aa80e136961944
-    </html>
+  <body className="bg-white max-w-[1440px] min-h-screen overflow-x-hidden mx-auto">
+    <Providers>
+      <div className="flex flex-col items-center justify-between min-h-screen">
+        <main className="w-full flex-grow">{children}</main>
+        <footer className="w-full flex items-center justify-center py-3">
+          {/* Footer content here */}
+          <Footer />
+        </footer>
+      </div>
+    </Providers>
+  </body>
+</html>
   );
 }
