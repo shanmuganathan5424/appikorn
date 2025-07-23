@@ -22,10 +22,10 @@ const FadeInParagraph = ({ children }: { children: React.ReactNode }) => {
 const EmbeddedDesign = () => {
   return (
     <div className="bg-[#F8F8FF] text-black py-30 px-4 md:py-20 md:px-2">
-      <h1 className="text-purple1 text-[58px] md:text-[40px] pb-10 font-bold leading-[71.22px] tracking-[-0.49px]">
+      <h1 className="text-purple1 text-[40px] pb-10 font-bold leading-[71.22px] tracking-[-0.49px] small:text-[40px] md:text[58px]">
         Embedded Design
       </h1>
-      <div className="font-normal space-y-4">
+      <div className="font-normal space-y-4 text-[24px] small:text-[18px] md:text[24px]">
         <FadeInParagraph>
           Lorem ipsum dolor sit amet consectetur. Id aliquam etiam at mauris
           ornare. Ullamcorper rhoncus a nullam feugiat mauris imperdiet a

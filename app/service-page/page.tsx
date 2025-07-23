@@ -14,9 +14,9 @@ const ServicePage = () => {
           <TopNavBar />
         </div>
 
-        {/* <div className="bg-white">
+        <div className="bg-white">
           <FirstContainer />
-        </div> */}
+        </div>
         <div className="bg-[#F8F8FF] px-15">
           <Card />
           <OfferInAppikorn />
