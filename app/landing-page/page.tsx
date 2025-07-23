@@ -10,7 +10,7 @@ import Animate from "./components/animation-page";
 
 export default function Home() {
   return (
-    <section  className="bg-overallbg w-full h-[1024px] gap-3">
+    <section  className="bg-overallbg w-full  gap-3">
       <Animate/>
       {/* about */}
       <div className="px-8">
