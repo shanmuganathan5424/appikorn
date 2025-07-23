@@ -54,63 +54,61 @@ export default function OfferInAppikorn() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % cards.length);
-    }, 5000);
+    }, 4000); // slower for smoother experience
     return () => clearInterval(timer);
   }, []);
 
   const currentCard = cards[index];
 
   return (
-    <>
-      <div className="py-20">
-        <div className="pb-20 text-purple1 font-bold leading-[71.22px] tracking-[-0.49px]">
-          <h1 className="text-[58px]">What We Offer in Appikorn</h1>
-        </div>
-        <div className="bg-[#F8F8FF] flex items-center justify-center">
-          <div className="h-[660px] w-[1550px] flex rounded-2xl shadow-xl items-center justify-center overflow-hidden">
-            {/* Left Column (Image) */}
-            <div className="relative w-1/2 h-[660px] overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`img-${index}`}
-                  initial={{ y: -640 }}
-                  animate={{ y: 0 }}
-                  exit={{ y: 640 }}
-                  transition={{ duration: 1, ease: "easeInOut" }}
-                  className="absolute inset-0"
-                >
-                  <Image
-                    src={currentCard.image}
-                    alt={currentCard.title}
-                    className="w-full h-full object-cover rounded-tl-2xl rounded-bl-2xl"
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
+    <div className="py-20">
+      <div className="pb-20 text-purple1 font-bold leading-[71.22px] tracking-[-0.49px]">
+        <h1 className="text-[58px]">What We Offer in Appikorn</h1>
+      </div>
+      <div className="bg-[#F8F8FF] flex items-center justify-center">
+        <div className="h-[640px] w-[1550px] flex rounded-2xl shadow-xl overflow-hidden">
+          {/* Left Column (Image) */}
+          <div className="relative w-1/2 h-[640px] overflow-hidden">
+            <AnimatePresence mode="sync" initial={false}>
+              <motion.div
+                key={`img-${index}`}
+                initial={{ y: -660 }}
+                animate={{ y: 0 }}
+                exit={{ y: 660 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full"
+              >
+                <Image
+                  src={currentCard.image}
+                  alt={currentCard.title}
+                  className="w-full h-full object-cover rounded-tl-2xl rounded-bl-2xl"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
-            {/* Right Column (Text) */}
-            <div className="relative w-1/2 h-[660px] overflow-hidden bg-white rounded-tr-2xl rounded-br-2xl">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`text-${index}`}
-                  initial={{ y: 640 }}
-                  animate={{ y: 0 }}
-                  exit={{ y: -640 }}
-                  transition={{ duration: 1, ease: "easeInOut" }}
-                  className="absolute inset-0 p-10 flex flex-col justify-center text-black"
-                >
-                  <h1 className="text-[48px] font-bold mb-6 leading-snug">
-                    {currentCard.title}
-                  </h1>
-                  <p className="text-[24px] leading-relaxed">
-                    {currentCard.text}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+          {/* Right Column (Text) */}
+          <div className="relative w-1/2 h-[640px] overflow-hidden bg-white rounded-tr-2xl rounded-br-2xl">
+            <AnimatePresence mode="sync" initial={false}>
+              <motion.div
+                key={`text-${index}`}
+                initial={{ y: 660 }}
+                animate={{ y: 0 }}
+                exit={{ y: -660 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full p-10 flex flex-col justify-center text-black"
+              >
+                <h1 className="text-[48px] font-bold mb-6 leading-snug">
+                  {currentCard.title}
+                </h1>
+                <p className="text-[24px] leading-relaxed">
+                  {currentCard.text}
+                </p>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

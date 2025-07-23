@@ -4,11 +4,16 @@ import EmbeddedDesign from "./component/embedded_design";
 import OfferInAppikorn from "./component/offer_in_appikorn";
 import Card from "./component/card";
 import FirstContainer from "./component/first_container";
+import TopNavBar from "@/global-component/navigation";
 
 const ServicePage = () => {
   return (
     <>
-      <div className="">
+      <div className="mx-auto bg-white">
+        <div className="bg-purple1 text-white">
+          <TopNavBar />
+        </div>
+
         <div className="bg-white">
           <FirstContainer />
         </div>

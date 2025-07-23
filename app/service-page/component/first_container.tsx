@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Image1 from "../../../public/first_container/Image 1.png";
 import Image2 from "../../../public/first_container/Image 2.png";
 import { PhoneIcon } from "@heroicons/react/24/solid";
@@ -9,28 +11,54 @@ import MapPin from "../../../public/first_container/Map-pin.svg";
 import Calendar from "../../../public/first_container/Calendar.svg";
 
 export default function FirstContainer() {
+  const { ref: imgRef, inView: imgInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  const { ref: centerRef, inView: centerInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: badgeRef, inView: badgeInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
   return (
     <>
-      <div className="w-[1641.78px] h-[977px] bg-[url('/first_container/big_screen1.png')] relative bg-center bg-cover py-20">
+      <div className="w-full h-[900px] bg-[url('/first_container/big_screen1.png')] relative bg-center bg-cover mx-auto overflow-hidden">
         {/* Images */}
-        <div className="relative w-full h-[840px] overflow-hidden flex items-center justify-between text-white text-4xl">
+        <motion.div
+          ref={imgRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={imgInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="w-full h-[840px] flex items-center justify-between text-4xl"
+        >
           <Image
-            className="h-[800px] absolute flex items-center justify-between -left-10 top-0 transform -translate-x-35 rounded-2xl"
+            className="h-[800px] absolute flex items-center justify-between -left-44 top-0  rounded-2xl"
             src={Image1}
             alt="Image1"
             height={850}
-            width={600}
+            width={580}
           ></Image>
           <Image
-            className="h-[800px] absolute flex items-center justify-between -right-10 top-0 transform translate-x-35 rounded-2xl"
+            className="h-[800px] absolute flex items-center justify-between -right-44 top-0 rounded-2xl"
             src={Image2}
             alt="Image2"
             height={800}
-            width={600}
+            width={580}
           ></Image>
-        </div>
+        </motion.div>
         {/* Center Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-4">
+        <motion.div
+          ref={centerRef}
+          initial={{ opacity: 0, y: 60 }}
+          animate={centerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-4"
+        >
           <div className="flex flex-row text-[22px] space-x-3 text-[#9EA3B5]">
             <p>Product Strategy</p>
             <p>.</p>
@@ -89,8 +117,15 @@ export default function FirstContainer() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="absolute bottom-8 left-85">
+        </motion.div>
+        {/* Down Element */}
+        <motion.div
+          ref={badgeRef}
+          initial={{ opacity: 0, y: 60 }}
+          animate={badgeInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="absolute bottom-12 left-65"
+        >
           <div className="bg-white w-[974px] h-[92px] rounded-full text-black flex flex-row items-center justify-center">
             <div className="w-[200px] flex items-center justify-center space-x-4">
               <div className="bg-[#1F3584] h-12 w-12 rounded-full flex items-center justify-center">
@@ -106,7 +141,7 @@ export default function FirstContainer() {
                 <p>Assurance</p>
               </div>
             </div>
-            <div></div>
+            <div className="w-[2px] h-[50px] bg-gradient-to-b from-white via-[#4F66B7] to-white"></div>
             <div className="w-[200px] flex items-center justify-center space-x-4">
               <div className="bg-[#1F3584] h-12 w-12 rounded-full flex items-center justify-center">
                 <Image
@@ -121,6 +156,7 @@ export default function FirstContainer() {
                 <p>Turnaround</p>
               </div>
             </div>
+            <div className="w-[2px] h-[50px] bg-gradient-to-b from-white via-[#4F66B7] to-white"></div>
             <div className="w-[200px] flex items-center justify-center space-x-4">
               <div className="bg-[#1F3584] h-12 w-12 rounded-full flex items-center justify-center">
                 <Image
@@ -135,6 +171,7 @@ export default function FirstContainer() {
                 <p>Professional</p>
               </div>
             </div>
+            <div className="w-[2px] h-[50px] bg-gradient-to-b from-white via-[#4F66B7] to-white"></div>
             <div className="w-[200px] flex items-center justify-center space-x-4">
               <div className="bg-[#1F3584] h-12 w-12 rounded-full flex items-center justify-center">
                 <Image
@@ -150,7 +187,7 @@ export default function FirstContainer() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
