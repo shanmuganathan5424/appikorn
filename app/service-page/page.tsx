@@ -1,10 +1,11 @@
-import Footer from "@/global-component/footer";
+
 import React from "react";
 import EmbeddedDesign from "./component/embedded_design";
 import OfferInAppikorn from "./component/offer_in_appikorn";
-import Card from "./component/card";
+
 import FirstContainer from "./component/first_container";
 import TopNavBar from "@/global-component/navigation";
+import Card from "@/global-component/card";
 
 const ServicePage = () => {
   return (

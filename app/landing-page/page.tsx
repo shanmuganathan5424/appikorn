@@ -1,11 +1,12 @@
 "use client";
 
-import Card from "@/app/landing-page/components/card";
+
 import Panel from "@/app/landing-page/components/panel";
 import SmartCard from "./components/dropdown";
 import Animate from "./components/animation-page";
 import DropDown from "./components/dropdown";
 import HoverCluster from "./components/gif";
+import Card from "@/global-component/card";
 
 export default function Home() {
   return (
@@ -52,9 +53,7 @@ export default function Home() {
 
         {/* Services */}
         <div className="my-14 md:my-20">
-          <div className="text-black text-[36px] md:text-[48px] lg:text-[58px] font-bold mb-10 text-start">
-            Services
-          </div>
+          
           <Card />
         </div>
 
