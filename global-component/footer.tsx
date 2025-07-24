@@ -17,7 +17,7 @@ export default function Footer() {
       initial={{ opacity: 0, y: 60 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8 }}
-      className="bg-white px-4 py-4 pt-8 text-black"
+      className="w-full bg-white px-4 py-4 pt-8 text-black"
     >
       {/* Upper Section */}
       <div className="grid grid-cols-1 gap-y-10 pl-10 small:grid-cols-1 sm:grid-cols-2 sm:pl-0 md:grid-cols-4 md:px-12 lg:grid-cols-4">
