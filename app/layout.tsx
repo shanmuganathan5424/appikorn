@@ -31,12 +31,11 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body className="bg-overallbg max-w-[1440px] min-h-screen overflow-x-hidden mx-auto">
+      <body className="bg-overallbg min-h-screen overflow-x-hidden mx-auto">
         <Providers>
           <div className="flex flex-col px-10 md:px-0">
             <main className="w-full flex-grow">{children}</main>
-            <footer className="">
-              {/* Footer content here */}
+            <footer>
               <Footer />
             </footer>
           </div>

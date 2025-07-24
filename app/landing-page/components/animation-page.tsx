@@ -104,7 +104,7 @@ export default function Animate() {
         {/* WaveTop (bottom to top fade in) */}
         <div
   className={`absolute left-0 w-full z-0 transition-all duration-1000 ease-in-out 
-    ${showWave ? "bottom-0 opacity-100" : "-bottom-[100%] opacity-50"}`}
+    ${showWave ? "-bottom-1 opacity-100" : "-bottom-[100%] opacity-50"}`}
 >
 
           <WaveTop />
