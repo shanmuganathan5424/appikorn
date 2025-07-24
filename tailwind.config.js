@@ -45,6 +45,7 @@ const config = {
         // tusker: ["Tusker Grotesk", "sans-serif"],
         // gilroy: ["Gilroy-Bold", "sans-serif"],
         anton: ["Impact"],
+         eudoxus: ['"Eudoxus Sans"', 'sans-serif'],
       },
 
       dropShadow: {

@@ -51,32 +51,39 @@ export default function SmartCard({ img, title, lines, bg }: SmartCardProps) {
 
   return (
     <div
-      ref={cardRef}
-      className={`relative transition-all duration-500 ${bg} rounded-xl overflow-hidden flex flex-col justify-between ${
-        isHovered ? "flex-[4]" : "flex-1"
-      } ${shouldBounce ? "animate-bounce-once" : ""}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {/* Text Section */}
-      <div className="p-6 text-white z-10">
-        <h2 className="text-xl font-bold mb-2">{title}</h2>
-        {textLines.map((line, idx) => (
-          <p key={idx}>{line}</p>
-        ))}
-      </div>
+  ref={cardRef}
+  className={`relative transition-all duration-500 ${bg} rounded-[20px] overflow-hidden flex flex-col justify-between ${
+    isHovered ? "flex-[4]" : "flex-1"
+  } ${shouldBounce ? "animate-bounce-once" : ""}`}
+  onMouseEnter={handleMouseEnter}
+  onMouseLeave={handleMouseLeave}
+>
+  {/* Text Section */}
+  <div className="p-6 text-white z-10">
+    <h2 className="text-xl font-bold mb-2">{title}</h2>
+    {textLines.map((line, idx) => (
+      <p key={idx}>{line}</p>
+    ))}
+  </div>
 
-      {/* Image Section */}
-      <div
-        className={`relative transition-all duration-500 transform mx-auto mt-auto ${imageSizeClass}`}
-      >
-        <img
-          src={img}
-          alt={title}
-          className="absolute bottom-1 w-full h-full object-contain"
-          loading="lazy"
-        />
-      </div>
-    </div>
+  {/* Image Section */}
+  <div
+    className={`relative transition-transform duration-500 transform mx-auto mt-auto ${
+      isHovered
+        ? "scale-110 w-[450px] h-[450px]"
+        : isShrunk
+        ? "scale-0 opacity-0 w-[50px] h-[50px]"
+        : "scale-100 w-[347px] h-[347px]"
+    }`}
+  >
+    <img
+      src={img}
+      alt={title}
+      className="absolute bottom-1 w-full h-full object-contain"
+      loading="lazy"
+    />
+  </div>
+</div>
+
   );
 }

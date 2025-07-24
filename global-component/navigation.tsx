@@ -22,7 +22,7 @@ export default function TopNavBar() {
         </div>
 
         {/* Navigation Menu */}
-        <div className="flex space-x-10 text-white text-base">
+        <div className="flex space-x-10 text-white text-base font-eudoxus">
           <a href={AppRoutes.HOME} className="hover:underline">
             Home
           </a>

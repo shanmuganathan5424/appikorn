@@ -40,11 +40,12 @@ export default function DropDown() {
       img: "/dropdown-image/04.png",
       bg: "bg-dartvilot",
       lines: [
-        "Your dedicated team of experts, committed to realizing your vision.",
-        "Together, we'll achieve your goals with precision and care.",
-        "Your dedicated team of experts, committed to realizing your vision.",
-        "Together, we'll achieve your goals with precision and care."
-      ]
+  "Your dedicated team of experts, committed to realizing your vision. Together, we'll achieve your goals with precision and care.",
+  "Your dedicated team of experts, committed to realizing your vision. Together, we'll achieve your goals with precision and care.",
+  "Your dedicated team of experts, committed to realizing your vision. Together, we'll achieve your goals with precision and care.",
+  
+]
+
     }
   ];
 
