@@ -71,15 +71,18 @@ export default function Animate() {
 
         {/* Logo text animation (bottom to top) */}
         <div
-          className={`z-10 text-center font-anton font-light 
-          bg-[linear-gradient(to_top,_#FFFFFF,_#6A0DAD)] bg-clip-text text-transparent tracking-[7px]
-          transition-all duration-1000 ease-in-out
-          ${textVisible 
-            ? "text-[280px] opacity-100 -translate-y-6" 
-            : "text-[230px] opacity-0 translate-y-28"}`}
-        >
-          APPIKORN
-        </div>
+  className={`z-10 text-center font-anton font-light 
+  bg-[linear-gradient(180deg,_#6A0DAD_0%,_#6A0DAD_30%,_white_65%)] 
+  bg-clip-text text-transparent tracking-[7px]
+  transition-all duration-1000 ease-in-out
+  ${textVisible 
+    ? "text-[280px] opacity-100 -translate-y-6" 
+    : "text-[230px] opacity-0 translate-y-28"}`}
+>
+  APPIKORN
+</div>
+
+
 
         {/* Landing image animation (bottom to top) */}
         {startAnimation && (
