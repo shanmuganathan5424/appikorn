@@ -79,7 +79,9 @@ function FadeInCard({
       <div className="w-[67px] h-[67px] mx-auto flex items-center justify-center rounded-full bg-white shadow-md mb-4">
         <img src={icon} alt={`${title} Icon`} className="w-8 h-8" />
       </div>
-      <h3 className="text-[27.36px] font-semibold text-gray-900">{title}</h3>
+      <h3 className="text-[27.36px] font-semibold text-gray-900 text-center">
+        {title}
+      </h3>
       <p className="text-gray-600 mt-2 text-center text-[19.55px]">
         {description}
       </p>
