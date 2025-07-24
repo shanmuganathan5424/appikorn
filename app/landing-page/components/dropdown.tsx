@@ -1,4 +1,4 @@
-import SmartCard from "./smartc-card";
+import SmartCard from "./smart-card";
 
 export default function DropDown() {
   const cardData = [

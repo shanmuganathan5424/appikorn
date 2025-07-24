@@ -41,9 +41,9 @@ const config = {
 
       fontFamily: {
         sans: ["var(--font-sans)", "Tusker Grotesk", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
-        tusker: ["Tusker Grotesk", "sans-serif"],
-        gilroy: ["Gilroy-Bold", "sans-serif"],
+        // mono: ["var(--font-mono)", "monospace"],
+        // tusker: ["Tusker Grotesk", "sans-serif"],
+        // gilroy: ["Gilroy-Bold", "sans-serif"],
         anton: ["Impact"],
       },
 

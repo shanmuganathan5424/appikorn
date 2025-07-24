@@ -1,23 +1,25 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
+// Props
 type SmartCardProps = {
   img: string;
   title: string;
   lines: string[];
-  bg: string; // Accepts bg color class like "bg-[#239E05]"
+  bg: string; // e.g., "bg-[#239E05]"
 };
 
 export default function SmartCard({ img, title, lines, bg }: SmartCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isShrunk, setIsShrunk] = useState(false);
+  const [shouldBounce, setShouldBounce] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Detect card height to decide if shrunk
+  // Resize observer to detect shrink
   useEffect(() => {
     const observer = new ResizeObserver((entries) => {
       const height = entries[0].contentRect.height;
-      setIsShrunk(height < 250); // adjust as needed
+      setIsShrunk(height < 250);
     });
 
     if (cardRef.current) {
@@ -29,9 +31,18 @@ export default function SmartCard({ img, title, lines, bg }: SmartCardProps) {
     };
   }, []);
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    setShouldBounce(true);
+    setTimeout(() => setShouldBounce(false), 400); // Match animation duration
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   const textLines = isHovered ? lines : [lines[0]];
 
-  // Image style based on hover and shrink
   const imageSizeClass = isHovered
     ? "w-[450px] h-[450px] opacity-100 translate-y-0"
     : isShrunk
@@ -43,9 +54,9 @@ export default function SmartCard({ img, title, lines, bg }: SmartCardProps) {
       ref={cardRef}
       className={`relative transition-all duration-500 ${bg} rounded-xl overflow-hidden flex flex-col justify-between ${
         isHovered ? "flex-[4]" : "flex-1"
-      }`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      } ${shouldBounce ? "animate-bounce-once" : ""}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* Text Section */}
       <div className="p-6 text-white z-10">
@@ -55,7 +66,7 @@ export default function SmartCard({ img, title, lines, bg }: SmartCardProps) {
         ))}
       </div>
 
-      {/* Image Section pinned to bottom */}
+      {/* Image Section */}
       <div
         className={`relative transition-all duration-500 transform mx-auto mt-auto ${imageSizeClass}`}
       >
