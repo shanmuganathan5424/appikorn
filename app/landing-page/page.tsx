@@ -26,21 +26,21 @@ export default function Home() {
               <HoverCluster />
             </div>
             {/* Text content */}
-            <div className="w-full lg:w-[616.47px] text-center lg:text-end">
-              <p className="font-sans font-bold text-[32px] md:text-[48px] lg:text-[57px] leading-tight mb-4">
+            <div className="w-full lg:w-[616.47px] text-center lg:text-end text-black">
+              <p className="font-sans font-bold text-[32px] md:text-[48px] lg:text-[57px] leading-tight mb-4 text-black">
                 Who we Are ?
               </p>
-              <div className="flex flex-col gap-3 text-[16px] md:text-[18px] lg:text-[20px] leading-6">
-                <p>
+              <div className="text-black flex flex-col gap-3 text-[16px] md:text-[18px] lg:text-[20px] leading-6">
+                <p className="text-black">
                   Founded in 2018, Appikorn Software Consultancy Services is
                   based in Pondicherry, India.
                 </p>
-                <p>
+                <p className="text-black ">
                   We specialize in end-to-end software solutions — from UI/UX
                   design to web and mobile development, VR/AR experiences,
                   cloud services, and more.
                 </p>
-                <p>
+                <p className="text-black">
                   Our passion lies in delivering innovative technology that
                   turns ideas into reality.
                 </p>
