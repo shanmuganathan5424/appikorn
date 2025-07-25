@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import Footer from "@/global-component/footer";
 
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -34,7 +35,10 @@ export default function RootLayout({
       <body className="bg-overallbg min-h-screen overflow-x-hidden mx-auto">
         <Providers>
           <div className="flex flex-col px-10 md:px-0">
-            <main className="w-full flex-grow">{children}</main>
+            <main className="w-full flex-grow">
+              
+              {children}
+              </main>
             <footer>
               <Footer />
             </footer>

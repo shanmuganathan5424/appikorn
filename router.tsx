@@ -6,5 +6,5 @@ export const AppRoutes = {
   SERVICES: "/service-page",
   PORTFOLIO: "/portfolio",
   TEAM: "/team",
-  CONTACT: "/contact",
+  CONTACT: "/contact-us",
 };

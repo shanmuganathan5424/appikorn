@@ -11,7 +11,7 @@ const ServicePage = () => {
   return (
     <>
       <div className="mx-auto bg-white max-w-custom">
-        <div className="bg-purple1 text-white">
+        <div className="bg-purple1 text-white flex items-center justify-center">
           <TopNavBar />
         </div>
 

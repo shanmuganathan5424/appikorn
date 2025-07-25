@@ -4,13 +4,7 @@ import { motion } from "framer-motion";
 
 export default function TopNavBar() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.5 }}
-      className="flex items-center justify-center"
-    >
+    
       <div className=" w-[1200px] h-[80px] px-8 py-2 flex items-center justify-between">
         {/* Logo Section */}
         <div>
@@ -38,11 +32,11 @@ export default function TopNavBar() {
           <a href="#" className="hover:underline">
             Team
           </a>
-          <a href="#" className="hover:underline">
+          <a href={AppRoutes.CONTACT} className="hover:underline">
             Contact
           </a>
         </div>
       </div>
-    </motion.div>
+    
   );
 }

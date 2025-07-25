@@ -46,6 +46,8 @@ const config = {
         // gilroy: ["Gilroy-Bold", "sans-serif"],
         anton: ["Impact"],
          eudoxus: ['"Eudoxus Sans"', 'sans-serif'],
+        gilroy: ["Gilroy Regular"],
+        
       },
 
       dropShadow: {
