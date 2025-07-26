@@ -9,31 +9,31 @@ const sectors = [
     title: "Health Sector",
     imageSrc: "/about/health_image.svg",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio...",
+      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio. Egestas consequat felis hac auctor nisl at. Mi consectetur hendrerit vitae sagittis vitae sed nunc nec. Eget dolor congue massa cras tellus odio. Ac fusce id augue adipiscing ullamcorper enim ut dictum. Maecenas nunc consequat diam nulla. ",
   },
   {
     title: "Insurance Sector",
     imageSrc: "/about/insurance_image.svg",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio...",
+      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio. Egestas consequat felis hac auctor nisl at. Mi consectetur hendrerit vitae sagittis vitae sed nunc nec. Eget dolor congue massa cras tellus odio. Ac fusce id augue adipiscing ullamcorper enim ut dictum. Maecenas nunc consequat diam nulla. ",
   },
   {
     title: "Banking Sector",
     imageSrc: "/about/banking_image.svg",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio...",
+      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio. Egestas consequat felis hac auctor nisl at. Mi consectetur hendrerit vitae sagittis vitae sed nunc nec. Eget dolor congue massa cras tellus odio. Ac fusce id augue adipiscing ullamcorper enim ut dictum. Maecenas nunc consequat diam nulla. ",
   },
   {
     title: "Social Application Sector",
     imageSrc: "/about/social_app_image.svg",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio...",
+      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio. Egestas consequat felis hac auctor nisl at. Mi consectetur hendrerit vitae sagittis vitae sed nunc nec. Eget dolor congue massa cras tellus odio. Ac fusce id augue adipiscing ullamcorper enim ut dictum. Maecenas nunc consequat diam nulla. ",
   },
   {
     title: "Web Development Sector",
     imageSrc: "/about/web_development_image.svg",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio...",
+      "Lorem ipsum dolor sit amet consectetur. Gravida commodo auctor auctor odio. Egestas consequat felis hac auctor nisl at. Mi consectetur hendrerit vitae sagittis vitae sed nunc nec. Eget dolor congue massa cras tellus odio. Ac fusce id augue adipiscing ullamcorper enim ut dictum. Maecenas nunc consequat diam nulla. ",
   },
 ];
 
