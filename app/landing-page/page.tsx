@@ -1,6 +1,5 @@
 "use client";
 
-
 import Panel from "@/app/landing-page/components/panel";
 import SmartCard from "./components/dropdown";
 import Animate from "./components/animation-page";
@@ -10,68 +9,69 @@ import Card from "@/global-component/card";
 
 export default function Home() {
   return (
-    <section className="bg-overallbg w-full">
+    <section className="bg-overallbg w-full overflow-x-hidden">
+      {/* Hero Animation */}
       <Animate />
 
-      {/* About */}
-      <div className="px-4 md:px-8">
-        <div className="mt-10 md:mt-14">
-          <div className="text-[36px] md:text-[50px] font-gilroy font-bold text-vilottext mb-6">
-            About US
-          </div>
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 mx-9">
 
-          <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-0">
-            {/* GIF / Image */}
+
+        {/* About Section */}
+        <section className="mt-12 md:mt-20">
+          <h2 className="text-[32px] sm:text-[42px] md:text-[58px]  font-bold text-vilottext mb-8 text-start">
+            About Us
+          </h2>
+
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
+            {/* Image/GIF */}
             <div className="w-full lg:w-[600px] flex justify-center">
               <HoverCluster />
             </div>
-            {/* Text content */}
-            <div className="w-full lg:w-[616.47px] text-center lg:text-end text-black">
-              <p className="font-sans font-bold text-[32px] md:text-[48px] lg:text-[57px] leading-tight mb-4 text-black">
-                Who we Are ?
-              </p>
-              <div className="text-black flex flex-col gap-3 text-[16px] md:text-[18px] lg:text-[20px] leading-6">
-                <p className="text-black">
+
+            {/* Text */}
+            <div className="w-full lg:w-[600px] text-center lg:text-right">
+              <h3 className="font-sans font-bold text-[28px] sm:text-[38px] md:text-[48px] lg:text-[57px] text-black mb-5 leading-tight">
+                Who we Are?
+              </h3>
+              <div className="text-[16px] sm:text-[18px] md:text-[20px] text-black space-y-4 leading-relaxed">
+                <p>
                   Founded in 2018, Appikorn Software Consultancy Services is
                   based in Pondicherry, India.
                 </p>
-                <p className="text-black ">
+                <p>
                   We specialize in end-to-end software solutions — from UI/UX
                   design to web and mobile development, VR/AR experiences,
                   cloud services, and more.
                 </p>
-                <p className="text-black">
+                <p>
                   Our passion lies in delivering innovative technology that
                   turns ideas into reality.
                 </p>
               </div>
             </div>
-
-            
           </div>
-        </div>
+        </section>
 
-        {/* Services */}
-        <div className="my-14 md:my-20">
-          
+        {/* Services Section */}
+        <section className="my-16 md:my-24">
           <Card />
-        </div>
+        </section>
 
-        {/* Our Works */}
-        <div className="my-14 md:my-20">
-          <div className="text-vilottext text-[36px] md:text-[48px] lg:text-[58px] font-bold mb-10 text-start">
+        {/* Our Works Section */}
+        <section className="my-16 md:my-24">
+          <h2 className="text-vilottext text-[32px] sm:text-[42px] md:text-[48px] lg:text-[58px] font-bold mb-8 text-start">
             Our Works
-          </div>
+          </h2>
           <Panel />
-        </div>
+        </section>
 
-        {/* Why Choose Us */}
-        <div className="mb-32 md:mb-52">
-          <div className="text-vilottext text-[36px] md:text-[48px] lg:text-[58px] font-bold mb-10 text-start">
+        {/* Why Choose Us Section */}
+        <section className="mb-24 md:mb-40">
+          <h2 className="text-vilottext text-[32px] sm:text-[42px] md:text-[48px] lg:text-[58px] font-bold mb-8 text-start">
             Why Choose Us?
-          </div>
+          </h2>
           <DropDown />
-        </div>
+        </section>
       </div>
     </section>
   );

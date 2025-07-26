@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className="bg-overallbg min-h-screen overflow-x-hidden mx-auto">
         <Providers>
           <div className="flex flex-col px-10 md:px-0">
-            <main className="w-full flex-grow">
+            <main className="w-[100%] flex-grow">
               
               {children}
               </main>
