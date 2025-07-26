@@ -34,7 +34,7 @@ export default function MapFrame() {
         initial={{ opacity: 0, x: 100 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 1.2, delay: 0.3 }}
-        className="text-center md:text-left"
+        className="text-center md:text-left text-black"
       >
         <h1 className="text-5xl md:text-6xl font-bold leading-tight">
           Our<br />Location

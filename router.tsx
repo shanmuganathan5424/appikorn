@@ -2,7 +2,7 @@
 
 export const AppRoutes = {
   HOME: "/landing-page",
-  ABOUT: "/about",
+  ABOUT: "/about-us",
   SERVICES: "/service-page",
   PORTFOLIO: "/portfolio",
   TEAM: "/team",
