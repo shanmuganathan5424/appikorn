@@ -1,6 +1,7 @@
 "use client";
 import { AppRoutes } from "@/router";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function TopNavBar() {
   return (
@@ -16,24 +17,24 @@ export default function TopNavBar() {
 
       {/* Navigation Menu */}
       <div className="flex space-x-10 text-white text-base font-eudoxus">
-        <a href={AppRoutes.HOME} className="hover:underline">
+        <Link href={AppRoutes.HOME} className="hover:underline">
           Home
-        </a>
-        <a href={AppRoutes.ABOUT} className="hover:underline">
+        </Link>
+        <Link href={AppRoutes.ABOUT} className="hover:underline">
           About
-        </a>
-        <a href={AppRoutes.SERVICES} className="hover:underline">
+        </Link>
+        <Link href={AppRoutes.SERVICES} className="hover:underline">
           Services
-        </a>
-        <a href="#" className="hover:underline">
+        </Link>
+        <Link href="#" className="hover:underline">
           Portfolio
-        </a>
-        <a href="#" className="hover:underline">
+        </Link>
+        <Link href="#" className="hover:underline">
           Team
-        </a>
-        <a href={AppRoutes.CONTACT} className="hover:underline">
+        </Link>
+        <Link href={AppRoutes.CONTACT} className="hover:underline">
           Contact
-        </a>
+        </Link>
       </div>
     </div>
   );
