@@ -10,9 +10,12 @@ export default function AboutUs() {
       <div className="w-[1440px] bg-purple1 mx-auto flex justify-center">
         <TopNavBar />
       </div>
+      <div className="bg-[#F8F8FF]">
       <FirstContainer />
       <NumberContainer />
       <IndustryPage />
+      </div>
+      
     </>
   );
 }

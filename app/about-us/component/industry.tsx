@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const sectors = [
   {
@@ -42,8 +42,11 @@ export default function IndustryPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [screenWidth, setScreenWidth] = useState(0);
 
+  // Create animation controls for each card
+  const cardControlsRef = useRef(sectors.map(() => useAnimation()));
+
   useEffect(() => {
-    // Set screen width on mount
+    // Set screen width on mount and update on resize
     const updateSize = () => setScreenWidth(window.innerWidth);
     updateSize();
     window.addEventListener("resize", updateSize);
@@ -53,29 +56,60 @@ export default function IndustryPage() {
   useEffect(() => {
     if (screenWidth === 0) return;
 
+    let current = 0;
     let isMounted = true;
 
-    const animate = async () => {
+    const loop = async () => {
       while (isMounted) {
+        const next = (current + 1) % sectors.length;
+
+        // Slide to next card
         await controls.start({
-          x: -currentIndex * screenWidth,
-          transition: { duration: 1.5, ease: "easeInOut" },
+          x: -next * screenWidth,
+          transition: { duration: 1, ease: "easeInOut" },
         });
 
-        await new Promise((resolve) => setTimeout(resolve, 3000)); // 2s pause
-        setCurrentIndex((prev) => (prev + 1) % sectors.length);
+        // Direction: forward or wraparound (right) vs backward (left)
+        const isForward =
+          next > current || (current === sectors.length - 1 && next === 0);
+        const nudgeValue = isForward ? 4 : -4;
+
+        // Quick nudge
+        await cardControlsRef.current[next].start({
+          x: nudgeValue,
+          transition: { duration: 0.2, ease: "easeOut" },
+        });
+
+        // Quick return
+        await cardControlsRef.current[next].start({
+          x: 0,
+          transition: { duration: 0.2, ease: "easeIn" },
+        });
+
+        // Wait remaining time (3s total)
+        await new Promise((resolve) => setTimeout(resolve, 2600));
+
+        // Reset others
+        cardControlsRef.current.forEach((ctrl, i) => {
+          if (i !== next) ctrl.set({ x: 0 });
+        });
+
+        current = next;
       }
     };
 
-    animate();
+    loop();
 
     return () => {
       isMounted = false;
     };
-  }, [currentIndex, controls, screenWidth]);
+  }, [controls, screenWidth]);
 
   return (
-    <div className="w-screen overflow-hidden bg-white py-[160px] mx-auto">
+    <div className="w-screen overflow-hidden pt-20 pb-40 mx-auto">
+      <h1 className="text-purple1 text-[58px] font-extrabold leading-[71.22px] tracking-[-0.49px] pb-50 pl-15">
+        Industries We Work For
+      </h1>
       <motion.div
         animate={controls}
         className="flex"
@@ -88,6 +122,7 @@ export default function IndustryPage() {
             imageSrc={sector.imageSrc}
             description={sector.description}
             width={screenWidth}
+            animateControl={cardControlsRef.current[index]}
           />
         ))}
       </motion.div>
@@ -100,6 +135,7 @@ type SectorCardProps = {
   description: string;
   imageSrc: string;
   width: number;
+  animateControl: ReturnType<typeof useAnimation>;
 };
 
 const SectorCard = ({
@@ -107,9 +143,11 @@ const SectorCard = ({
   description,
   imageSrc,
   width,
+  animateControl,
 }: SectorCardProps) => {
   return (
-    <div
+    <motion.div
+      animate={animateControl}
       className="grid grid-cols-2 px-[100px] pt-[70px] pb-[30px] rounded-3xl flex-shrink-0"
       style={{ width: `${width}px` }}
     >
@@ -131,6 +169,6 @@ const SectorCard = ({
           {description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };

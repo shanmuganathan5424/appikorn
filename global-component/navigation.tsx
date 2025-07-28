@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function TopNavBar() {
   return (
-    <div className=" w-[1200px] h-[80px] px-8 py-2 flex items-center justify-between">
+    <div className=" w-[90%] h-[80px] px-8 py-2 flex items-center justify-between">
       {/* Logo Section */}
       <div>
         <img

@@ -45,9 +45,8 @@ const config = {
         // tusker: ["Tusker Grotesk", "sans-serif"],
         // gilroy: ["Gilroy-Bold", "sans-serif"],
         anton: ["Impact"],
-         eudoxus: ['"Eudoxus Sans"', 'sans-serif'],
+        eudoxus: ['"Eudoxus Sans"', "sans-serif"],
         gilroy: ["Gilroy Regular"],
-        
       },
 
       dropShadow: {
@@ -73,6 +72,11 @@ const config = {
       xl: "1280px",
       xl_small: "1340px",
       big: "1400px",
+      biggy: "1500px",
+      big_0: "1600px",
+      big_1: "1800px",
+      big_2: "2000px",
+      desktop: "2560px",
     },
     darkMode: "class",
     plugins: [heroui()],
