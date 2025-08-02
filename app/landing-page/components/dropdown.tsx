@@ -51,7 +51,7 @@ export default function DropDown() {
 return (
   <div className="
   w-full 
-  min-h-[850px] md:min-h-[900px] lg:min-h-[950px] xl:min-h-[1000px] 2xl:min-h-[1100px]
+   
   flex flex-row 
   items-center 
   justify-center 
@@ -64,10 +64,10 @@ return (
     {/* First Column */}
     <div className="
       w-[420px] h-[800px] 
-      md:w-[460px] md:h-[850px] 
-      lg:w-[500px] lg:h-[900px] 
-      xl:w-[540px] xl:h-[950px]
-      2xl:w-[580px] 2xl:h-[1000px]
+      md:w-[520px] md:h-[900px] 
+      lg:w-[620px] lg:h-[1000px] 
+      xl:w-[720px] xl:h-[1100px]
+      
       flex flex-col gap-4 overflow-hidden transition-all duration-500
     ">
       <SmartCard {...cardData[0]} />
@@ -76,11 +76,10 @@ return (
 
     {/* Second Column */}
     <div className="
-      w-[420px] h-[800px] 
-      md:w-[460px] md:h-[850px] 
-      lg:w-[500px] lg:h-[900px] 
-      xl:w-[540px] xl:h-[950px]
-      2xl:w-[580px] 2xl:h-[1000px]
+       w-[420px] h-[800px] 
+      md:w-[520px] md:h-[900px] 
+      lg:w-[620px] lg:h-[1000px] 
+      xl:w-[720px] xl:h-[1100px]
       flex flex-col gap-4 overflow-hidden transition-all duration-500
     ">
       <SmartCard {...cardData[2]} />

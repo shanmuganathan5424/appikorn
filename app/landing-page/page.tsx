@@ -6,6 +6,7 @@ import Animate from "./components/animation-page";
 import DropDown from "./components/dropdown";
 import HoverCluster from "./components/gif";
 import Card from "@/global-component/card";
+import PanelSlider from "./components/pannelslider";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       {/* Hero Animation */}
       <Animate />
 
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 mx-9">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 mx-auto">
 
 
         {/* About Section */}
@@ -72,6 +73,11 @@ export default function Home() {
           </h2>
           <DropDown />
         </section>
+
+
+        <div>
+          {/* <PanelSlider /> */}
+        </div>
       </div>
     </section>
   );

@@ -3,13 +3,20 @@ import { useState, useEffect } from "react";
 import TopNavBar from "@/global-component/navigation";
 import WaveTop from "../components/wavetop";
 import FlipOnHover from "./fliponhover";
+import PanelSlider from "./pannelslider";
 
 export default function Animate() {
+  const [mounted, setMounted] = useState(false);
   const [startAnimation, setStartAnimation] = useState(false);
   const [imageShrunk, setImageShrunk] = useState(false);
   const [textVisible, setTextVisible] = useState(false);
   const [showFlip, setShowFlip] = useState(false);
   const [showWave, setShowWave] = useState(false);
+
+  // Ensure client-only rendering
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Auto-start animation after 1 second on mount
   useEffect(() => {
@@ -37,29 +44,31 @@ export default function Animate() {
     }
   }, [startAnimation]);
 
+  if (!mounted) return null; // Avoid hydration mismatch
+
   return (
     <div
-      className="relative w-full h-[1024px] overflow-hidden
+      className="relative w-full h-[1024px] overflow-hidden flex-col items-center justify-center
       bg-gradient-to-b from-[#08081F] via-transparent to-[#08081F]"
     >
-      {/* Background image (visible only before animation starts) */}
-      {!startAnimation && (
-        <img
-          src="/Rectangle-svg.svg"
-          alt="Intro Background"
-          className="absolute inset-0 w-full h-full object-cover z-30"
-        />
-      )}
+      {/* Background image (fades out instead of disappearing) */}
+      <img
+        src="/Rectangle-svg.svg"
+        alt="Intro Background"
+        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${
+          startAnimation ? "opacity-0" : "opacity-100"
+        }`}
+      />
+
+      {/* Navigation on top */}
+      <div
+        className={`absolute top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out flex justify-center 
+        ${textVisible ? "opacity-100 -translate-y-0" : "opacity-0 translate-y-10"}`}
+      >
+        <TopNavBar />
+      </div>
 
       <div className="relative w-full h-full flex flex-col items-center bg-darkblue z-10">
-        {/* Navigation */}
-        <div
-          className={`transition-all duration-1000 ease-in-out 
-          ${textVisible ? "opacity-100 -translate-y-0" : "opacity-0 translate-y-10"}`}
-        >
-          <TopNavBar />
-        </div>
-
         {/* Logo Text */}
         <div
           className={`z-10 text-center font-anton font-light 
@@ -72,18 +81,16 @@ export default function Animate() {
         </div>
 
         {/* Landing Image */}
-        {startAnimation && (
-          <div
-            className={`z-10 absolute bottom-6 left-1/2 transform -translate-x-1/2 transition-all duration-1000 ease-in-out
-            ${imageShrunk ? "w-[1350px] translate-y-16" : "w-[1900px] translate-y-36"}`}
-          >
-            <img
-              src="/landing/landing_image.png"
-              alt="landing"
-              className="w-full h-full object-contain"
-            />
-          </div>
-        )}
+        <div
+          className={`z-10 absolute bottom-6 left-1/2 transform -translate-x-1/2 transition-all duration-1000 ease-in-out
+          ${startAnimation ? (imageShrunk ? "w-[1350px] translate-y-16" : "w-[1900px] translate-y-36") : "w-[1900px] translate-y-36"}`}
+        >
+          <img
+            src="/landing/landing_image.png"
+            alt="landing"
+            className="w-full h-full object-contain"
+          />
+        </div>
 
         {/* Flip animation component */}
         {showFlip && <FlipOnHover />}
