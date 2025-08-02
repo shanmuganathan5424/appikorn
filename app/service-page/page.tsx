@@ -9,7 +9,7 @@ import Card from "@/global-component/card";
 const ServicePage = () => {
   return (
     <>
-      <div className="mx-auto bg-white">
+      <div className="mx-auto bg-white ">
         <div className="bg-purple1 text-white flex items-center justify-center">
           <TopNavBar />
         </div>
