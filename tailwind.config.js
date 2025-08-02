@@ -75,6 +75,7 @@ const config = {
       biggy: "1500px",
       big_0: "1600px",
       big_1: "1800px",
+      big_11: "1900px",
       big_2: "2000px",
       desktop: "2560px",
     },
