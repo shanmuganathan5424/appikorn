@@ -52,7 +52,7 @@ return (
   <div className="
   w-full 
    
-  flex flex-row 
+  flex flex-col md:flex-row 
   items-center 
   justify-center 
   gap-4 md:gap-6 lg:gap-10 xl:gap-14 2xl:gap-20
@@ -64,9 +64,9 @@ return (
     {/* First Column */}
     <div className="
       w-[420px] h-[800px] 
-      md:w-[520px] md:h-[900px] 
-      lg:w-[620px] lg:h-[1000px] 
-      xl:w-[720px] xl:h-[1100px]
+      md:w-[580px] md:h-[900px] 
+      lg:w-[520px] lg:h-[1000px] 
+      xl:w-[620px] xl:h-[1100px]
       
       flex flex-col gap-4 overflow-hidden transition-all duration-500
     ">
@@ -76,10 +76,10 @@ return (
 
     {/* Second Column */}
     <div className="
-       w-[420px] h-[800px] 
-      md:w-[520px] md:h-[900px] 
-      lg:w-[620px] lg:h-[1000px] 
-      xl:w-[720px] xl:h-[1100px]
+      w-[420px] h-[800px] 
+      md:w-[580px] md:h-[900px] 
+      lg:w-[520px] lg:h-[1000px] 
+      xl:w-[620px] xl:h-[1100px]
       flex flex-col gap-4 overflow-hidden transition-all duration-500
     ">
       <SmartCard {...cardData[2]} />

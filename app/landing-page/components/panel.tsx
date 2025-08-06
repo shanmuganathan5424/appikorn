@@ -1,7 +1,7 @@
 export default function Panel() {
   return (
     <div className="flex items-center-safe justify-center">
-    <div className="flex w-[85%] h-[600px] rounded-[20px] overflow-hidden ">
+    <div className="flex w-[95%] h-[600px] rounded-[20px] overflow-hidden ">
       {/* Panel 1 */}
     <div className="group relative flex-1 hover:flex-[54%] transition-all duration-500 ease-in-out bg-orangecustom flex flex-col items-start justify-between text-white p-6 cursor-pointer leading-[71.2px] overflow-hidden">
 

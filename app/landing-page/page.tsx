@@ -1,12 +1,12 @@
 "use client";
 
-import Panel from "@/app/landing-page/components/panel";
-import SmartCard from "./components/dropdown";
+
 import Animate from "./components/animation-page";
 import DropDown from "./components/dropdown";
 import HoverCluster from "./components/gif";
 import Card from "@/global-component/card";
-import PanelSlider from "./components/pannelslider";
+
+import ResponsivePanel from "./components/mobile-responsive";
 
 export default function Home() {
   return (
@@ -63,7 +63,7 @@ export default function Home() {
           <h2 className="text-vilottext text-[32px] sm:text-[42px] md:text-[48px] lg:text-[58px] font-bold mb-8 text-start">
             Our Works
           </h2>
-          <Panel />
+          <ResponsivePanel />
         </section>
 
         {/* Why Choose Us Section */}
@@ -76,7 +76,7 @@ export default function Home() {
 
 
         <div>
-          {/* <PanelSlider /> */}
+          
         </div>
       </div>
     </section>
