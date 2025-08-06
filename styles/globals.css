@@ -9,3 +9,11 @@
 .clip-top-right-notch {
   clip-path: polygon(0 100%, 20% 0, 100% 0, 100% 100%, 0 100%);
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
