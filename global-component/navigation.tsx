@@ -26,7 +26,7 @@ export default function TopNavBar() {
         <Link href={AppRoutes.SERVICES} className="hover:underline">
           Services
         </Link>
-        <Link href="#" className="hover:underline">
+        <Link href={AppRoutes.PORTFOLIO} className="hover:underline">
           Portfolio
         </Link>
         <Link href="#" className="hover:underline">
