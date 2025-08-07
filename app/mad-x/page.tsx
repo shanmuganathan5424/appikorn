@@ -4,6 +4,9 @@ import AiFrame from "./component/ai-video";
 import MadxCard from "./component/card";
 import PrivacySection from "./component/privacy-security";
 import FooterP from "./component/footer";
+import MadxImage from "./component/mad-x-image-show";
+import MadxGrid from "./component/mad-x-grid";
+import ImageSliderContainer from "./component/image-slider";
 
 export default function MadX() {
   return (
@@ -37,6 +40,13 @@ export default function MadX() {
     <div>
         <MadxCard />
     </div>
+
+    <div><ImageSliderContainer /></div>
+
+
+    <div><MadxGrid /></div>
+
+    <div><MadxImage /></div>
 
     <div>
         <PrivacySection />

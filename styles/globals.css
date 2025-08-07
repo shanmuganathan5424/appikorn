@@ -2,6 +2,12 @@
 
 @config "../tailwind.config.js";
 
+@media (max-width: 1400px) {
+  .hide-below-1400 {
+    display: none;
+  }
+}
+
 .clip-top-left-notch {
   clip-path: polygon(0 0, 80% 0, 100% 100%, 100% 100%, 0 100%);
 }

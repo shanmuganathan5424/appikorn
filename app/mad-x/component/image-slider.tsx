@@ -4,7 +4,7 @@ import "../../../styles/globals.css"; // <- Include custom CSS to hide scrollbar
 export default function ImageSliderContainer() {
   return (
     <>
-      <div className="bg-[#121314] w-full flex justify-center items-center overflow-x-hidden py-15 min-h-[640px]">
+      <div className="bg-[#121314] w-full flex justify-center items-center overflow-x-hidden py-15 min-h-[640px] mb-5">
         <div className="flex overflow-x-auto no-scrollbar space-x-20 mx-auto">
           {/* Text */}
           <div className="flex-shrink-0 flex flex-col text-white text-center h-[550px] text-[48px] text-bold font-bold justify-center items-center pl-20">
