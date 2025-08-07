@@ -5,6 +5,8 @@ import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import Footer from "@/global-component/footer";
+import FooterP from "./mad-x/component/footer";
+import FooterWrapper from "@/global-component/footer-wrap";
 
 
 export const metadata: Metadata = {
@@ -40,7 +42,7 @@ export default function RootLayout({
               {children}
               </main>
             <footer>
-              <Footer />
+              <FooterWrapper />
             </footer>
           </div>
         </Providers>

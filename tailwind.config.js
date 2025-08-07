@@ -37,6 +37,7 @@ const config = {
         dartvilot: "#89006C",
         greencustom: "#239E05",
         overallbg: "#F9F9FF",
+        madxgrey: "#121314",
       },
 
       fontFamily: {
