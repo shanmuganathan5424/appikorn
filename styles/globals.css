@@ -2,6 +2,7 @@
 
 @config "../tailwind.config.js";
 
+
 @media (max-width: 1400px) {
   .hide-below-1400 {
     display: none;
@@ -23,3 +24,4 @@
   -ms-overflow-style: none;  /* IE & Edge */
   scrollbar-width: none;     /* Firefox */
 }
+

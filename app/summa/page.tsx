@@ -5,11 +5,11 @@ import SlidingImage from "../mad-x/component/slideing-card";
 
 export default function Summa() {
   return (
-    <>
+    <div className="w-full">
       <ImageSliderContainer />
       <MadxGrid />
       <MadxImage />
       <SlidingImage />
-    </>
+    </div>
   );
 }

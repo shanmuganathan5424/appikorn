@@ -12,6 +12,7 @@ const config = {
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],
       },
+      
 
       fontSize: {
         base: ["18px", "30px"], // size + line-height
@@ -19,6 +20,7 @@ const config = {
       maxWidth: {
         custom: "1440px",
       },
+      
       colors: {
         darkblue: "#6A0DAD",
         blueCustom: "#2A2AFF",

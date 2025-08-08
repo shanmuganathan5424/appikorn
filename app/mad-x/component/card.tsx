@@ -32,7 +32,7 @@ export default function WhyChoose() {
       title: "Collaborative Workspace",
       icon: "/mad-x/card/message.svg",
       description:
-        "Stay in the loop with clear and consistent communication throughout the process.We provide innovative solutions that meet our clients' goals. Our team of experts is dedicated to your success. We provide a complete approach to each project, utilising our knowledge to ensure the best possible outcome.",
+        "Stay in the loop with clear and consistent communication throughout the process. We provide innovative solutions that meet our clients' goals. Our team of experts is dedicated to your success.",
     },
     {
       title: "Secure & Scalable AI",
@@ -43,7 +43,7 @@ export default function WhyChoose() {
   ];
 
   const translateMap = [
-  { width: "900px", height: "900px", x: "-50%", y: "-30%" },
+    { width: "900px", height: "900px", x: "-50%", y: "-30%" },
   { width: "880px", height: "900px", x: "-53%", y: "-46%" },
   { width: "860px", height: "900px", x: "-52%", y: "-44%" },
   { width: "850px", height: "900px", x: "-54%", y: "-43%" },
@@ -99,11 +99,10 @@ export default function WhyChoose() {
   { width: "860px", height: "900px", x: "-52%", y: "-44%" },
   { width: "880px", height: "900px", x: "-53%", y: "-46%" },
   { width: "900px", height: "900px", x: "-50%", y: "-30%" }
-];
-
+  ];
 
   return (
-    <section className="bg-black text-white py-20 px-4">
+    <section className="bg-black text-white py-20 px-4 ">
       <h2 className="text-4xl font-bold text-center mb-16">Why Choose Madix</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {cardData.map((card, idx) => (
@@ -126,20 +125,17 @@ function AnimatedCard({
   translateMap: { width: string; height: string; x: string; y: string }[];
 }) {
   const [style, setStyle] = useState(translateMap[0]);
+  const [hovering, setHovering] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isAnimatingRef = useRef(false);
 
-  const defaultBackground = {
-    width: "900px",
-    height: "900px",
-    x: "-50%",
-    y: "-30%",
-  };
+  const defaultBackground = translateMap[0];
 
   const startAnimation = () => {
-    if (isAnimatingRef.current) return; // prevent multiple starts
+    if (isAnimatingRef.current) return;
     isAnimatingRef.current = true;
+    setHovering(true);
     let step = 0;
 
     intervalRef.current = setInterval(() => {
@@ -150,13 +146,13 @@ function AnimatedCard({
         clearInterval(intervalRef.current!);
         intervalRef.current = null;
 
-        // Delay before resetting to default for smoother dissolve
         timeoutRef.current = setTimeout(() => {
           setStyle(defaultBackground);
+          setHovering(false);
           isAnimatingRef.current = false;
-        }, 300); // optional dissolve delay
+        }, 300);
       }
-    }, 80); // fast + smooth animation
+    }, 80);
   };
 
   useEffect(() => {
@@ -168,10 +164,10 @@ function AnimatedCard({
 
   return (
     <div
-      className="relative flex flex-col items-start gap-[15px] w-[337.18px] h-[389.05px] px-[19.45px] py-[32px] rounded-[40px] border overflow-hidden transition-all duration-300"
+      className="relative border border-black hover:border-[#7CF8A4] flex flex-col items-start gap-[15px] w-[337.18px] h-[389.05px] px-[19.45px] py-[32px] rounded-[40px] overflow-hidden transition-all duration-300"
       style={{
         background: "linear-gradient(88deg, #17C964 0.11%, #7CF8A4 63.8%)",
-        boxShadow: isAnimatingRef.current
+        boxShadow: hovering
           ? "0 66px 122.25px rgba(124, 248, 164, 0.17), inset 0 -16.5px 36.9px #FFF"
           : "none",
       }}
@@ -204,8 +200,9 @@ function AnimatedCard({
         <div
           className="w-[71.33px] h-[71.33px] rounded-full flex justify-center items-center transition-all duration-500"
           style={{
-            background:
-              "linear-gradient(146deg, rgba(255, 255, 255, 0.20) 16.49%, rgba(255, 255, 255, 0.00) 90.13%), linear-gradient(147deg, #1FE58D 10.91%, #17C964 97.16%)",
+            background: hovering
+              ? "linear-gradient(147deg, #1FE58D 10.91%, #17C964 97.16%)"
+              : "linear-gradient(146deg, rgba(255, 255, 255, 0.20) 16.49%, rgba(255, 255, 255, 0.00) 90.13%)",
             boxShadow: "inset 0 1.5px 4.8px rgba(255, 255, 255, 0.25)",
           }}
         >
