@@ -1,8 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export default function SlidingImage() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const startXRef = useRef<number | null>(null);
+  const isDraggingRef = useRef(false);
 
   const cards = [
     {
@@ -47,8 +49,33 @@ export default function SlidingImage() {
     }
   };
 
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    isDraggingRef.current = true;
+    startXRef.current =
+      "touches" in e ? e.touches[0].clientX : e.clientX;
+  };
+
+  const handleDragEnd = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!isDraggingRef.current || startXRef.current === null) return;
+
+    const endX =
+      "changedTouches" in e ? e.changedTouches[0].clientX : e.clientX;
+    const deltaX = endX - startXRef.current;
+
+    if (deltaX > 50) {
+      // Swiped right → show previous card
+      prevCard();
+    } else if (deltaX < -50) {
+      // Swiped left → show next card
+      nextCard();
+    }
+
+    isDraggingRef.current = false;
+    startXRef.current = null;
+  };
+
   return (
-    <div className="bg-[#121314] py-10 px-5 sm:px-10">
+    <div className="bg-[#121314] py-10 px-5 sm:px-10 select-none">
       <div className="max-w-[1550px] mx-auto">
         {/* Header Text */}
         <div className="flex flex-col items-center text-center">
@@ -101,7 +128,13 @@ export default function SlidingImage() {
         </div>
 
         {/* Card Carousel */}
-        <div className="relative h-[400px] sm:h-[640px] w-full flex items-center justify-center">
+        <div
+          className="relative h-[400px] sm:h-[640px] w-full flex items-center justify-center"
+          onMouseDown={handleDragStart}
+          onMouseUp={handleDragEnd}
+          onTouchStart={handleDragStart}
+          onTouchEnd={handleDragEnd}
+        >
           <div className="relative flex h-full w-full items-start justify-start">
             {cards.map((card, index) => {
               const isActive = index === activeIndex;
@@ -134,7 +167,7 @@ export default function SlidingImage() {
                   <img
                     src={card.image}
                     alt={`Card ${card.id}`}
-                    className="w-[200px] sm:w-[331px] h-[200px] sm:h-[317px] object-contain"
+                    className="w-[200px] sm:w-[331px] h-[200px] sm:h-[317px] object-contain pointer-events-none"
                   />
                 </div>
               );

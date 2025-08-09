@@ -10,7 +10,7 @@ import ResponsivePanel from "./components/mobile-responsive";
 
 export default function Home() {
   return (
-    <section className="bg-overallbg w-full overflow-x-hidden">
+    <section className="bg-overallbg w-full overflow-x-hidden ">
       {/* Hero Animation */}
       <Animate />
 

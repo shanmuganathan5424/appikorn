@@ -1,13 +1,10 @@
 // app/layout.tsx
-
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
-import Footer from "@/global-component/footer";
-import FooterP from "./mad-x/component/footer";
 import FooterWrapper from "@/global-component/footer-wrap";
-
+import TopNavBar from "@/global-component/navigation";
 
 export const metadata: Metadata = {
   title: {
@@ -37,10 +34,19 @@ export default function RootLayout({
       <body className="bg-overallbg min-h-screen overflow-x-hidden mx-auto">
         <Providers>
           <div className="flex flex-col px-0">
-            <main className="w-[100%] flex-grow">
+            <main className="relative w-full flex-grow">
               
-              {children}
-              </main>
+              {/* Fixed Navbar Overlapping */}
+              <div className="absolute top-0 left-0 w-full z-50">
+                <TopNavBar />
+              </div>
+
+              {/* Page Content Behind Navbar */}
+              <div className="relative">
+                {children}
+              </div>
+            </main>
+
             <footer>
               <FooterWrapper />
             </footer>

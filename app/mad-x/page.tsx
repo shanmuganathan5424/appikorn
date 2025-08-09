@@ -13,9 +13,9 @@ import SlidingImage from "./component/slideing-card";
 
 export default function MadX() {
   return (
-    <div className="relative w-full bg-[#0C0D0C] text-white overflow-x-hidden ">
+    <div className="relative w-full bg-[#0C0D0C] text-white overflow-x-hidden  top-0">
       {/* Background Green Gradient */}
-      <div className="absolute inset-0 z-0 flex justify-center">
+      <div className="absolute inset-0 z-0 flex justify-center top-0">
         <div
           className="w-[580px] h-[580px] rounded-full blur-[250px] -translate-y-44"
           style={{
@@ -25,13 +25,10 @@ export default function MadX() {
         />
       </div>
 
-      {/* Top Navigation */}
-      <div className="relative z-40 px-4">
-        <TopNavBar />
-      </div>
+
 
       {/* Sections */}
-      <div className="relative z-10">
+      <div className="relative z-10  ">
         <Home />
         <AiFrame />
         <MadxCard />

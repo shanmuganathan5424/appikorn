@@ -15,7 +15,7 @@ export default function FirstContainer() {
   const { ref: imgRef, inView: imgInView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
-  });
+  }); 
 
   const { ref: centerRef, inView: centerInView } = useInView({
     triggerOnce: true,
