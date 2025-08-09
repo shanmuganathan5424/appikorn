@@ -62,7 +62,7 @@ export default function Animate() {
 
       {/* Navigation on top */}
       <div
-        className={`absolute top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out flex justify-center 
+        className={`absolute top-0 left-0 w-full z-70 transition-all duration-1000 ease-in-out flex justify-center 
         ${textVisible ? "opacity-100 -translate-y-0" : "opacity-0 translate-y-10"}`}
       >
         <TopNavBar />

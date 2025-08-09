@@ -44,67 +44,68 @@ export default function WhyChoose() {
 
   const translateMap = [
     { width: "900px", height: "900px", x: "-50%", y: "-30%" },
-  { width: "880px", height: "900px", x: "-53%", y: "-46%" },
-  { width: "860px", height: "900px", x: "-52%", y: "-44%" },
-  { width: "850px", height: "900px", x: "-54%", y: "-43%" },
-  { width: "840px", height: "900px", x: "-50%", y: "-42%" },
-  { width: "830px", height: "900px", x: "-48%", y: "-43%" },
-  { width: "800px", height: "900px", x: "-47%", y: "-44%" },
-  { width: "780px", height: "900px", x: "-48%", y: "-45%" },
-  { width: "760px", height: "900px", x: "-50%", y: "-46%" },
-  { width: "750px", height: "900px", x: "-51%", y: "-47%" },
-  { width: "740px", height: "900px", x: "-53%", y: "-46%" },
-  { width: "760px", height: "900px", x: "-52%", y: "-45%" },
-  { width: "780px", height: "900px", x: "-51%", y: "-44%" },
-  { width: "800px", height: "900px", x: "-50%", y: "-43%" },
-  { width: "820px", height: "900px", x: "-49%", y: "-42%" },
-  { width: "850px", height: "900px", x: "-50%", y: "-43%" },
-  { width: "880px", height: "900px", x: "-52%", y: "-44%" },
-  { width: "900px", height: "900px", x: "-55%", y: "-45%" },
-  { width: "920px", height: "900px", x: "-54%", y: "-44%" },
-  { width: "940px", height: "900px", x: "-53%", y: "-43%" },
-  { width: "960px", height: "900px", x: "-52%", y: "-42%" },
-  { width: "980px", height: "900px", x: "-51%", y: "-41%" },
-  { width: "1000px", height: "900px", x: "-50%", y: "-40%" },
-  { width: "980px", height: "900px", x: "-52%", y: "-41%" },
-  { width: "960px", height: "900px", x: "-54%", y: "-42%" },
-  { width: "940px", height: "900px", x: "-56%", y: "-43%" },
-  { width: "920px", height: "900px", x: "-58%", y: "-44%" },
-  { width: "900px", height: "900px", x: "-60%", y: "-45%" },
-  // 
-  { width: "920px", height: "900px", x: "-58%", y: "-44%" },
-  { width: "940px", height: "900px", x: "-56%", y: "-43%" },
-   { width: "960px", height: "900px", x: "-54%", y: "-42%" },
-  { width: "980px", height: "900px", x: "-52%", y: "-41%" },
-  { width: "1000px", height: "900px", x: "-50%", y: "-40%" },
-  { width: "980px", height: "900px", x: "-51%", y: "-41%" },
-  { width: "960px", height: "900px", x: "-52%", y: "-42%" },
-  { width: "940px", height: "900px", x: "-53%", y: "-43%" },
-  { width: "920px", height: "900px", x: "-54%", y: "-44%" },
-  { width: "900px", height: "900px", x: "-55%", y: "-45%" },
-  { width: "880px", height: "900px", x: "-52%", y: "-44%" },
-  { width: "850px", height: "900px", x: "-50%", y: "-43%" },
-  { width: "820px", height: "900px", x: "-49%", y: "-42%" },
-  { width: "800px", height: "900px", x: "-50%", y: "-43%" },
-  { width: "780px", height: "900px", x: "-51%", y: "-44%" },
-  { width: "760px", height: "900px", x: "-52%", y: "-45%" },
-  { width: "740px", height: "900px", x: "-53%", y: "-46%" },
-  { width: "750px", height: "900px", x: "-51%", y: "-47%" },
-  { width: "760px", height: "900px", x: "-50%", y: "-46%" },
-  { width: "780px", height: "900px", x: "-48%", y: "-45%" },
-  { width: "800px", height: "900px", x: "-47%", y: "-44%" },
-  { width: "830px", height: "900px", x: "-48%", y: "-43%" },
-  { width: "840px", height: "900px", x: "-50%", y: "-42%" },
-  { width: "850px", height: "900px", x: "-54%", y: "-43%" },
-  { width: "860px", height: "900px", x: "-52%", y: "-44%" },
-  { width: "880px", height: "900px", x: "-53%", y: "-46%" },
-  { width: "900px", height: "900px", x: "-50%", y: "-30%" }
+    { width: "880px", height: "900px", x: "-53%", y: "-46%" },
+    { width: "860px", height: "900px", x: "-52%", y: "-44%" },
+    { width: "850px", height: "900px", x: "-54%", y: "-43%" },
+    { width: "840px", height: "900px", x: "-50%", y: "-42%" },
+    { width: "830px", height: "900px", x: "-48%", y: "-43%" },
+    { width: "800px", height: "900px", x: "-47%", y: "-44%" },
+    { width: "780px", height: "900px", x: "-48%", y: "-45%" },
+    { width: "760px", height: "900px", x: "-50%", y: "-46%" },
+    { width: "750px", height: "900px", x: "-51%", y: "-47%" },
+    { width: "740px", height: "900px", x: "-53%", y: "-46%" },
+    { width: "760px", height: "900px", x: "-52%", y: "-45%" },
+    { width: "780px", height: "900px", x: "-51%", y: "-44%" },
+    { width: "800px", height: "900px", x: "-50%", y: "-43%" },
+    { width: "820px", height: "900px", x: "-49%", y: "-42%" },
+    { width: "850px", height: "900px", x: "-50%", y: "-43%" },
+    { width: "880px", height: "900px", x: "-52%", y: "-44%" },
+    { width: "900px", height: "900px", x: "-55%", y: "-45%" },
+    { width: "920px", height: "900px", x: "-54%", y: "-44%" },
+    { width: "940px", height: "900px", x: "-53%", y: "-43%" },
+    { width: "960px", height: "900px", x: "-52%", y: "-42%" },
+    { width: "980px", height: "900px", x: "-51%", y: "-41%" },
+    { width: "1000px", height: "900px", x: "-50%", y: "-40%" },
+    { width: "980px", height: "900px", x: "-52%", y: "-41%" },
+    { width: "960px", height: "900px", x: "-54%", y: "-42%" },
+    { width: "940px", height: "900px", x: "-56%", y: "-43%" },
+    { width: "920px", height: "900px", x: "-58%", y: "-44%" },
+    { width: "900px", height: "900px", x: "-60%", y: "-45%" },
+    { width: "920px", height: "900px", x: "-58%", y: "-44%" },
+    { width: "940px", height: "900px", x: "-56%", y: "-43%" },
+    { width: "960px", height: "900px", x: "-54%", y: "-42%" },
+    { width: "980px", height: "900px", x: "-52%", y: "-41%" },
+    { width: "1000px", height: "900px", x: "-50%", y: "-40%" },
+    { width: "980px", height: "900px", x: "-51%", y: "-41%" },
+    { width: "960px", height: "900px", x: "-52%", y: "-42%" },
+    { width: "940px", height: "900px", x: "-53%", y: "-43%" },
+    { width: "920px", height: "900px", x: "-54%", y: "-44%" },
+    { width: "900px", height: "900px", x: "-55%", y: "-45%" },
+    { width: "880px", height: "900px", x: "-52%", y: "-44%" },
+    { width: "850px", height: "900px", x: "-50%", y: "-43%" },
+    { width: "820px", height: "900px", x: "-49%", y: "-42%" },
+    { width: "800px", height: "900px", x: "-50%", y: "-43%" },
+    { width: "780px", height: "900px", x: "-51%", y: "-44%" },
+    { width: "760px", height: "900px", x: "-52%", y: "-45%" },
+    { width: "740px", height: "900px", x: "-53%", y: "-46%" },
+    { width: "750px", height: "900px", x: "-51%", y: "-47%" },
+    { width: "760px", height: "900px", x: "-50%", y: "-46%" },
+    { width: "780px", height: "900px", x: "-48%", y: "-45%" },
+    { width: "800px", height: "900px", x: "-47%", y: "-44%" },
+    { width: "830px", height: "900px", x: "-48%", y: "-43%" },
+    { width: "840px", height: "900px", x: "-50%", y: "-42%" },
+    { width: "850px", height: "900px", x: "-54%", y: "-43%" },
+    { width: "860px", height: "900px", x: "-52%", y: "-44%" },
+    { width: "880px", height: "900px", x: "-53%", y: "-46%" },
+    { width: "900px", height: "900px", x: "-50%", y: "-30%" },
   ];
 
   return (
-    <section className="bg-black text-white py-20 px-4 ">
-      <h2 className="text-4xl font-bold text-center mb-16">Why Choose Madix</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+    <section className="bg-black text-white py-10 sm:py-20 px-4">
+      <h2 className="text-[20px] sm:text-4xl font-bold text-center mb-12 sm:mb-16">
+        Why Choose Madix
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 max-w-6xl mx-auto">
         {cardData.map((card, idx) => (
           <AnimatedCard key={idx} data={card} translateMap={translateMap} />
         ))}
@@ -117,11 +118,7 @@ function AnimatedCard({
   data,
   translateMap,
 }: {
-  data: {
-    title: string;
-    icon: string;
-    description: string;
-  };
+  data: { title: string; icon: string; description: string };
   translateMap: { width: string; height: string; x: string; y: string }[];
 }) {
   const [style, setStyle] = useState(translateMap[0]);
@@ -129,7 +126,6 @@ function AnimatedCard({
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isAnimatingRef = useRef(false);
-
   const defaultBackground = translateMap[0];
 
   const startAnimation = () => {
@@ -137,15 +133,12 @@ function AnimatedCard({
     isAnimatingRef.current = true;
     setHovering(true);
     let step = 0;
-
     intervalRef.current = setInterval(() => {
       setStyle(translateMap[step]);
       step += 1;
-
       if (step >= translateMap.length) {
         clearInterval(intervalRef.current!);
         intervalRef.current = null;
-
         timeoutRef.current = setTimeout(() => {
           setStyle(defaultBackground);
           setHovering(false);
@@ -164,7 +157,7 @@ function AnimatedCard({
 
   return (
     <div
-      className="relative border border-black hover:border-[#7CF8A4] flex flex-col items-start gap-[15px] w-[337.18px] h-[389.05px] px-[19.45px] py-[32px] rounded-[40px] overflow-hidden transition-all duration-300"
+      className="relative border border-black hover:border-[#7CF8A4] flex flex-col items-start gap-4 w-full max-w-[337.18px] h-auto sm:h-[389.05px] px-5 py-8 rounded-[30px] sm:rounded-[40px] overflow-hidden transition-all duration-300 mx-auto"
       style={{
         background: "linear-gradient(88deg, #17C964 0.11%, #7CF8A4 63.8%)",
         boxShadow: hovering
@@ -188,7 +181,7 @@ function AnimatedCard({
 
       {/* Static Overlay */}
       <div
-        className="z-40 absolute inset-0 rounded-[40px] pointer-events-none"
+        className="z-40 absolute inset-0 rounded-[30px] sm:rounded-[40px] pointer-events-none"
         style={{
           background:
             "linear-gradient(142deg, rgba(255,255,255,0.20) 2.65%, rgba(255,255,255,0.00) 44.8%)",
@@ -196,9 +189,9 @@ function AnimatedCard({
       />
 
       {/* Content */}
-      <div className="z-20 flex flex-col items-start gap-[16.27px] px-[10px] py-[10px]">
+      <div className="z-20 flex flex-col items-start gap-4 px-2 py-2">
         <div
-          className="w-[71.33px] h-[71.33px] rounded-full flex justify-center items-center transition-all duration-500"
+          className="w-14 h-14 sm:w-[71.33px] sm:h-[71.33px] rounded-full flex justify-center items-center transition-all duration-500"
           style={{
             background: hovering
               ? "linear-gradient(147deg, #1FE58D 10.91%, #17C964 97.16%)"
@@ -209,15 +202,15 @@ function AnimatedCard({
           <img
             src={data.icon}
             alt={data.title}
-            className="w-[32.42px] h-[32.42px]"
+            className="w-8 h-8 sm:w-[32.42px] sm:h-[32.42px]"
           />
         </div>
 
-        <div className="text-white font-bold text-[26px] leading-[30px]">
+        <div className="text-white font-bold text-lg sm:text-[26px] leading-tight">
           {data.title}
         </div>
 
-        <div className="font-sans text-[14px] font-normal leading-[17px] text-[#E6E6E7]">
+        <div className="font-sans text-sm sm:text-[14px] font-normal leading-relaxed text-[#E6E6E7]">
           {data.description}
         </div>
       </div>

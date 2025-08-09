@@ -8,10 +8,10 @@ export default function MadxGrid() {
     <div className="bg-[#0C0D0C] px-4 py-16 sm:px-10">
       {/* Header Text */}
       <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16">
-        <h1 className="text-4xl md:text-5xl font-semibold text-[#F5F9FE] mb-4">
+        <h1 className="text-[20px] md:text-5xl font-semibold text-[#F5F9FE] mb-4">
           Lorem ipsum dolor sit
         </h1>
-        <p className="text-[#A6AAB5] text-base md:text-[15.05px] leading-relaxed font-medium">
+        <p className="text-[#A6AAB5] text-[16px] md:text-[20px] leading-relaxed font-medium">
           Lorem ipsum dolor sit amet consectetur. In feugiat vivamus mauris
           dignissim et est sed scelerisque volutpat. Varius mauris eu risus in.
         </p>
@@ -33,8 +33,8 @@ export default function MadxGrid() {
   {/* Foreground content on top of image */}
   <div className="relative z-10 p-6 text-white space-y-3 h-full flex flex-col justify-end bg-black/40">
     <Image src="/mad-x/mad-x-grid/thunder.svg" alt="Icon" width={48} height={48} />
-    <h2 className="text-[#F5F9FE] text-lg font-semibold">AI-Powered Assistant</h2>
-    <p className="text-[#A3A3A3] font-semibold">
+    <h2 className="text-[#F5F9FE] text-[16px] sm:text-lg font-semibold">AI-Powered Assistant</h2>
+    <p className="text-[#A3A3A3] font-semibold hidden sm:block">
       Bring your ideas to life with our intelligent assistant, no coding knowledge required.
     </p>
   </div>
@@ -42,14 +42,14 @@ export default function MadxGrid() {
 
 
         {/* CARD 2 */}
-        <div className="relative col-span-1 sm:col-span-1 lg:col-span-2 bg-black rounded-xl flex flex-col justify-between h-[352px]">
+        <div className="relative col-span-1 sm:col-span-2 lg:col-span-2 bg-black rounded-xl flex flex-col justify-between h-[352px]">
           <div className="absolute bottom-0 p-6 text-white space-y-3">
             <Image src="/mad-x/mad-x-grid/magic-beta.svg" alt="Icon" width={48} height={48} />
             <div className="flex items-center gap-2">
-              <h2 className="text-[#F5F9FE] text-lg font-semibold">Lorem</h2>
+              <h2 className="text-[#F5F9FE] text-[16px] sm:text-lg font-semibold">Lorem</h2>
               <span className="bg-[#18181B] text-white text-xs px-2 py-0.5 rounded-sm">BETA</span>
             </div>
-            <p className="text-[#A3A3A3] font-semibold">
+            <p className="text-[#A3A3A3] font-semibold hidden sm:block">
               Lorem ipsum dolor sit amet consectetur. Sapien magna.
             </p>
           </div>
@@ -60,10 +60,10 @@ export default function MadxGrid() {
           <Slide />
           <div className="absolute bottom-0 p-6 text-white space-y-3">
             <Image src="/mad-x/mad-x-grid/rocket.svg" alt="Icon" width={48} height={48} />
-            <h2 className="text-[#F5F9FE] text-lg font-semibold">
+            <h2 className="text-[#F5F9FE] text-[16px] sm:text-lg font-semibold">
               Lorem ipsum dolor sit amet consectetur. Etiam est gravida.
             </h2>
-            <p className="text-[#A3A3A3] font-semibold">
+            <p className="text-[#A3A3A3] font-semibold hidden sm:block">
               Lorem ipsum dolor sit amet consectetur. Blandit tincidunt ultrices sed nullam aliquam semper quisque. Eu etiam eget sed sit urna.
             </p>
           </div>
@@ -73,8 +73,8 @@ export default function MadxGrid() {
         <div className="relative col-span-1 sm:col-span-1 lg:col-span-2 bg-black rounded-xl flex flex-col justify-between h-[352px]">
           <div className="absolute bottom-0 p-6 text-white space-y-3">
             <Image src="/mad-x/mad-x-grid/thunder.svg" alt="Icon" width={48} height={48} />
-            <h2 className="text-[#F5F9FE] text-lg font-semibold">Lorem ipsum dolor sit</h2>
-            <p className="text-[#A3A3A3] font-semibold">
+            <h2 className="text-[#F5F9FE] text-[16px] sm:text-lg font-semibold">Lorem ipsum dolor sit</h2>
+            <p className="text-[#A3A3A3] font-semibold hidden sm:block">
               Lorem ipsum dolor sit amet consectetur. Tempor ullamcorper sollicitudin ac vitae metus eget sit. Pharetra aliquet aliquam est a.
             </p>
           </div>
@@ -84,8 +84,8 @@ export default function MadxGrid() {
         <div className="relative col-span-1 sm:col-span-1 lg:col-span-2 bg-black rounded-xl flex flex-col justify-between h-[352px]">
           <div className="absolute bottom-0 p-6 text-white space-y-3">
             <Image src="/mad-x/mad-x-grid/upload.svg" alt="Icon" width={48} height={48} />
-            <h2 className="text-[#F5F9FE] text-lg font-semibold">Lorem ipsum dolor sit</h2>
-            <p className="text-[#A3A3A3] font-semibold">
+            <h2 className="text-[#F5F9FE] text-[16px] sm:text-lg font-semibold">Lorem ipsum dolor sit</h2>
+            <p className="text-[#A3A3A3] font-semibold hidden sm:block">
               Lorem ipsum dolor sit amet consectetur. Egestas at lacus fermentum aliquet urna morbi.
             </p>
           </div>
@@ -98,10 +98,10 @@ export default function MadxGrid() {
           </div>
           <div className="absolute bottom-0 p-6 text-white space-y-3">
             <Image src="/mad-x/mad-x-grid/thunder.svg" alt="Icon" width={48} height={48} />
-            <h2 className="text-[#F5F9FE] text-lg font-semibold">
+            <h2 className="text-[#F5F9FE] text-[16px] sm:text-lg font-semibold">
               Lorem ipsum dolor sit amet consectetur. Amet posuere.
             </h2>
-            <p className="text-[#A3A3A3] font-semibold">
+            <p className="text-[#A3A3A3] font-semibold hidden sm:block">
               Lorem ipsum dolor sit amet consectetur. Aenean posuere pulvinar varius quam ullamcorper volutpat. Sed odio viverra auctor sed.
             </p>
           </div>

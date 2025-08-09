@@ -52,10 +52,10 @@ export default function SlidingImage() {
       <div className="max-w-[1550px] mx-auto">
         {/* Header Text */}
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-[32px] sm:text-[46.83px] font-semibold leading-tight text-[#F5F9FE] pb-5">
+          <h1 className="text-[20px] sm:text-[46.83px] font-semibold leading-tight text-[#F5F9FE] pb-5">
             Lorem ipsum dolor sit amet
           </h1>
-          <p className="text-[#A6AAB5] text-[15px] sm:text-[16px] leading-[24px] font-medium max-w-[90%] sm:max-w-[600px] pb-10">
+          <p className="text-[#A6AAB5] text-[16px] sm:text-[20px] leading-[24px] font-medium max-w-[90%] sm:max-w-[600px] pb-10">
             Lorem ipsum dolor sit amet consectetur. At mauris lorem volutpat et
             ullamcorper sit eget.
           </p>
