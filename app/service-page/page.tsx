@@ -22,7 +22,7 @@ const ServicePage = () => {
           <OfferInAppikorn />
           <EmbeddedDesign />
         </div>
-        <div>{/* <Footer /> */}</div>
+        <div>{/* <Footer /> */}</div> 
       </div>
     </>
   );
