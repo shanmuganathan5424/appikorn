@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 export default function ContactSection() {
   return (
-    <section className="relative w-full min-h-screen bg-[#6A0DAD] flex flex-col items-center text-black overflow-hidden pb-32">
+    <section className="relative top-0 w-full min-h-screen bg-[#6A0DAD] flex flex-col items-center text-black overflow-hidden pt-8 pb-32">
       
       {/* Top Nav */}
-      <TopNavBar />
+    
 
       {/* Background Gradient Circle */}
 

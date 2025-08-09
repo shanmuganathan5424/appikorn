@@ -10,12 +10,8 @@ const ServicePage = () => {
   return (
     <>
       <div className="mx-auto bg-white ">
-        <div className="bg-purple1 z-40 text-white flex items-center justify-center">
-          <TopNavBar />
-        </div>
-
         <div className="bg-white">
-          <FirstContainer />
+          <FirstContainer /> 
         </div>
         <div className="bg-[#F8F8FF] px-15">
           <Card />

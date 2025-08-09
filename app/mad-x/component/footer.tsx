@@ -5,10 +5,11 @@ export default function FooterP() {
   return (
     <footer className="bg-black text-gray-400 px-6 py-10 md:py-16">
       <div
-        className="max-w-7xl mx-auto
-                   grid grid-cols-1 md:grid-cols-5 gap-8
-                   justify-center items-start"
-      >
+  className="max-w-7xl mx-auto
+             grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-24
+             justify-center items-start"
+>
+
         {/* Left Column - Email & Social Icons */}
         <div className="space-y-4 text-center md:text-left flex flex-col items-center">
           <div className="flex flex-col item-center md:items-start gap-4">

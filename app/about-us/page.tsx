@@ -6,6 +6,7 @@ import IndustryPage from "./component/industry";
 
 export default function AboutUs() {
   return (
+
     <>
       <div className="w-full bg-purple1 mx-auto flex justify-center z-40">
         <TopNavBar />

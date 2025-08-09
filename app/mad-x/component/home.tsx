@@ -19,7 +19,7 @@ export default function Home() {
       </div>
 
       {/* Main Container */}
-      <div className="flex flex-col items-center justify-center w-full  gap-8">
+      <div className="flex flex-col items-center justify-center w-full  gap-8 pt-16 ">
         
         {/* Heading Section */}
         <div className="flex flex-col items-center justify-center gap-4 sm:gap-6">
