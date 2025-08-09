@@ -6,15 +6,17 @@ import IndustryPage from "./component/industry";
 
 export default function AboutUs() {
   return (
-    <div>
-      
-      
-      <div className="bg-[#F8F8FF] relative top-0 ">
-      <FirstContainer />
-      <NumberContainer />
-      <IndustryPage />
+
+    <>
+      <div className="w-full bg-purple1 mx-auto flex justify-center z-40">
+        <TopNavBar />
       </div>
-      
-    </div>
+
+      <div className="bg-[#F8F8FF]">
+        <FirstContainer />
+        <NumberContainer />
+        <IndustryPage />
+      </div>
+    </>
   );
 }
