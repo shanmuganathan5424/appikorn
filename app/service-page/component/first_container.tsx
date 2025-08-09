@@ -15,7 +15,7 @@ export default function FirstContainer() {
   const { ref: imgRef, inView: imgInView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
-  }); 
+  });
 
   const { ref: centerRef, inView: centerInView } = useInView({
     triggerOnce: true,
@@ -30,22 +30,22 @@ export default function FirstContainer() {
 
   return (
     <>
-      <div className="w-full h-[900px] bg-[url('/first_container/big_screen1.png')] relative bg-center bg-cover mx-auto overflow-hidden lg:h-[680px] lg:py-10 lg_big:h-[900px] xl:h-[900px] big:h-[1000px] big_1:bg-purple1 big_2:h-[1000px]">
+      <div className="w-full h-[900px] bg-[url('/first_container/big_screen1.png')] relative bg-center bg-cover mx-auto overflow-hidden lg:h-[720px] lg:py-10 lg_big:h-[900px] xl:h-[900px] lapl:h-[1000px] big_1:bg-purple1 big_2:h-[1000px]">
         {/* Images */}
         <motion.div
           ref={imgRef}
           initial={{ opacity: 0, y: 50 }}
           animate={imgInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="w-full h-[840px] flex items-center justify-between text-4xl lg:h-[640px] lg_big:h-[840px] xl:h-[840px] big:h-[840px] big_1:h-[1000px] big_2:h-[1000px]"
+          className="w-full h-[840px] flex items-center justify-between text-4xl lg:h-[640px] lg_big:h-[840px] xl:h-[840px] lapl:h-[840px] big_1:h-[1000px] big_2:h-[1000px]"
         >
           <Image
-            className="h-[800px] w-[580px] absolute flex items-center justify-between -left-44 top-0 rounded-2xl lg:h-[600px] lg:w-[440px] lg_small:w-[450px] lg_big:h-[800px] lg_big:w-[500px] xl:h-[800px] xl:w-[500px] big:h-[880px] big:w-[560px] biggy:h-[880px] biggy:w-[520px] biggy:-left-20 big_0:h-[880px] big_0:w-[540px] big_1:h-[900px] big_1:w-[540px] big_1:left-0 big_11:w-[540px] big_2:h-[900px] big_2:w-[560px]"
+            className="h-[800px] w-[580px] absolute flex items-center justify-between -left-44 top-20 rounded-2xl md:hidden lg:h-[550px] lg:w-[440px] lg_small:w-[450px] lg_big:h-[800px] lg_big:w-[500px] xl:h-[800px] xl:w-[500px] lapl:h-[880px] lapl:w-[560px] biggy:h-[880px] biggy:w-[520px] biggy:-left-20 big_0:h-[880px] big_0:w-[540px] big_1:h-[900px] big_1:w-[540px] big_1:left-0 big_11:w-[540px] big_2:h-[900px] big_2:w-[560px]"
             src={Image1}
             alt="Image1"
           ></Image>
           <Image
-            className="h-[800px] w-[580px] absolute flex items-center justify-between -right-44 top-0 rounded-2xl lg:h-[600px] lg:w-[440px] lg_small:w-[450px] lg_big:h-[800px] lg_big:w-[500px] xl:h-[800px] xl:w-[500px] big:h-[880px] big:w-[560px] biggy:h-[880px] biggy:w-[520px] biggy:-right-20 big_0:h-[880px] big_0:w-[540px] big_1:h-[900px] big_1:w-[540px] big_1:right-0 big_11:w-[540px] big_2:h-[900px] big_2:w-[560px]"
+            className="h-[800px] w-[580px] absolute flex items-center justify-between -right-44 top-20 rounded-2xl  md:hidden lg:h-[550px] lg:w-[440px] lg_small:w-[450px] lg_big:h-[800px] lg_big:w-[500px] xl:h-[800px] xl:w-[500px] lapl:h-[880px] lapl:w-[560px] biggy:h-[880px] biggy:w-[520px] biggy:-right-20 big_0:h-[880px] big_0:w-[540px] big_1:h-[900px] big_1:w-[540px] big_1:right-0 big_11:w-[540px] big_2:h-[900px] big_2:w-[560px]"
             src={Image2}
             alt="Image2"
           ></Image>
@@ -69,7 +69,7 @@ export default function FirstContainer() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-4 big_2:justify-start big_2:pt-45"
         >
-          <div className="flex flex-row text-[22px] items-center justify-center space-x-3 text-[#9EA3B5] lg:text-[15px] lg:w-[560px] xl:text-[19px] xl:w-[680px] big_1:w-[680px] big_1:text-[21px] big_2:w-[740px] big_2:text-[24px]">
+          <div className="flex flex-row text-[22px] items-center justify-center space-x-3 text-[#9EA3B5] lg:text-[14px] lg:w-[560px] xl:text-[19px] xl:w-[680px] big_1:w-[680px] big_1:text-[21px] big_2:w-[740px] big_2:text-[24px]">
             <p>Product Strategy</p>
             <p>.</p>
             <p>Design & Development</p>
@@ -135,9 +135,9 @@ export default function FirstContainer() {
           initial={{ opacity: 0, y: 60 }}
           animate={badgeInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="absolute bottom-12 left-68 lg:left-41 lg_small:left-50 lg_big:left-36 xl:left-42 xl:bottom-15 xl_small:left-52 big:left-51 biggy:left-63 big_0:left-77 big_0:bottom-20 big_1:left-103 big_11:left-116 big_2:left-126"
+          className="absolute bottom-12 left-68 md:left-10 lg:left-41 lg_small:left-50 lg_big:left-36 xl:left-42 xl:bottom-15 xl_small:left-52 lapl:left-51 biggy:left-63 big_0:left-77 big_0:bottom-20 big_1:left-103 big_11:left-116 big_2:left-126"
         >
-          <div className="bg-white w-[974px] h-[92px] rounded-full text-black flex flex-row items-center justify-around px-8 lg:h-[64px] lg:w-[700px] lg_big:w-[900px] lg_big:h-[92px] xl:w-[944px] xl:h-[92px] xl_small:w-[922px] big:w-[984px] big_0:w-[984px] big_0:h-[100px] big_1:w-[984px] big_1:h-[100px]">
+          <div className="bg-white w-[974px] h-[92px] rounded-full text-black flex flex-row items-center justify-around px-8 md:w-[500px] lg:h-[64px] lg:w-[700px] lg_big:w-[900px] lg_big:h-[92px] xl:w-[944px] xl:h-[92px] xl_small:w-[922px] lapl:w-[984px] big_0:w-[984px] big_0:h-[100px] big_1:w-[984px] big_1:h-[100px]">
             <div className="w-[200px] flex items-center justify-center space-x-4">
               <div className="bg-[#1F3584] h-12 w-12 rounded-full flex items-center justify-center lg:h-10 lg:w-10 lg_big:h-12 lg_big:w-12 xl:h-12 xl:w-12 big_1:h-14 big_1:w-14">
                 <Image
