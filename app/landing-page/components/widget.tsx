@@ -10,7 +10,7 @@ export default function Widgets() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className=" min-h-screen">
 
       {/* Top Section */}
       <section className="text-center max-w-4xl mx-auto pt-16 px-4">
