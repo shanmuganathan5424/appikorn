@@ -8,9 +8,7 @@ export default function AboutUs() {
   return (
 
     <>
-      <div className="w-full bg-purple1 mx-auto flex justify-center z-40">
-        <TopNavBar />
-      </div>
+      
 
       <div className="bg-[#F8F8FF]">
         <FirstContainer />

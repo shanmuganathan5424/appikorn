@@ -1,8 +1,9 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-// Your services data
+// Services data
 const services = [
   {
     icon: "/service-icon/cloud.svg",
@@ -38,45 +39,40 @@ const services = [
 
 export default function Card() {
   return (
-    <>
-      <section className="bg-gray-50 py-10 sm:py-16 md:py-20">
-        <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 2xl:px-40 max-w-[1720px] mx-auto">
-          <div className="pb-10 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-purple1 text-left font-bold leading-tight tracking-tight text-[32px] sm:text-[42px] md:text-[50px] lg:text-[58px]"
-            >
-              Services
-            </motion.h1>
-          </div>
+    <section className="bg-gray-50 py-10 sm:py-16 md:py-20">
+      <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 2xl:px-40 max-w-[1720px] mx-auto">
+        <div className="pb-10 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-purple1 text-left font-bold leading-tight tracking-tight text-[32px] sm:text-[42px] md:text-[50px] lg:text-[58px]"
+          >
+            Services
+          </motion.h1>
+        </div>
 
-          <div
-            className="
+        <div
+          className="
             grid
             grid-cols-1
             sm:grid-cols-2
+            md:grid-cols-3
             lg:grid-cols-3
-            gap-6
-            sm:gap-8
-            md:gap-10
-            lg:gap-14
-            xl:gap-16
-            2xl:gap-20
+            xl:grid-cols-3
+            gap-6 sm:gap-8 md:gap-10 lg:gap-14 xl:gap-16 2xl:gap-20
           "
-          >
-            {services.map((service, index) => (
-              <FadeInCard key={index} {...service} delay={index * 0.1} />
-            ))}
-          </div>
+        >
+          {services.map((service, index) => (
+            <FadeInCard key={index} {...service} delay={index * 0.1} />
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 
-// Card animation wrapper
+// Animated card component
 function FadeInCard({
   icon,
   title,
@@ -94,13 +90,12 @@ function FadeInCard({
   });
 
   return (
-    <>
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut", delay }}
-        className="
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut", delay }}
+      className="
         group
         flex flex-col items-center
         bg-white
@@ -111,64 +106,64 @@ function FadeInCard({
         hover:scale-105
         hover:border-b-4
         hover:border-purple1
+        w-full
+        max-w-sm
+        min-w-0
+        mx-auto
       "
-      >
-        <div className="relative mb-4 icon-glow">
-          <div
-            className="
-      relative z-10
-      w-[64px] h-[64px]
-      sm:w-[72px] sm:h-[72px]
-      md:w-[80px] md:h-[80px]
-      xl:w-[88px] xl:h-[88px]
-      flex items-center justify-center
-      rounded-full bg-white
-      shadow-md
-      transition-shadow duration-300
-      group-hover:shadow-xl
-      overflow-hidden
-    "
-          >
-            <img
-              src={icon}
-              alt={`${title} Icon`}
-              className="w-8 h-8 md:w-10 md:h-10"
-            />
-          </div>
-        </div>
-
-        <motion.h3
+    >
+      <div className="relative mb-4 icon-glow">
+        <div
           className="
-          text-[20px]
-          sm:text-[22px]
-          md:text-[24px]
-          lg:text-[27px]
+            relative z-10
+            w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 xl:w-18 xl:h-18
+            flex items-center justify-center
+            rounded-full bg-white
+            shadow-md
+            transition-shadow duration-300
+            group-hover:shadow-xl
+            overflow-hidden
+          "
+        >
+          <img
+            src={icon}
+            alt={`${title} Icon`}
+            className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
+        </div>
+      </div>
+
+      <motion.h3
+        className="
+          text-[20px] sm:text-[21px] md:text-[22px]
           font-semibold
           text-gray-900
           text-center
           transition-colors duration-300
           group-hover:text-purple-600
+          break-words
         "
-        >
-          {title}
-        </motion.h3>
+      >
+        {title}
+      </motion.h3>
 
-        <motion.p
-          className="
+      <motion.p
+        className="
           text-gray-600
           text-center
           mt-2
-          text-[15px]
-          sm:text-[16.5px]
-          md:text-[18px]
-          xl:text-[19.5px]
+          text-[16px]
+          sm:text-[16px]
+          md:text-[16px]
+          xl:text-[16px]
           transition-opacity duration-300
           group-hover:opacity-90
+          break-words
         "
-        >
-          {description}
-        </motion.p>
-      </motion.div>
-    </>
+      >
+        {description}
+      </motion.p>
+    </motion.div>
   );
 }

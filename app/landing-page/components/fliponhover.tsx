@@ -13,7 +13,7 @@ export default function FlipOnHover() {
   }, []);
 
   return (
-    <div className="absolute -top-16 left-0 flex w-full h-full overflow-hidden pointer-events-none gap-3">
+    <div className="absolute -top-16 left-0 flex w-full h-[600px] sm:md:h-full overflow-hidden pointer-events-none gap-3">
       {/* Left Panel Layer 1 - Initial */}
       <div
         className={`w-1/2  h-full absolute top-0 left-0 transition-opacity duration-700 ease-in-out

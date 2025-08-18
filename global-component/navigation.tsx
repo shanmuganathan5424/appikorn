@@ -12,11 +12,14 @@ export default function TopNavBar() {
     <div className="w-full px-4 sm:px-8 py-2 flex items-center justify-between bg-transparent relative z-50">
       {/* Logo */}
       <div>
+        <Link href={AppRoutes.HOME}>
         <img
           src="/landing/appikorn-logo 1.svg"
           alt="Appikorn Logo"
           className="h-[60px] w-[60px] sm:h-[80px] sm:w-[80px]"
         />
+        </Link>
+        
       </div>
 
       {/* Desktop Navigation */}

@@ -9,19 +9,28 @@ const config = {
   ],
   theme: {
     extend: {
-      
+      keyframes: {
+        glow: {
+          "0%, 100%": { filter: "url(#none)" }, // no shadow
+          "50%": { filter: "url(#largePurpleShadow)" }, // shadow on
+        },
+      },
+      animation: {
+        glow: "glow 800ms infinite",
+      },
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],
+        anton: ["Impact"],
+        eudoxus: ['"Eudoxus Sans"', "sans-serif"],
+        gilroy: ["Gilroy Regular"],
+        // Optionally keep: ["var(--font-sans)", "Tusker Grotesk", "sans-serif"],
       },
-      
-
       fontSize: {
         base: ["18px", "30px"], // size + line-height
       },
       maxWidth: {
         custom: "1440px",
       },
-      
       colors: {
         darkblue: "#6A0DAD",
         blueCustom: "#2A2AFF",
@@ -30,7 +39,6 @@ const config = {
         light_blue: "#F9F9FF",
         head_grey: "#9795B5",
         purple1: "#6A0DAD",
-        blueCustom: "#2A2AFF",
         vilottext: "#6A0DAD",
         orangecustom: "#AF6C2F",
         browncustom: "#6E250A",
@@ -42,17 +50,6 @@ const config = {
         overallbg: "#F9F9FF",
         madxgrey: "#121314",
       },
-
-      fontFamily: {
-        sans: ["var(--font-sans)", "Tusker Grotesk", "sans-serif"],
-        // mono: ["var(--font-mono)", "monospace"],
-        // tusker: ["Tusker Grotesk", "sans-serif"],
-        // gilroy: ["Gilroy-Bold", "sans-serif"],
-        anton: ["Impact"],
-        eudoxus: ['"Eudoxus Sans"', "sans-serif"],
-        gilroy: ["Gilroy Regular"],
-      },
-
       dropShadow: {
         "multi-layer": [
           "0px -0.977px 1.955px rgba(0, 0, 0, 0.10)",
@@ -86,9 +83,9 @@ const config = {
       big_2: "2000px",
       desktop: "2560px",
     },
-    darkMode: "class",
-    plugins: [heroui()],
   },
+  darkMode: "class",
+  plugins: [heroui()],
 };
 
 module.exports = config;

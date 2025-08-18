@@ -48,7 +48,7 @@ export default function Animate() {
 
   return (
     <div
-      className="relative w-full h-[1024px] overflow-hidden flex-col items-center justify-center
+      className="relative w-full h-[400px] sm:md:h-[1024px] overflow-hidden flex-col items-center justify-center
       bg-gradient-to-b from-[#08081F] via-transparent to-[#08081F]"
     >
       {/* Background image (fades out instead of disappearing) */}
@@ -65,27 +65,41 @@ export default function Animate() {
 
       <div className="relative w-full h-full flex flex-col items-center bg-darkblue z-10 pt-8">
         {/* Logo Text */}
-        <div
-          className={`z-10 text-center font-anton font-light 
-          bg-gradient-to-b from-[#6A0DAD] via-[#6A0DAD] to-white
-          bg-clip-text text-transparent tracking-[7px]
-          transition-all duration-1000 ease-in-out
-          ${textVisible ? "text-[280px] opacity-100 -translate-y-6" : "text-[230px] opacity-0 translate-y-28"}`}
-        >
-          APPIKORN
-        </div>
+       <div
+  className={`z-10 text-center font-anton font-light
+    bg-gradient-to-b from-[#6A0DAD] via-[#6A0DAD] to-white
+    bg-clip-text text-transparent tracking-[4px]
+    transition-all duration-1000 ease-in-out
+    ${
+      textVisible
+        ? "text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] opacity-100 translate-y-14 sm:md:translate-y-14 sm:-translate-y-2 md:-translate-y-3"
+        : "text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] opacity-0 translate-y-8 sm:translate-y-12 md:translate-y-16"
+    }
+  `}
+>
+  APPIKORN
+</div>
+
+
 
         {/* Landing Image */}
         <div
-          className={`z-10 absolute bottom-6 left-1/2 transform -translate-x-1/2 transition-all duration-1000 ease-in-out
-          ${startAnimation ? (imageShrunk ? "w-[1350px] translate-y-16" : "w-[1900px] translate-y-36") : "w-[1900px] translate-y-36"}`}
-        >
-          <img
-            src="/landing/landing_image.png"
-            alt="landing"
-            className="w-full h-full object-contain"
-          />
-        </div>
+  className={`z-10 absolute bottom-6 left-1/2 transform -translate-x-1/2 transition-all duration-1000 ease-in-out
+    ${
+      startAnimation
+        ? imageShrunk
+          ? "w-[280px] sm:w-[600px] md:w-[900px] lg:w-[1350px] translate-y-8 sm:translate-y-12 md:translate-y-16"
+          : "w-[400px] sm:w-[800px] md:w-[1200px] lg:w-[1900px] translate-y-16 sm:translate-y-24 md:translate-y-36"
+        : "w-[400px] sm:w-[800px] md:w-[1200px] lg:w-[1900px] translate-y-16 sm:translate-y-24 md:translate-y-36"
+    }`}
+>
+  <img
+    src="/landing/landing_image.png"
+    alt="landing"
+    className="w-full h-full object-contain"
+  />
+</div>
+
 
         {/* Flip animation component */}
         {showFlip && <FlipOnHover />}
