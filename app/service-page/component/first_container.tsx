@@ -40,12 +40,20 @@ export default function FirstContainer() {
           className="w-full h-[840px] flex items-center justify-between text-4xl lg:h-[640px] lg_big:h-[840px] xl:h-[840px] big:h-[840px] big_1:h-[1000px] big_2:h-[1000px]"
         >
           <Image
+<<<<<<< HEAD
             className="h-[800px] w-[580px] absolute flex items-center justify-between -left-44 top-20 rounded-2xl mob_s:hidden mob_m:hidden small:hidden lg:block lg:h-[600px] lg:w-[440px] lg_small:w-[450px] lg_big:h-[800px] lg_big:w-[500px] xl:h-[800px] xl:w-[500px] xl_small:h-[700px] xl_small:w-[500px] big:h-[880px] big:w-[560px] biggy:h-[880px] biggy:w-[520px] biggy:-left-20 big_0:h-[880px] big_0:w-[540px] big_1:h-[900px] big_1:w-[540px] big_1:left-0 big_11:w-[540px] big_2:h-[900px] big_2:w-[560px]"
+=======
+            className="h-[800px] w-[580px] absolute flex items-center justify-between -left-44 top-0 rounded-2xl mob_s:hidden mob_m:hidden small:hidden lg:block lg:h-[600px] lg:w-[440px] lg_small:w-[450px] lg_big:h-[800px] lg_big:w-[500px] xl:h-[800px] xl:w-[500px] big:h-[880px] big:w-[560px] biggy:h-[880px] biggy:w-[520px] biggy:-left-20 big_0:h-[880px] big_0:w-[540px] big_1:h-[900px] big_1:w-[540px] big_1:left-0 big_11:w-[540px] big_2:h-[900px] big_2:w-[560px]"
+>>>>>>> 145ec65f3616166717a9928926e28fe953396c7b
             src={Image1}
             alt="Image1"
           ></Image>
           <Image
+<<<<<<< HEAD
             className="h-[800px] w-[580px] absolute flex items-center justify-between -right-44 top-20 rounded-2xl mob_s:hidden mob_m:hidden small:hidden md:hidden lg:block lg:h-[600px] lg:w-[440px] lg_small:w-[450px] lg_big:h-[800px] lg_big:w-[500px] xl:h-[800px] xl:w-[500px] xl_small:h-[700px] xl_small:w-[500px] big:h-[880px] big:w-[560px] biggy:h-[880px] biggy:w-[520px] biggy:-right-20 big_0:h-[880px] big_0:w-[540px] big_1:h-[900px] big_1:w-[540px] big_1:right-0 big_11:w-[540px] big_2:h-[900px] big_2:w-[560px]"
+=======
+            className="h-[800px] w-[580px] absolute flex items-center justify-between -right-44 top-0 rounded-2xl mob_s:hidden mob_m:hidden small:hidden md:hidden lg:block lg:h-[600px] lg:w-[440px] lg_small:w-[450px] lg_big:h-[800px] lg_big:w-[500px] xl:h-[800px] xl:w-[500px] big:h-[880px] big:w-[560px] biggy:h-[880px] biggy:w-[520px] biggy:-right-20 big_0:h-[880px] big_0:w-[540px] big_1:h-[900px] big_1:w-[540px] big_1:right-0 big_11:w-[540px] big_2:h-[900px] big_2:w-[560px]"
+>>>>>>> 145ec65f3616166717a9928926e28fe953396c7b
             src={Image2}
             alt="Image2"
           ></Image>
@@ -67,7 +75,11 @@ export default function FirstContainer() {
           initial={{ opacity: 0, y: 60 }}
           animate={centerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
+<<<<<<< HEAD
           className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-4 pt-10 mob_s:justify-start md:pt-0 md:space-y-1 lg:pt-20 xl_small:pt-50 lapl:pt-40 big_2:justify-start big_2:pt-45"
+=======
+          className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-4 pt-10 mob_s:justify-start md:pt-0 md:space-y-1 lg:pt-20 lapl:pt-40 big_2:justify-start big_2:pt-45"
+>>>>>>> 145ec65f3616166717a9928926e28fe953396c7b
         >
           <div className="flex flex-row text-[22px] items-center justify-center space-x-3 text-[#9EA3B5] mob_s:text-[12px] md:text-[14px] lg:w-[560px] xl:text-[19px] xl:w-[680px] big_1:w-[680px] big_1:text-[21px] big_2:w-[740px] big_2:text-[24px]">
             <p>Product Strategy</p>
