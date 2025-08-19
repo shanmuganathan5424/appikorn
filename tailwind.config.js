@@ -67,21 +67,10 @@ const config = {
       mob_s: "320px", // Mobile S
       mob_m: "375px", // Mobile M
       small: "425px", // Mobile L
-      sm: "600px",
       md: "768px", // Tablet
       lg: "1024px", // Laptop
-      lg_small: "1100px",
-      lg_big: "1190px",
-      xl: "1280px",
-      xl_small: "1340px",
-      big: "1400px",
       lapl: "1440px", // Laptop L
-      biggy: "1500px",
-      big_0: "1600px",
-      big_1: "1800px",
-      big_11: "1900px",
-      big_2: "2000px",
-      desktop: "2560px",
+      desktop: "2560px", // Desktop
     },
   },
   darkMode: "class",
