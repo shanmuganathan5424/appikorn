@@ -1,4 +1,4 @@
-export default function Panel() {
+export default function  () {
   return (
     <div className="flex items-center-safe justify-center">
     <div className="flex w-[95%] h-[600px] rounded-[20px] overflow-hidden ">

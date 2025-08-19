@@ -11,7 +11,7 @@ const services = [
     description: "Delivering secure and scalable cloud solutions.",
   },
   {
-    icon: "/service-icon/cloud.svg",
+    icon: "/service-icon/design.svg",
     title: "UI/UX Designer",
     description: "Crafting intuitive and engaging user experiences.",
   },
@@ -39,8 +39,8 @@ const services = [
 
 export default function Card() {
   return (
-    <section className="bg-gray-50 py-10 sm:py-16 md:py-20">
-      <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 xl:px-28 2xl:px-40 max-w-[1720px] mx-auto">
+    <section className=" py-10 sm:py-16 md:py-20">
+      <div className="w-full   mx-auto">
         <div className="pb-10 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -72,7 +72,7 @@ export default function Card() {
   );
 }
 
-// Animated card component
+
 function FadeInCard({
   icon,
   title,
@@ -95,75 +95,73 @@ function FadeInCard({
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: "easeOut", delay }}
+      whileHover={{ scale: 1.03 }}
       className="
         group
-        flex flex-col items-center
-        bg-white
+        relative
+        flex flex-col
+        items-center
+        justify-between
+        bg-gray-100
         rounded-2xl
-        shadow-xl
-        p-6
-        transform transition-transform duration-300
-        hover:scale-105
-        hover:border-b-4
-        hover:border-purple1
+        shadow-md
+        p-8
         w-full
+        h-full
         max-w-sm
-        min-w-0
         mx-auto
+        border border-gray-200
+        transition-all duration-500
+        hover:shadow-xl
       "
     >
-      <div className="relative mb-4 icon-glow">
+      {/* Subtle gradient hover overlay */}
+      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50"></div>
+
+      {/* Card Content */}
+      <div className="relative z-10 flex flex-col items-center text-center flex-1">
         <div
           className="
-            relative z-10
-            w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 xl:w-18 xl:h-18
+            w-16 h-16 md:w-20 md:h-20
             flex items-center justify-center
-            rounded-full bg-white
-            shadow-md
-            transition-shadow duration-300
-            group-hover:shadow-xl
-            overflow-hidden
+            rounded-full bg-gradient-to-tr from-purple-100 via-pink-100 to-indigo-100
+            shadow-inner
+            mb-6
+            group-hover:scale-110
+            transition-transform duration-500
           "
         >
           <img
             src={icon}
             alt={`${title} Icon`}
-            className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
-            style={{ maxWidth: "100%", height: "auto" }}
+            className="w-9 h-9 md:w-10 md:h-10"
           />
         </div>
+
+        <motion.h3
+          className="
+            text-[22px] md:text-[24px]
+            font-bold
+            text-gray-900
+            transition-colors duration-300
+            group-hover:text-purple-600
+          "
+        >
+          {title}
+        </motion.h3>
+
+        <motion.p
+          className="
+            text-gray-600
+            mt-3
+            text-[16px] leading-relaxed
+            transition-colors duration-300
+            group-hover:text-gray-800
+          "
+        >
+          {description}
+        </motion.p>
       </div>
-
-      <motion.h3
-        className="
-          text-[20px] sm:text-[21px] md:text-[22px]
-          font-semibold
-          text-gray-900
-          text-center
-          transition-colors duration-300
-          group-hover:text-purple-600
-          break-words
-        "
-      >
-        {title}
-      </motion.h3>
-
-      <motion.p
-        className="
-          text-gray-600
-          text-center
-          mt-2
-          text-[16px]
-          sm:text-[16px]
-          md:text-[16px]
-          xl:text-[16px]
-          transition-opacity duration-300
-          group-hover:opacity-90
-          break-words
-        "
-      >
-        {description}
-      </motion.p>
     </motion.div>
   );
 }
