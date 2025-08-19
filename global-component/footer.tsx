@@ -25,7 +25,9 @@ export default function Footer() {
         <div className="flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left w-full lg:w-1/4">
           <Image src={AppikornImage} alt="Appikorn Logo" width={140} height={70} />
           <p className="text-head_grey leading-relaxed max-w-full">
-            Lorem ipsum dolor sit amet consectetur dolol drakgonil adipiscing elit aliquam mauris
+            Join us on the journey to redefine possibilities, where technology seamlessly enhances
+human potential. Experience the power of Appikorn Industry 4.0 solutions
+and unlock the door to unprecedented growth, efficiency, and sustainability.
           </p>
 
           <div className="flex flex-row sm:flex-row md:flex-col gap-3 w-full sm:w-[70%] md:w-[70%]">
