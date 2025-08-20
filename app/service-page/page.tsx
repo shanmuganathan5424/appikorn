@@ -5,6 +5,7 @@ import OfferInAppikorn from "./component/offer_in_appikorn";
 import FirstContainer from "./component/first_container";
 import TopNavBar from "@/global-component/navigation";
 import Card from "@/global-component/card";
+import Footer from "@/global-component/footer";
 
 const ServicePage = () => {
   return (
@@ -18,7 +19,7 @@ const ServicePage = () => {
           <OfferInAppikorn />
           <EmbeddedDesign />
         </div>
-        <div>{/* <Footer /> */}</div> 
+        <div><Footer /></div>  
       </div>
     </>
   );
