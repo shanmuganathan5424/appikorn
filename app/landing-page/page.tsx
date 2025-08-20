@@ -68,6 +68,7 @@ export default function Home() {
         {/* Services Section */}
         <section className="my-16 md:my-24">
           <Card />
+          <NewCard />
 
         </section>
 
