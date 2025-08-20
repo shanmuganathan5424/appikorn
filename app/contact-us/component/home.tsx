@@ -7,7 +7,7 @@ export default function ContactSection() {
   return (
     <section className="relative w-full min-h-screen bg-[#6A0DAD] flex flex-col items-center text-black overflow-hidden px-4  pt-8 pb-32">
       {/* Background String */}
-      <div className="absolute bottom-8 sm:bottom-24 right-[2%] sm:right-[5%]">
+      <div className="absolute bottom-8 sm:bottom-24 right-[2%] sm:right-[5%] hidden sm:md:block">
         <img
           src="/contact/String.svg"
           alt="string"
@@ -24,6 +24,7 @@ export default function ContactSection() {
         absolute
         right-4 sm:right-[15%]
         w-48 h-48
+        hidden sm:md:block
         sm:w-72 sm:h-72
         md:w-96 md:h-96
         lg:w-[500px] lg:h-[500px]
@@ -34,12 +35,13 @@ export default function ContactSection() {
       />
 
       {/* Floating SVG */}
-      <div className="absolute top-16 right-5  sm:top-28 sm:left-40 opacity-30 sm:opacity-65 z-10">
+      <div className="absolute top-16 right-5  sm:top-28 sm:left-40 opacity-30 sm:opacity-65 z-10 hidden sm:md:block">
         <img
           src="/contact/3d.svg"
           alt="cubic"
           className="w-20 h-20 sm:w-[120px] sm:h-[140px]"
         />
+        
       </div>
 
       {/* Bottom Ovals */}
@@ -195,6 +197,9 @@ export default function ContactSection() {
           </motion.div>
         </div>
       </div>
+
+      <div className="z-40 absolute bottom-9 text-white sm:md:text-black text-center w-full sm:md:w-[70%] px-4 ">The firm will to challenge the conventional is an attitude innate in our history. It serves as most important for future growth and achievement.</div>
+
     </section>
   );
 }
