@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function FirstContainer() {
   const wordList = ["Confidence", "Purpose", "Boldness", "Energy", "Drive"];
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0); 
 
   useEffect(() => {
     const timer = setInterval(() => {
