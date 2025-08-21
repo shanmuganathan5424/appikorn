@@ -8,48 +8,58 @@ const processSteps = [
     heading: "Uncovering insights that",
     subHeading: "Delivering secure and scalable cloud solutions.",
     dark: true,
-    image: "/images/discovery.svg",
+    image: "/card-image-new/white-cloud.svg",
   },
   {
     title: "UI/UX Designer",
     heading: "Design with purpose",
     subHeading: "Crafting intuitive and engaging user experiences.",
     dark: false,
-    image: "/images/production.svg",
+    image: "/card-image-new/uiux.svg",
   },
   {
     title: "Product Design",
     heading: "Innovation that inspires",
     subHeading: "Designing products users love.",
     dark: true,
-    image: "/images/production.svg",
+    image: "/card-image-new/product-design.svg",
   },
   {
     title: "QA & Testing",
     heading: "Precision at every step",
     subHeading: "Ensuring quality, reliability, and performance.",
     dark: false,
-    image: "/images/production.svg",
+    image: "/card-image-new/testing.svg",
   },
   {
     title: "Web Development",
     heading: "Engineering the future",
     subHeading: "Building fast, scalable platforms.",
     dark: true,
-    image: "/images/production.svg",
+    image: "/card-image-new/web-dev.svg",
   },
   {
     title: "VR/AR Technology",
     heading: "Beyond imagination",
     subHeading: "Creating immersive digital worlds.",
     dark: false,
-    image: "/images/production.svg",
+    image: "/card-image-new/vr-ar.svg",
   },
 ];
 
 export default function ProcessSection() {
   return (
     <section className="py-16 sm:py-20">
+      <div className="pb-10 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-purple1 text-left font-bold leading-tight tracking-tight text-[32px] sm:text-[42px] md:text-[50px] lg:text-[58px]"
+          >
+            Services
+          </motion.h1>
+        </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
         {processSteps.map((step, index) => (
           <motion.div
@@ -58,11 +68,12 @@ export default function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            className={`rounded-3xl p-8 sm:p-10 flex flex-col justify-between ${
+            className={`rounded-3xl p-8 sm:p-10 flex flex-col  ${
               step.dark ? "bg-black text-white" : "bg-white text-black"
             } shadow-md`}
           >
             {/* Title */}
+
             <p
               className={`uppercase text-sm font-semibold tracking-wide mb-4 ${
                 step.dark ? "text-gray-400" : "text-gray-500"
@@ -78,19 +89,17 @@ export default function ProcessSection() {
               }`}
             >
               {step.heading}{" "}
-              <span
-                className={step.dark ? "text-gray-300" : "text-gray-500"}
-              >
+              <span className={step.dark ? "text-gray-300" : "text-gray-500"}>
                 {step.subHeading}
               </span>
             </h3>
 
-            {/* Illustration */}
-            <div className="mt-8 flex justify-center items-center">
+            {/* Illustration (fixed height for alignment) */}
+            <div className="mt-auto flex justify-center items-center h-[300px] py-6">
               <img
                 src={step.image}
                 alt={step.title}
-                className="w-full max-w-xs md:max-w-sm object-contain"
+                className="max-h-full max-w-full object-contain"
               />
             </div>
           </motion.div>

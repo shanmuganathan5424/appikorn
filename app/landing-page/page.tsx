@@ -11,10 +11,13 @@ import LandingPage from "../page";
 import Widgets from "./components/widget";
 import WhyChoose from "../mad-x/component/card";
 import NewCard from "./components/new-card";
+import AboutCompany from "./components/about-company";
+import Hero from "./components/about-company";
 
 export default function Home() {
   return (
     <section className="bg-overallbg w-full overflow-x-hidden ">
+      <Hero />
       {/* Hero Animation */}
       {/* <Animate /> */}
       <MadxLanding />
@@ -67,7 +70,7 @@ export default function Home() {
 
         {/* Services Section */}
         <section className="my-16 md:my-24">
-          <Card />
+
           <NewCard />
 
         </section>
