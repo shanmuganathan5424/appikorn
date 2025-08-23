@@ -59,67 +59,50 @@ export default function Footer() {
 
         {/* Columns 2, 3, 4 wrapper */}
         {/* Columns 2, 3, 4 wrapper */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full lg:w-3/4">
-          {/* Column 2 */}
-          <div className="flex flex-col items-center">
-            <ul className="space-y-2 text-head_grey text-center mob_s:text-[12px] md:text-[14px] lapl:text-[16px] sm:md:text-start">
-              <li className="text-dark_purple font-bold text-xl mb-4 mob_s:text-[15px] md:text-[17px] lapl:text-[20px]">
-                Services
-              </li>
-              <li>Cloud service</li>
-              <li>UI/UX Design</li>
-              <li>Product Design</li>
-              <li>QA & Testing</li>
-              <li>Web Development</li>
-              <li>VR/AR Technology</li>
-              <li>Android</li>
-              <li>IOS application</li>
-              <li>Automations</li>
-            </ul>
-          </div>
+{/* Columns 2, 3, 4 wrapper */}
+<div className="grid grid-cols-2 lg:grid-cols-3 gap-10 w-full lg:w-3/4">
+  {/* Column 2 */}
+  <div className="flex flex-col items-center text-center sm:text-center md:text-left">
+    <ul className="space-y-2 text-head_grey mob_s:text-[12px] md:text-[14px] lapl:text-[16px]">
+      <li className="text-dark_purple font-bold text-xl mb-4 mob_s:text-[15px] md:text-[17px] lapl:text-[20px]">
+        Services
+      </li>
+      <li>Cloud service</li>
+      <li>UI/UX Design</li>
+      <li>Product Design</li>
+      <li>QA & Testing</li>
+      <li>Web Development</li>
+      <li>VR/AR Technology</li>
+      <li>Android</li>
+      <li>IOS application</li>
+      <li>Automations</li>
+    </ul>
+  </div>
 
-          {/* Column 3 */}
-          <div className="flex flex-col items-center">
-            <ul className="space-y-2 text-head_grey text-center mob_s:text-[12px] md:text-[14px] lapl:text-[16px] sm:md:text-start">
-              <li className="text-dark_purple font-bold text-xl mb-4 mob_s:text-[15px] md:text-[17px] lapl:text-[20px]">
-                Company
-              </li>
-              <li>About</li>
-              <li>Contact us</li>
-              <li>Help Center</li>
-            </ul>
-          </div>
+  {/* Column 3 */}
+  <div className="flex flex-col items-center text-center sm:text-center md:text-left">
+    <ul className="space-y-2 text-head_grey mob_s:text-[12px] md:text-[14px] lapl:text-[16px]">
+      <li className="text-dark_purple font-bold text-xl mb-4 mob_s:text-[15px] md:text-[17px] lapl:text-[20px]">
+        Company
+      </li>
+      <li>About</li>
+      <li>Contact us</li>
+      <li>Help Center</li>
+    </ul>
+  </div>
 
-          {/* Column 4 */}
-          <div className="flex flex-col items-center sm:col-span-full lg:col-span-1">
-            <p className="text-dark_purple font-bold text-xl mb-4 mob_s:text-[15px] md:text-[17px] lapl:text-[20px]">
-              Follow on Instagram
-            </p>
-            <div className="flex space-x-4">
-              <div className="w-6 h-6 md:w-9 md:h-9">
-                <Image
-                  src={Instagram}
-                  alt="Instagram"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9">
-                <Image
-                  src={LinkedIn}
-                  alt="LinkedIn"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9">
-                <Image
-                  src={WhatsApp}
-                  alt="WhatsApp"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+  {/* Column 4 */}
+  <div className="flex flex-col item-center md:items-start text-center md:text-left col-span-2 lg:col-span-1">
+    <p className="text-dark_purple font-bold text-xl mb-4 mob_s:text-[15px] md:text-[17px] lapl:text-[20px]">
+      Follow on Instagram
+    </p>
+    <div className="flex space-x-4">
+      {/* social icons */}
+    </div>
+  </div>
+</div>
+
+
       </div>
 
       {/* Divider */}

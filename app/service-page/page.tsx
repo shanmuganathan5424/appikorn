@@ -14,12 +14,12 @@ const ServicePage = () => {
         <div className="bg-white">
           <FirstContainer /> 
         </div>
-        <div className="bg-[#F8F8FF] px-15">
+        <div className="bg-[#F8F8FF] px-4">
           <Card />
           <OfferInAppikorn />
           <EmbeddedDesign />
         </div>
-        <div><Footer /></div>  
+        
       </div>
     </>
   );

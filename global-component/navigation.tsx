@@ -14,7 +14,7 @@ export default function TopNavBar() {
       <div>
         <Link href={AppRoutes.HOME}>
         <img
-          src="/landing/appikorn-logo 1.svg"
+          src="/appikorn-logo-1.svg"
           alt="Appikorn Logo"
           className="h-[60px] w-[60px] sm:h-[80px] sm:w-[80px]"
         />

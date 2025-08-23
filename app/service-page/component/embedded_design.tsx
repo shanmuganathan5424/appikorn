@@ -12,7 +12,9 @@ const FadeInParagraph = ({ children }: { children: React.ReactNode }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="text-[24px] leading-[45px] text-justify mb-6"
+      className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 
+                 leading-relaxed sm:leading-7 md:leading-8 lg:leading-9 xl:leading-[45px] 
+                 text-justify mb-6 break-words"
     >
       {children}
     </motion.p>
@@ -21,11 +23,17 @@ const FadeInParagraph = ({ children }: { children: React.ReactNode }) => {
 
 const EmbeddedDesign = () => {
   return (
-    <div className="bg-[#F8F8FF] text-black py-30 px-4 md:py-20 md:px-2">
-      <h1 className="text-purple1 text-[40px] pb-10 font-bold leading-[71.22px] tracking-[-0.49px] small:text-[40px] md:text[58px]">
+    <div className="bg-[#F8F8FF] text-black ">
+      {/* Title */}
+      <h1 className="text-purple1 
+                     text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-[58px] 
+                     font-bold leading-snug sm:leading-tight lg:leading-[71px] 
+                     tracking-tight pb-6 sm:pb-8 md:pb-10">
         Embedded Design
       </h1>
-      <div className="font-normal space-y-4 text-[24px] small:text-[18px] md:text[24px]">
+
+      {/* Content */}
+      <div className="font-normal space-y-6">
         <FadeInParagraph>
           Lorem ipsum dolor sit amet consectetur. Id aliquam etiam at mauris
           ornare. Ullamcorper rhoncus a nullam feugiat mauris imperdiet a
@@ -36,6 +44,7 @@ const EmbeddedDesign = () => {
           Dolor in dolor maecenas sed id et lorem a tellus. Interdum pharetra
           donec pulvinar dui sed eros.
         </FadeInParagraph>
+
         <FadeInParagraph>
           Ullamcorper auctor pellentesque lacus orci non ullamcorper porta in
           pharetra. Ultricies sit eleifend elit risus urna in. Aliquam amet at

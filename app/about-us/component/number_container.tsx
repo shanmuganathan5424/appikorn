@@ -41,7 +41,7 @@ const AnimatedNumber = ({ min, max }: AnimatedNumberProps) => {
       initial={{ opacity: 0, y: 10 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold flex justify-center items-center"
+      className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold"
     >
       {displayNumber} +
     </motion.p>
@@ -52,17 +52,17 @@ export default function NumberContainer() {
   const stats = [
     { min: 10, max: 100, label: "PROJECT DELIVERED" },
     { min: 15, max: 30, label: "YEARS OF EXPERIENCE" },
-    { min: 20, max: 200, label: "SATISFIED CLIENTS IN 10 COUNTRIES" },
+    { min: 20, max: 200, label: "SATISFIED CLIENTS" },
     { min: 10, max: 30, label: "TECH EXPERTS" },
   ];
 
   return (
-    <div className="w-full max-w-screen-xl mx-auto px-4 py-10 md:py-20">
-      <div className="grid grid-cols-2 gap-8 sm:gap-10 md:flex md:justify-around md:items-center md:gap-0 text-black">
+    <div className="w-full max-w-screen-xl mx-auto px-4 py-10 md:py-16">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 text-black items-stretch">
         {stats.map((stat, index) => (
           <div
             key={stat.label}
-            className="flex flex-col items-center text-center max-w-[220px] w-full relative"
+            className="flex flex-col items-center justify-center text-center relative px-4"
           >
             <AnimatedNumber min={stat.min} max={stat.max} />
             <motion.p
@@ -70,7 +70,7 @@ export default function NumberContainer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-xs sm:text-sm md:text-base xl:text-lg font-semibold"
+              className="text-xs sm:text-sm md:text-base xl:text-lg font-semibold mt-2"
             >
               {stat.label}
             </motion.p>
@@ -80,7 +80,7 @@ export default function NumberContainer() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 2 }}
-                className="hidden md:block bg-black/50 w-px h-full absolute right-0 translate-x-1/2 "
+                className="hidden sm:block bg-black/40 w-px h-full absolute right-0 top-1/2 -translate-y-1/2"
               />
             )}
           </div>

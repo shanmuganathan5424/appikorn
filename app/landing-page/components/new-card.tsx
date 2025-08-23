@@ -50,12 +50,12 @@ const processSteps = [
 export default function ProcessSection() {
   return (
     <section className="py-16 sm:py-20">
-      <div className="pb-10 text-center">
+      <div className=" text-center">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-purple1 text-left font-bold leading-tight tracking-tight text-[32px] sm:text-[42px] md:text-[50px] lg:text-[58px]"
+            className="pb-12 text-center text-black font-bold leading-tight tracking-tight text-[32px] sm:text-[42px] md:text-[50px] lg:text-[58px]"
           >
             Services
           </motion.h1>

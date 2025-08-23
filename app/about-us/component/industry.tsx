@@ -1,10 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const sectors = [
+const cards = [
   {
     title: "Health Sector",
     imageSrc: "/about/health_image.svg",
@@ -42,222 +43,123 @@ const sectors = [
   },
 ];
 
-export default function IndustryPage() {
-  const controls = useAnimation();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [screenWidth, setScreenWidth] = useState(0);
+export default function AutoSlidingCard() {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  const cardControlsRef = useRef(sectors.map(() => useAnimation()));
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    const updateSize = () => setScreenWidth(window.innerWidth);
-    updateSize();
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
-
-  useEffect(() => {
-    if (screenWidth === 0) return;
-
-    const autoScroll = () => {
-      const next = (currentIndex + 1) % sectors.length;
-      scrollToIndex(next);
-    };
-
-    intervalRef.current = setInterval(autoScroll, 3000);
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [currentIndex, screenWidth]);
-
-  const scrollToIndex = async (nextIndex: number) => {
-    setCurrentIndex(nextIndex);
-
-    await controls.start({
-      x: -nextIndex * screenWidth,
-      transition: { duration: 1, ease: "easeInOut" },
-    });
-
-    const isForward =
-      nextIndex > currentIndex ||
-      (currentIndex === sectors.length - 1 && nextIndex === 0);
-    const nudgeValue = isForward ? 4 : -4;
-
-    await cardControlsRef.current[nextIndex].start({
-      x: nudgeValue,
-      transition: { duration: 0.2, ease: "easeOut" },
-    });
-
-    await cardControlsRef.current[nextIndex].start({
-      x: 0,
-      transition: { duration: 0.2, ease: "easeIn" },
-    });
-
-    cardControlsRef.current.forEach((ctrl, i) => {
-      if (i !== nextIndex) ctrl.set({ x: 0 });
-    });
+  const nextCard = () => {
+    setDirection(1);
+    setIndex((prev) => (prev + 1) % cards.length);
   };
 
-  const handleArrowClick = (direction: "left" | "right") => {
-    const nextIndex =
-      direction === "right"
-        ? (currentIndex + 1) % sectors.length
-        : (currentIndex - 1 + sectors.length) % sectors.length;
+  const prevCard = () => {
+    setDirection(-1);
+    setIndex((prev) => (prev - 1 + cards.length) % cards.length);
+  };
 
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = setInterval(() => {
-        const next = (nextIndex + 1) % sectors.length;
-        scrollToIndex(next);
-      }, 3000);
-    }
+  // Auto slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextCard();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
-    scrollToIndex(nextIndex);
+  const variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 150 : -150,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 300, damping: 30 },
+    },
+    exit: (dir: number) => ({
+      x: dir > 0 ? -150 : 150,
+      opacity: 0,
+      transition: { type: "spring", stiffness: 300, damping: 30 },
+    }),
   };
 
   return (
-    <div className="w-screen overflow-hidden pt-20 pb-40 mx-auto">
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="text-purple1 text-[58px] font-extrabold leading-[71.22px] tracking-[-0.49px] pb-20 pl-15"
+    <div className="relative flex flex-col justify-center items-center w-full min-h-[450px] px-4">
+      {/* Prev Button */}
+      <button
+        onClick={prevCard}
+        className="absolute left-2 md:left-6 z-20 bg-white/70 hover:bg-white p-2 rounded-full shadow-md"
       >
-        Industries We Work For
-      </motion.h1>
+        <FaChevronLeft className="text-xl text-black" />
+      </button>
 
-      <div className="relative w-full">
-        {/* Left Arrow */}
-        <button
-          onClick={() => handleArrowClick("left")}
-          className="absolute left-5 top-1/2 -translate-y-1/2 z-10 bg-white text-black p-3 rounded-full shadow-md hover:bg-gray-100"
-        >
-          {/* Left Arrow SVG */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
+      {/* Next Button */}
+      <button
+        onClick={nextCard}
+        className="absolute right-2 md:right-6 z-20 bg-white/70 hover:bg-white p-2 rounded-full shadow-md"
+      >
+        <FaChevronRight className="text-xl text-black" />
+      </button>
 
-        {/* Right Arrow */}
-        <button
-          onClick={() => handleArrowClick("right")}
-          className="absolute right-5 top-1/2 -translate-y-1/2 z-10 bg-white text-black p-3 rounded-full shadow-md hover:bg-gray-100"
-        >
-          {/* Right Arrow SVG */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-
-        {/* Sliding Cards */}
+      <AnimatePresence mode="wait" custom={direction}>
         <motion.div
-          animate={controls}
-          className="flex"
-          style={{ width: `${sectors.length * screenWidth}px` }}
+          key={index}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={(e, { offset, velocity }) => {
+            if (offset.x < -100 || velocity.x < -500) {
+              nextCard();
+            } else if (offset.x > 100 || velocity.x > 500) {
+              prevCard();
+            }
+          }}
+          className="flex flex-col md:flex-row items-center w-full md:h-[320px] rounded-2xl shadow-xl overflow-visible cursor-grab active:cursor-grabbing"
+          style={{ backgroundColor: cards[index].bgColor }}
         >
-          {sectors.map((sector, index) => (
-            <SectorCard
-              key={index}
-              title={sector.title}
-              imageSrc={sector.imageSrc}
-              description={sector.description}
-              bgColor={sector.bgColor}
-              width={screenWidth}
-              animateControl={cardControlsRef.current[index]}
+          {/* Left: Image */}
+          <div className="w-full md:w-1/2 h-[220px] md:h-[500px] flex items-center justify-center relative p-4">
+            <Image
+              src={cards[index].imageSrc}
+              alt={cards[index].title}
+              width={400}
+              height={400}
+              className="object-contain max-h-full"
             />
-          ))}
-        </motion.div>
+          </div>
 
-        {/* Dot Indicators */}
-        <div className="flex justify-center mt-8 space-x-3">
-          {sectors.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                currentIndex === index
-                  ? "bg-black scale-125 shadow-md shadow-black/50"
-                  : "bg-gray-400"
-              }`}
-            />
-          ))}
-        </div>
+          {/* Right: Text */}
+          <div className="w-full md:w-1/2 h-auto md:h-full flex flex-col justify-center px-6 md:px-10 py-6 md:py-0 text-white text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+              {cards[index].title}
+            </h2>
+            <p className="text-sm md:text-base leading-relaxed">
+              {cards[index].description}
+            </p>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Dot Indicators */}
+      <div className="flex mt-6 space-x-3">
+        {cards.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              setDirection(i > index ? 1 : -1);
+              setIndex(i);
+            }}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === i
+                ? "bg-black scale-125 shadow-md shadow-black/50"
+                : "bg-gray-400"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
 }
-
-type SectorCardProps = {
-  title: string;
-  description: string;
-  imageSrc: string;
-  bgColor: string;
-  width: number;
-  animateControl: ReturnType<typeof useAnimation>;
-};
-
-const SectorCard = ({
-  title,
-  description,
-  imageSrc,
-  bgColor,
-  width,
-  animateControl,
-}: SectorCardProps) => {
-  return (
-    <motion.div
-      animate={animateControl}
-      className="grid grid-cols-2 px-[100px] pt-[150px] pb-[30px] rounded-3xl flex-shrink-0"
-      style={{ width: `${width}px` }}
-    >
-      {/* Left: Image */}
-      <div
-        className="h-[350px] rounded-l-3xl relative overflow-visible"
-        style={{ backgroundColor: bgColor }}
-      >
-        <Image
-          src={imageSrc}
-          alt={title}
-          className="absolute -top-[160px] -left-[72px]"
-          width={600}
-          height={600}
-        />
-      </div>
-
-      {/* Right: Text */}
-      <div
-        className="h-[350px] rounded-r-3xl text-white flex flex-col justify-center space-y-5"
-        style={{ backgroundColor: bgColor }}
-      >
-        <h1 className="text-[50px] leading-[56.51px] font-semibold">{title}</h1>
-        <p className="text-[20px] leading-[37px] font-normal pr-20">
-          {description}
-        </p>
-      </div>
-    </motion.div>
-  );
-};

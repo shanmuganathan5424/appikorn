@@ -12,7 +12,7 @@ export default function AboutUs() {
         <FirstContainer />
         <NumberContainer />
         <IndustryPage />
-        <LandingAboutUs />
+      
       </div>
     </>
   );
