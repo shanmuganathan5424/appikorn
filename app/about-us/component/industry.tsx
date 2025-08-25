@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -46,6 +46,7 @@ const cards = [
 export default function AutoSlidingCard() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextCard = () => {
     setDirection(1);
@@ -57,12 +58,43 @@ export default function AutoSlidingCard() {
     setIndex((prev) => (prev - 1 + cards.length) % cards.length);
   };
 
-  // Auto slide effect
+  // Auto slide only when visible
   useEffect(() => {
-    const interval = setInterval(() => {
-      nextCard();
-    }, 4000);
-    return () => clearInterval(interval);
+    const startAutoSlide = () => {
+      if (!intervalRef.current) {
+        intervalRef.current = setInterval(() => {
+          nextCard();
+        }, 5000);
+      }
+    };
+
+    const stopAutoSlide = () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startAutoSlide();
+          } else {
+            stopAutoSlide();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const container = document.getElementById("auto-sliding-card");
+    if (container) observer.observe(container);
+
+    return () => {
+      stopAutoSlide();
+      if (container) observer.unobserve(container);
+    };
   }, []);
 
   const variants = {
@@ -83,19 +115,29 @@ export default function AutoSlidingCard() {
   };
 
   return (
-    <div className="relative flex flex-col justify-center items-center w-full min-h-[450px] px-4">
+    <section
+      id="auto-sliding-card"
+      aria-labelledby="sectors-heading"
+      className="relative flex flex-col justify-center items-center w-full min-h-[450px] px-4"
+    >
+      <h2 id="sectors-heading" className="sr-only">
+        Industry Sectors We Serve
+      </h2>
+
       {/* Prev Button */}
       <button
+        aria-label="Previous sector"
         onClick={prevCard}
-        className="absolute left-2 md:left-6 z-20 bg-white/70 hover:bg-white p-2 rounded-full shadow-md"
+        className="absolute left-2 md:left-6 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500"
       >
         <FaChevronLeft className="text-xl text-black" />
       </button>
 
       {/* Next Button */}
       <button
+        aria-label="Next sector"
         onClick={nextCard}
-        className="absolute right-2 md:right-6 z-20 bg-white/70 hover:bg-white p-2 rounded-full shadow-md"
+        className="absolute right-2 md:right-6 z-20 bg-white/80 hover:bg-white p-2 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500"
       >
         <FaChevronRight className="text-xl text-black" />
       </button>
@@ -128,14 +170,15 @@ export default function AutoSlidingCard() {
               width={400}
               height={400}
               className="object-contain max-h-full"
+              loading="lazy"
             />
           </div>
 
           {/* Right: Text */}
           <div className="w-full md:w-1/2 h-auto md:h-full flex flex-col justify-center px-6 md:px-10 py-6 md:py-0 text-white text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">
               {cards[index].title}
-            </h2>
+            </h3>
             <p className="text-sm md:text-base leading-relaxed">
               {cards[index].description}
             </p>
@@ -144,10 +187,12 @@ export default function AutoSlidingCard() {
       </AnimatePresence>
 
       {/* Dot Indicators */}
-      <div className="flex mt-6 space-x-3">
-        {cards.map((_, i) => (
+      <div className="flex mt-6 space-x-3" role="tablist" aria-label="Sector navigation">
+        {cards.map((card, i) => (
           <button
             key={i}
+            aria-label={`Go to ${card.title}`}
+            aria-current={index === i ? "true" : "false"}
             onClick={() => {
               setDirection(i > index ? 1 : -1);
               setIndex(i);
@@ -160,6 +205,6 @@ export default function AutoSlidingCard() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 
 export default function WhyChoose() {
   const cardData = [
@@ -101,8 +102,14 @@ export default function WhyChoose() {
   ];
 
   return (
-    <section className="bg-black text-white py-10 sm:py-20 px-4">
-      <h2 className="text-[20px] sm:text-4xl font-bold text-center mb-12 sm:mb-16">
+    <section
+      className="bg-black text-white py-10 sm:py-20 px-4"
+      aria-labelledby="why-choose-heading"
+    >
+      <h2
+        id="why-choose-heading"
+        className="text-[20px] sm:text-4xl font-bold text-center mb-12 sm:mb-16"
+      >
         Why Choose Madix
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 max-w-6xl mx-auto">
@@ -156,8 +163,12 @@ function AnimatedCard({
   }, []);
 
   return (
-    <div
-      className="relative border border-black hover:border-[#7CF8A4] flex flex-col items-start gap-4 w-full max-w-[337.18px] h-auto sm:h-[389.05px] px-5 py-8 rounded-[30px] sm:rounded-[40px] overflow-hidden transition-all duration-300 mx-auto"
+    <article
+      role="article"
+      className="relative border border-black hover:border-[#7CF8A4] 
+                 flex flex-col items-start gap-4 w-full max-w-[337.18px] h-auto 
+                 sm:h-[389.05px] px-5 py-8 rounded-[30px] sm:rounded-[40px] 
+                 overflow-hidden transition-all duration-300 mx-auto"
       style={{
         background: "linear-gradient(88deg, #17C964 0.11%, #7CF8A4 63.8%)",
         boxShadow: hovering
@@ -168,7 +179,8 @@ function AnimatedCard({
     >
       {/* Animated Background */}
       <div
-        className="z-0 absolute top-0 left-1/2 rounded-full pointer-events-none"
+        aria-hidden="true"
+        className="z-0 absolute top-0 left-1/2 rounded-full pointer-events-none will-change-transform"
         style={{
           width: style.width,
           height: style.height,
@@ -179,8 +191,9 @@ function AnimatedCard({
         }}
       />
 
-      {/* Static Overlay */}
+      {/* Overlay */}
       <div
+        aria-hidden="true"
         className="z-40 absolute inset-0 rounded-[30px] sm:rounded-[40px] pointer-events-none"
         style={{
           background:
@@ -199,21 +212,24 @@ function AnimatedCard({
             boxShadow: "inset 0 1.5px 4.8px rgba(255, 255, 255, 0.25)",
           }}
         >
-          <img
+          <Image
             src={data.icon}
-            alt={data.title}
-            className="w-8 h-8 sm:w-[32.42px] sm:h-[32.42px]"
+            alt={`${data.title} Icon`}
+            width={40}
+            height={40}
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
-        <div className="text-white font-bold text-lg sm:text-[26px] leading-tight">
+        <h3 className="text-white font-bold text-lg sm:text-[26px] leading-tight">
           {data.title}
-        </div>
+        </h3>
 
-        <div className="font-sans text-sm sm:text-[14px] font-normal leading-relaxed text-[#E6E6E7]">
+        <p className="font-sans text-sm sm:text-[14px] font-normal leading-relaxed text-[#E6E6E7]">
           {data.description}
-        </div>
+        </p>
       </div>
-    </div>
+    </article>
   );
 }

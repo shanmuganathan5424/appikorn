@@ -1,26 +1,44 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import PanelSlider from "./pannelslider";
 import Panel from "./panel";
 
-
 export default function ResponsivePanel() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 800); // Tailwind's "lg" breakpoint is 1024px
+    // Use matchMedia (better than window.innerWidth check)
+    const mediaQuery = window.matchMedia("(max-width: 1024px)"); // matches Tailwind lg breakpoint
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+
+    updateIsMobile(); // check on mount
+    mediaQuery.addEventListener("change", updateIsMobile);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateIsMobile);
     };
-
-    checkScreenSize(); // Check initially
-
-    window.addEventListener("resize", checkScreenSize); // Listen on resize
-    return () => window.removeEventListener("resize", checkScreenSize); // Cleanup
   }, []);
 
+  if (isMobile === null) {
+    // Prevent hydration mismatch → render placeholder while checking screen size
+    return (
+      <section
+        aria-label="Loading panels"
+        className="w-full min-h-[600px] flex items-center justify-center"
+      >
+        <p className="text-gray-500">Loading...</p>
+      </section>
+    );
+  }
+
   return (
-    <div className="w-full">
+    <section
+      id="responsive-panel"
+      aria-label="Interactive panel showcase"
+      className="w-full"
+    >
       {isMobile ? <PanelSlider /> : <Panel />}
-    </div>
+    </section>
   );
 }

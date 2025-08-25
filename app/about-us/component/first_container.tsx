@@ -16,7 +16,7 @@ export default function FirstContainer() {
   }, []);
 
   return (
- <div className="bg-purple1 w-full h-screen rounded-br-[80px] md:rounded-br-[200px] xl:rounded-br-[300px] flex items-center">
+ <div className="bg-purple1 w-full h-screen rounded-br-[80px] md:rounded-br-[200px] xl:rounded-br-[300px] flex items-center overflow-hidden">
   <div className="flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 md:px-10 gap-6 sm:gap-10 lg:gap-16 max-w-screen-xl mx-auto w-full">
 
     {/* Text Section */}

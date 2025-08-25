@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo } from "react";
+import Image from "next/image";
 
 export default function SlidingImage() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -63,10 +64,8 @@ export default function SlidingImage() {
     const deltaX = endX - startXRef.current;
 
     if (deltaX > 50) {
-      // Swiped right → show previous card
       prevCard();
     } else if (deltaX < -50) {
-      // Swiped left → show next card
       nextCard();
     }
 
@@ -74,10 +73,24 @@ export default function SlidingImage() {
     startXRef.current = null;
   };
 
+  // Only render active, prev, and next
+  const visibleCards = useMemo(
+    () =>
+      cards.filter(
+        (_, i) => i === activeIndex || i === activeIndex - 1 || i === activeIndex + 1
+      ),
+    [activeIndex]
+  );
+
   return (
-    <div className="bg-[#121314] py-10 px-5 sm:px-10 select-none">
+    <div
+      className="bg-[#121314] py-10 px-5 sm:px-10 select-none"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Feature carousel"
+    >
       <div className="max-w-[1550px] mx-auto">
-        {/* Header Text */}
+        {/* Header */}
         <div className="flex flex-col items-center text-center">
           <h1 className="text-[20px] sm:text-[46.83px] font-semibold leading-tight text-[#F5F9FE] pb-5">
             Lorem ipsum dolor sit amet
@@ -88,9 +101,10 @@ export default function SlidingImage() {
           </p>
         </div>
 
-        {/* Navigation Buttons */}
+        {/* Navigation */}
         <div className="flex justify-end space-x-4 pb-10">
-          <div
+          <button
+            aria-label="Previous slide"
             className="group bg-[#EDEFF22E] h-10 w-10 flex items-center justify-center hover:bg-[#32F08C] cursor-pointer"
             onClick={prevCard}
           >
@@ -106,9 +120,10 @@ export default function SlidingImage() {
                 strokeLinecap="square"
               />
             </svg>
-          </div>
+          </button>
 
-          <div
+          <button
+            aria-label="Next slide"
             className="group bg-[#EDEFF22E] h-10 w-10 flex items-center justify-center hover:bg-[#32F08C] cursor-pointer"
             onClick={nextCard}
           >
@@ -124,10 +139,10 @@ export default function SlidingImage() {
                 strokeLinecap="square"
               />
             </svg>
-          </div>
+          </button>
         </div>
 
-        {/* Card Carousel */}
+        {/* Carousel */}
         <div
           className="relative h-[400px] sm:h-[640px] w-full flex items-center justify-center"
           onMouseDown={handleDragStart}
@@ -136,12 +151,11 @@ export default function SlidingImage() {
           onTouchEnd={handleDragEnd}
         >
           <div className="relative flex h-full w-full items-start justify-start">
-            {cards.map((card, index) => {
-              const isActive = index === activeIndex;
-              const isPrev = index === activeIndex - 1;
-              const isNext = index === activeIndex + 1;
-
-              if (!isPrev && !isActive && !isNext) return null;
+            {visibleCards.map((card, index) => {
+              const originalIndex = cards.findIndex((c) => c.id === card.id);
+              const isActive = originalIndex === activeIndex;
+              const isPrev = originalIndex === activeIndex - 1;
+              const isNext = originalIndex === activeIndex + 1;
 
               let positionClass = "";
               let scaleClass = "";
@@ -162,12 +176,15 @@ export default function SlidingImage() {
               return (
                 <div
                   key={card.id}
-                  className={`absolute top-1/2 -translate-y-1/2 w-[90%] sm:w-[800px] lg:w-[960px] h-[350px] sm:h-[615px] bg-[#BCBCBC] rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out ${positionClass} ${scaleClass}`}
+                  className={`absolute top-1/2 -translate-y-1/2 w-[90%] sm:w-[800px] lg:w-[960px] h-[350px] sm:h-[615px] bg-[#BCBCBC] rounded-lg flex items-center justify-center transition-all duration-300 ease-in-out will-change-transform ${positionClass} ${scaleClass}`}
                 >
-                  <img
+                  <Image
                     src={card.image}
                     alt={`Card ${card.id}`}
-                    className="w-[200px] sm:w-[331px] h-[200px] sm:h-[317px] object-contain pointer-events-none"
+                    width={331}
+                    height={317}
+                    className="object-contain pointer-events-none"
+                    priority={isActive}
                   />
                 </div>
               );
@@ -175,7 +192,7 @@ export default function SlidingImage() {
           </div>
         </div>
 
-        {/* Footer Text - Dynamic */}
+        {/* Footer */}
         <div className="flex flex-col sm:flex-row px-0 sm:px-10 lg:px-60 pt-10 space-y-4 sm:space-y-0 sm:space-x-10">
           <h1 className="text-white w-full sm:w-[25%] text-[20px] font-semibold">
             {cards[activeIndex].title}

@@ -18,10 +18,18 @@ export default function PrivacySection() {
         "Our security infrastructure is continuously monitored and updated, staying ahead of emerging threats to maintain the highest level of protection.",
     },
   ];
+
   return (
-    <section className="bg-[#111] text-white py-16 px-4">
+    <section
+      className="bg-[#111] text-white py-16 px-4"
+      aria-labelledby="privacy-heading"
+    >
       <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
-        <h2 className="text-[20px] md:text-4xl font-bold mb-4">
+        {/* Section Heading */}
+        <h2
+          id="privacy-heading"
+          className="text-[20px] md:text-4xl font-bold mb-4"
+        >
           Privacy and Security
         </h2>
         <p className="text-gray-400 max-w-2xl mb-12">
@@ -30,31 +38,34 @@ export default function PrivacySection() {
           control.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center w-full">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
           {cardData.map((card, index) => (
             <article
               key={index}
               tabIndex={0}
-              className="flex flex-col items-start gap-6 p-6 pr-12 rounded-[20px] bg-[rgba(237,239,242,0.04)] max-w-[425.667px] min-h-[240px] mx-auto focus:outline-none focus:ring-2 focus:ring-[#32F08C] hover:bg-[rgba(237,239,242,0.08)] transition"
+              className="flex flex-col gap-4 p-6 rounded-2xl bg-white/5 max-w-[425px] min-h-[240px] mx-auto focus:outline-none focus:ring-2 focus:ring-[#32F08C] hover:bg-white/10 transition"
               aria-labelledby={`privacy-card-title-${index}`}
             >
-              <div>
+              {/* Icon */}
+              <Image
+                src="/mad-x/privacy.svg"
+                alt=""
+                width={28}
+                height={28}
+                loading="lazy"
+                className="text-green-400"
+              />
+
+              {/* Title + Description */}
+              <div className="text-start">
                 <h3
                   id={`privacy-card-title-${index}`}
                   className="text-white font-semibold text-lg mb-2"
                 >
-                  {card.title} {/* Use the title from cardData */}
+                  {card.title}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 text-start">
-                  {card.description} {/* Use the description from cardData */}
-                </p>
-                <Image
-                  src="/mad-x/privacy.svg"
-                  alt="Privacy icon"
-                  width={24}
-                  height={24}
-                  className="text-green-400"
-                />
+                <p className="text-gray-400 text-sm">{card.description}</p>
               </div>
             </article>
           ))}

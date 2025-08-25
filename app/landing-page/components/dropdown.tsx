@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const cardData = [
   {
@@ -10,6 +11,7 @@ const cardData = [
       "Streamlined processes that accelerate your success with optimized workflows.",
     dark: true,
     image: "/fast.png",
+    alt: "Fast workflow illustration",
   },
   {
     title: "Dedicated Team",
@@ -18,6 +20,7 @@ const cardData = [
       "Your dedicated team of experts, committed to realizing your vision.",
     dark: false,
     image: "/people.png",
+    alt: "Team collaboration illustration",
   },
   {
     title: "24 / 7 Support",
@@ -26,6 +29,7 @@ const cardData = [
       "Round-the-clock support for your peace of mind, day or night.",
     dark: false,
     image: "/24-hours.png",
+    alt: "24/7 support icon",
   },
   {
     title: "Tailored Strategies",
@@ -34,32 +38,39 @@ const cardData = [
       "Innovative strategies tailored to your specific needs and goals.",
     dark: true,
     image: "/idea.png",
+    alt: "Lightbulb idea icon",
   },
 ];
 
 export default function DropDown() {
   return (
-    <section className="w-full  px-4 sm:px-6 lg:px-12 ">
-      {/* Heading */}
-      <motion.h1
+    <section
+      id="why-choose-us"
+      className="w-full px-4 sm:px-6 lg:px-12 py-16"
+      aria-labelledby="why-choose-heading"
+    >
+      {/* Section Heading */}
+      <motion.h2
+        id="why-choose-heading"
         initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="pb-12 text-black text-center font-bold leading-tight tracking-tight text-[32px] sm:text-[42px] md:text-[50px] lg:text-[58px]"
+        className="pb-12 text-black text-center font-bold leading-tight tracking-tight text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px]"
       >
         Why Choose Us
-      </motion.h1>
+      </motion.h2>
 
-      {/* Grid */}
+      {/* Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         {cardData.map((card, index) => (
-          <motion.div
-            key={index}
+          <motion.article
+            key={card.title}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className={`w-full rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row md:flex-row items-center shadow-lg transform transition duration-300 hover:scale-105 ${
+            transition={{ duration: 0.6, delay: index * 0.15 }}
+            className={`w-full rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center shadow-lg transform transition duration-300 hover:scale-105 ${
               card.dark
                 ? "bg-black text-white"
                 : "bg-white text-black border border-gray-200"
@@ -90,13 +101,16 @@ export default function DropDown() {
 
             {/* Image Section */}
             <div className="flex-1 flex justify-center items-center mt-6 md:mt-0">
-              <img
+              <Image
                 src={card.image}
-                alt={card.title}
-                className="max-h-[200px] object-contain"
+                alt={card.alt}
+                width={220}
+                height={220}
+                className="object-contain"
+                loading="lazy"
               />
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </section>

@@ -9,6 +9,17 @@
   }
 }
 
+html, body {
+  height: 100%;
+  overscroll-behavior: none;
+  scroll-behavior: auto; /* disable browser smooth scroll */
+}
+
+[data-lenis] {
+  will-change: transform;
+}
+
+
 .clip-top-left-notch {
   clip-path: polygon(0 0, 80% 0, 100% 100%, 100% 100%, 0 100%);
 }
