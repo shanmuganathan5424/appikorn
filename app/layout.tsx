@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import FooterWrapper from "@/global-component/footer-wrap";
 import TopNavBar from "@/global-component/navigation";
+import FooterP from "./mad-x/component/footer";
 
 export const metadata: Metadata = {
   title: {

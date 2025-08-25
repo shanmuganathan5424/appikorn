@@ -45,7 +45,29 @@ const processSteps = [
     dark: false,
     image: "/card-image-new/vr-ar.svg",
   },
+  {
+    title: "iOS Application",
+    heading: "Seamless Apple experience",
+    subHeading: "Building high-performance apps for iPhone & iPad.",
+    dark: true,
+    image: "/card-image-new/ios-application.svg",
+  },
+  {
+    title: "Android Application",
+    heading: "Power in every device",
+    subHeading: "Developing scalable apps for Android ecosystems.",
+    dark: false,
+    image: "/card-image-new/Mobile wireframe-.svg",
+  },
+  {
+    title: "Automation",
+    heading: "Smarter, faster workflows",
+    subHeading: "Streamlining processes with intelligent automation.",
+    dark: true,
+    image: "/card-image-new/robo.svg",
+  },
 ];
+
 
 export default function ProcessSection() {
   return (
