@@ -25,36 +25,38 @@ const EmbeddedDesign = () => {
   return (
     <div className="bg-[#F8F8FF] text-black ">
       {/* Title */}
-      <h1 className="text-purple1 
+      <h1
+        className="text-purple1 
                      text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-[58px] 
                      font-bold leading-snug sm:leading-tight lg:leading-[71px] 
-                     tracking-tight pb-6 sm:pb-8 md:pb-10">
+                     tracking-tight pb-6 sm:pb-8 md:pb-10"
+      >
         Embedded Design
       </h1>
 
       {/* Content */}
       <div className="font-normal space-y-6">
         <FadeInParagraph>
-          Lorem ipsum dolor sit amet consectetur. Id aliquam etiam at mauris
-          ornare. Ullamcorper rhoncus a nullam feugiat mauris imperdiet a
-          lacinia. Scelerisque mollis sed interdum elit tortor diam faucibus.
-          Scelerisque at gravida risus ullamcorper ipsum quis eget risus. Justo
-          adipiscing ut tortor ultrices vehicula amet. Turpis aliquam dictumst
-          tellus sit tortor egestas. Sed mauris sit aliquam volutpat eu eu quam.
-          Dolor in dolor maecenas sed id et lorem a tellus. Interdum pharetra
-          donec pulvinar dui sed eros.
+          Embedded Design focuses on developing specialized computing systems
+          that are integrated directly into devices to perform dedicated
+          functions with high efficiency and reliability. Unlike general-purpose
+          computers, embedded systems are tailored to specific tasks, combining
+          custom hardware and software to optimize performance, minimize power
+          consumption, and ensure precise operation. These designs are the
+          backbone of modern electronics, enabling everything from smart
+          appliances and wearable devices to industrial machinery and medical
+          instruments to operate seamlessly and intelligently.
         </FadeInParagraph>
 
         <FadeInParagraph>
-          Ullamcorper auctor pellentesque lacus orci non ullamcorper porta in
-          pharetra. Ultricies sit eleifend elit risus urna in. Aliquam amet at
-          pulvinar malesuada vel posuere mattis et habitasse. Phasellus dolor
-          est urna parturient. Enim aenean feugiat feugiat diam vulputate amet
-          sed eget facilisi. Nullam magna rhoncus nec ultrices quam cras cursus
-          cursus faucibus. Nam aliquam hac mauris nulla. Ullamcorper id massa
-          auctor vulputate a et sodales cras. Interdum accumsan pharetra tempor
-          pretium feugiat sagittis. Id vitae erat enim sit diam egestas. Ut
-          maecenas nulla volutpat mauris dui pretium proin.
+          The scope of Embedded Design extends across multiple industries,
+          driving innovation in areas like IoT, robotics, automotive systems,
+          and automation. By enabling real-time processing, intelligent control,
+          and seamless integration, embedded systems not only enhance
+          functionality but also improve safety, usability, and overall user
+          experience. As technology advances, Embedded Design continues to
+          evolve, empowering devices to be smarter, more connected, and more
+          responsive to the needs of both consumers and industries.
         </FadeInParagraph>
       </div>
     </div>

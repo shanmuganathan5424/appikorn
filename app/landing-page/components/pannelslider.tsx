@@ -7,40 +7,41 @@ import "swiper/css/pagination";
 const cardData = [
   {
     number: "01",
-    title: "AI-Powered Workflow Optimizer",
+    title: "JuzAI AI-Powered Docs",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Ac aliquam tellus tristique imperdiet...",
+      "AI-powered automation that organizes files, extracts insights, and boosts productivity.",
     image: "/panel/center-image/01.svg",
     bgImage: "/panel/bg-image/bg1.png",
   },
   {
     number: "02",
-    title: "Real-Time Collaboration Hub",
+    title: "Bestea Coffee Machine",
     description:
-      "Curabitur malesuada feugiat in morbi faucibus proin ipsum tellus a...",
+      "Fresh coffee, tea, and specialty drinks at the touch of a button—easy, sleek, and convenient.",
     image: "/panel/center-image/02.svg",
     bgImage: "/panel/bg-image/bg2.png",
   },
   {
     number: "03",
-    title: "Intelligent Project Tracking Suite",
+    title: "JuzDate – Couples Dating App",
     description:
-      "Euismod eget odio eu ac aliquam. Nisl bibendum tellus ipsum lectus...",
+      "Smart matching and private tools to help couples connect and grow together.",
     image: "/panel/center-image/03.png",
     bgImage: "/panel/bg-image/bg3.png",
   },
   {
     number: "04",
-    title: "Smart Workflow Automation",
-    description: "Maecenas diam amet at sapien. Nulla eu leo venenatis ultrices...",
+    title: "JuzScan – Food Delivery App",
+    description:
+      "Fast, reliable food delivery with smart recommendations and secure payments.",
     image: "/panel/center-image/04.svg",
     bgImage: "/panel/bg-image/bg4.png",
   },
   {
     number: "05",
-    title: "JuzAI Powered Intelligence Document Management",
+    title: "Eco-friendly Wellness System",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Ac aliquam tellus tristique imperdiet...",
+      "Sustainable solutions for physical, mental, and environmental well-being.",
     image: "/panel/center-image/05.svg",
     bgImage: "/panel/bg-image/bg5.png",
   },
@@ -90,7 +91,9 @@ export default function PanelSlider() {
                   <h3 className="text-[18px] sm:text-[20px] md:text-[22px] font-bold leading-tight">
                     {card.title}
                   </h3>
-                  <p className="text-[16px] leading-snug mt-2">{card.description}</p>
+                  <p className="text-[16px] leading-snug mt-2">
+                    {card.description}
+                  </p>
 
                   {/* Review Section */}
                   <div className="mt-3 sm:mt-5 absolute bottom-8 sm:static">
@@ -148,7 +151,7 @@ export default function PanelSlider() {
               </div>
 
               {/* Background Image */}
-              <div >
+              <div>
                 <img
                   src={card.bgImage}
                   alt="Background"
