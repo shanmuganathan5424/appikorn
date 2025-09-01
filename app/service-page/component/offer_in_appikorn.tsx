@@ -88,7 +88,7 @@ export default function OfferInAppikorn() {
 
   return (
     <section className="py-20" aria-labelledby="offer-heading">
-      <header className="pb-20 text-purple1 font-bold text-center">
+      <header className="pb-20 text-black font-bold text-center">
         <h1 id="offer-heading" className="text-[32px] md:text-[58px]">
           What We Offer in Appikorn
         </h1>

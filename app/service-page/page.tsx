@@ -4,8 +4,8 @@ import React from "react";
 import EmbeddedDesign from "./component/embedded_design";
 import OfferInAppikorn from "./component/offer_in_appikorn";
 import FirstContainer from "./component/first_container";
-import Card from "@/global-component/card";
 import useLenisScroll from "@/hooks/useLenisScroll";
+import NewCard from "../landing-page/components/new-card";
 
 //  Service Page Component
 export default function ServicePage(){
@@ -15,7 +15,7 @@ export default function ServicePage(){
       <div className="mx-auto bg-white">
         {/* Hero / First Section */}
         <section
-          className="bg-white"
+          className="bg-black"
           role="region"
           aria-labelledby="service-hero"
         >
@@ -36,7 +36,7 @@ export default function ServicePage(){
           </h2>
 
           {/* Cards with key offerings */}
-          <Card />
+          <NewCard />
 
           {/* Auto-sliding Offer Showcase */}
           <OfferInAppikorn />

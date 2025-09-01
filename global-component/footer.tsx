@@ -2,7 +2,7 @@
 // components/Footer.tsx
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-400 px-6 py-2 md:py-6 mt-16">
+    <footer className="bg-black text-gray-400 px-6 py-2 md:py-6 ">
       <div
   className="max-w-7xl mx-auto
              grid grid-cols-1 md:grid-cols-6 gap-8 md:gap-24

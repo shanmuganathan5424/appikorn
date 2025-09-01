@@ -78,10 +78,11 @@ const processSteps = [
   },
 ];
 
-export default function ProcessSection() {
+export default function NewCard() {
   return (
     <section className="py-16 sm:py-20">
       <div className="text-center">
+
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

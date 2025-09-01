@@ -50,17 +50,12 @@ export default function Widgets() {
             className="mt-6 flex justify-center gap-4 relative z-10"
           >
             <a
-              href="https://appikorn-widgets.web.app/"
-              className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-900"
-            >
-              Get Started
-            </a>
-            <a
-              href="https://appikorn-widgets.web.app/docs/widgets"
-              className="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-100 text-gray-700"
-            >
-              Learn More
-            </a>
+  href="https://appikorn-widgets.web.app/docs/widgets"
+  className="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-100 text-gray-700"
+>
+  Learn More About Widgets
+</a>
+
           </motion.div>
         </div>
       </section>

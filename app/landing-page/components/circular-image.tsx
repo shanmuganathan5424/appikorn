@@ -5,17 +5,16 @@ import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 
 const icons = [
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  "/circular-image/tailwind.svg",
+  "/circular-image/css3-original.svg",
+  "/circular-image/flutter.svg",
+  "/circular-image/github-original.svg",
+  "/circular-image/github-original.svg",
+  "/circular-image/html5-original.svg",
+  "/circular-image/js.svg",
+  "/circular-image/nextjs-original.svg",
+  "/circular-image/nodejs-original.svg",
+  "/circular-image/react-original.svg",
 ];
 
 export default function CircleLogos() {
@@ -40,7 +39,7 @@ export default function CircleLogos() {
       {/* Background Circle */}
       <div
         className="absolute inset-0 w-full aspect-square rounded-full 
-        bg-gradient-to-br from-[#0a0f1c] to-[#101828] 
+        bg-gradient-to-b from-[#080121] to-[#000000] 
         shadow-[0_-40px_80px_rgba(0,0,0,0.8)]"
       />
 

@@ -11,35 +11,35 @@ const cards = [
     imageSrc: "/about/health_image.svg",
     description:
       "We help healthcare institutions enhance digital systems and streamline patient services.",
-    bgColor: "#6887DC",
+    bgColor: "#000000",
   },
   {
     title: "Insurance Sector",
     imageSrc: "/about/insurance_image.svg",
     description:
       "Supporting insurance firms in risk management and claims automation with innovative tech.",
-    bgColor: "#A45EE5",
+    bgColor: "#000000",
   },
   {
     title: "Banking Sector",
     imageSrc: "/about/banking_image.svg",
     description:
       "Empowering banks with digital transformation, secure transactions, and AI-driven insights.",
-    bgColor: "#56C4C5",
+    bgColor: "#000000",
   },
   {
     title: "Social Application Sector",
     imageSrc: "/about/social_app_image.svg",
     description:
       "We create scalable and engaging social platforms for communities, creators, and influencers.",
-    bgColor: "#FF9066",
+    bgColor: "#000000",
   },
   {
     title: "Web Development Sector",
     imageSrc: "/about/web_development_image.svg",
     description:
       "Crafting performant, responsive, and accessible web experiences tailored for all industries.",
-    bgColor: "#6BDB8D",
+    bgColor: "#000000",
   },
 ];
 

@@ -11,7 +11,10 @@ import NewCard from "./components/new-card";
 import useLenisScroll from "@/hooks/useLenisScroll";
 
 // Lazy load below-the-fold content
-const ResponsivePanel = dynamic(() => import("./components/mobile-responsive"), { ssr: false });
+const ResponsivePanel = dynamic(
+  () => import("./components/mobile-responsive"),
+  { ssr: false }
+);
 const DropDown = dynamic(() => import("./components/dropdown"), { ssr: false });
 
 export default function Home() {
@@ -33,10 +36,7 @@ export default function Home() {
         aria-labelledby="about-heading"
         className="mt-16 px-4"
       >
-        <h2
-          id="about-heading"
-          className="sr-only"
-        >
+        <h2 id="about-heading" className="sr-only">
           About Appikorn Software Consultancy
         </h2>
         <AboutUs />
@@ -72,10 +72,7 @@ export default function Home() {
         aria-labelledby="why-heading"
         className="mt-16 md:mb-40 px-4"
       >
-        <h2
-          id="why-heading"
-          className="sr-only"
-        >
+        <h2 id="why-heading" className="sr-only">
           Why Choose Appikorn
         </h2>
         <DropDown />

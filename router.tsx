@@ -4,7 +4,7 @@ export const AppRoutes = {
   HOME: "/landing-page",
   ABOUT: "/about-us",
   SERVICES: "/service-page",
-  PORTFOLIO: "/mad-x",
+  PORTFOLIO: "/portfoilio",
   TEAM: "/team",
   CONTACT: "/contact-us",
 };

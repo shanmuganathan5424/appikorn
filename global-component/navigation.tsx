@@ -28,7 +28,7 @@ export default function TopNavBar() {
         <Link href={AppRoutes.ABOUT} className="hover:underline">About</Link>
         <Link href={AppRoutes.SERVICES} className="hover:underline">Services</Link>
         <Link href={AppRoutes.PORTFOLIO} className="hover:underline">Portfolio</Link>
-        <Link href="#" className="hover:underline">Team</Link>
+        <Link href={AppRoutes.TEAM} className="hover:underline">Team</Link>
         <Link href={AppRoutes.CONTACT} className="hover:underline">Contact</Link>
       </div>
 
@@ -61,7 +61,7 @@ export default function TopNavBar() {
             <Link href={AppRoutes.ABOUT} onClick={() => setIsMenuOpen(false)}>About</Link>
             <Link href={AppRoutes.SERVICES} onClick={() => setIsMenuOpen(false)}>Services</Link>
             <Link href={AppRoutes.PORTFOLIO} onClick={() => setIsMenuOpen(false)}>Portfolio</Link>
-            <Link href="#" onClick={() => setIsMenuOpen(false)}>Team</Link>
+            <Link href={AppRoutes.TEAM} onClick={() => setIsMenuOpen(false)}>Team</Link>
             <Link href={AppRoutes.CONTACT} onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </motion.div>
         )}

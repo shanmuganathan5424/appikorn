@@ -9,6 +9,13 @@
   }
 }
 
+@media (max-height: 650px) {
+  .hide-on-small-height {
+    display: none !important;
+  }
+}
+
+
 html, body {
   height: 100%;
   overscroll-behavior: none;

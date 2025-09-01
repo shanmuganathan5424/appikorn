@@ -26,7 +26,7 @@ const EmbeddedDesign = () => {
     <div className="bg-[#F8F8FF] text-black ">
       {/* Title */}
       <h1
-        className="text-purple1 
+        className="text-black text-center
                      text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-[58px] 
                      font-bold leading-snug sm:leading-tight lg:leading-[71px] 
                      tracking-tight pb-6 sm:pb-8 md:pb-10"
