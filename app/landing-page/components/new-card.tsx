@@ -80,14 +80,14 @@ const processSteps = [
 
 export default function NewCard() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-8 sm:py-20">
       <div className="text-center">
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="pb-12 text-center text-black font-bold leading-tight tracking-tight text-[32px] sm:text-[42px] md:text-[50px] lg:text-[58px]"
+          className="pb-8 sm:pb-12 text-center text-black font-bold leading-tight tracking-tight text-[24px] sm:text-[42px] md:text-[50px] lg:text-[58px]"
         >
           Services
         </motion.h1>
@@ -100,7 +100,7 @@ export default function NewCard() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            className={`rounded-3xl p-8 sm:p-10 flex flex-col ${
+            className={`rounded-3xl p-4 sm:p-10 flex flex-col ${
               step.dark ? "bg-black text-white" : "bg-white text-black"
             } shadow-md`}
           >
@@ -113,7 +113,7 @@ export default function NewCard() {
             </p>
 
             <h2
-              className={`text-2xl sm:text-3xl font-semibold leading-snug ${
+              className={`text-[18px] sm:text-3xl font-semibold leading-snug ${
                 step.dark ? "text-white" : "text-black"
               }`}
             >

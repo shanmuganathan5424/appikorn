@@ -49,7 +49,7 @@ const cardData = [
 
 export default function PanelSlider() {
   return (
-    <div className="w-full max-w-[900px] mx-auto px-4 py-2">
+    <div className="w-full max-w-[900px] mx-auto px-0 md:px-4 sm:py-0 md:py-2">
       <Swiper
         modules={[Autoplay, Pagination]}
         slidesPerView={1}

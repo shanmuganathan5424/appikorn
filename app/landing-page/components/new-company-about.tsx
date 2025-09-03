@@ -48,7 +48,7 @@ export default function NewHero() {
       /> */}
 
       {/* Circle logos (lazy-loaded, no LCP impact) */}
-<div className=" min-h-screen hidden md:flex absolute left-1/2 -translate-x-1/2 bottom-0 sm:-bottom-12 sm:translate-y-[100%] md:translate-y-[55%] md:w-[1440] w-full justify-center"> <CircleLogos /> </div>
+<div className=" min-h-screen hidden md:flex absolute left-1/2 -translate-x-1/2 bottom-0 sm:-bottom-12 sm:translate-y-[100%] md:translate-y-[55%] min-w-[1440px] w-full justify-center"> <CircleLogos /> </div>
 
 
       {/* Hero Content */}
@@ -72,7 +72,7 @@ export default function NewHero() {
   variants={fadeIn}
   initial="hidden"
   animate="visible"
-  className="z-30 w-[80%] mx-auto absolute left-1/2 -translate-x-1/2 bottom-8 hide-on-small-height sm:block md:hidden lg:block"
+  className="z-30 w-[70%] mx-auto absolute left-1/2 -translate-x-1/2 bottom-14 hide-on-small-height sm:block md:hidden lg:block"
 >
   <Image
     src="/buttom-lables/lable-md.svg"
@@ -93,7 +93,7 @@ export default function NewHero() {
 
 
       {/* Mobile circular text (lazy) */}
-      <div className="block sm:hidden absolute left-1/2 -translate-x-1/2 bottom-0">
+      <div className="block sm:hidden absolute left-1/2 -translate-x-1/2 bottom-6">
         <CircularText />
       </div>
     </section>

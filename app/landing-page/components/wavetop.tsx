@@ -21,7 +21,7 @@ export default function WaveTop() {
       </svg>
 
       {/* Footer Note */}
-      <p className="absolute bottom-40 left-1/2 -translate-x-1/2 mt-16 text-gray-400 text-sm text-center">
+      <p className="w-full absolute top-1/2 -translate-y-1/5 mt-16 text-gray-400 text-[12px] sm:text-sm text-center">
         Madx - Developed from Appikorn
       </p>
     </div>

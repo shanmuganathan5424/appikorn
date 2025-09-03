@@ -28,7 +28,7 @@ export default function Widgets() {
             initial={{ y: -104, opacity: 0 }}
             animate={isInView || hovered ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-bold leading-tight text-black"
+            className=" text-[24px] sm:text-4xl md:text-6xl font-bold leading-tight text-black"
           >
             Build Your Application Using <br /> Appikorn Widgets
           </motion.h2>
@@ -37,7 +37,7 @@ export default function Widgets() {
             initial={{ y: -80, opacity: 0 }}
             animate={isInView || hovered ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="mt-4 text-gray-600"
+            className="mt-4 text-gray-600 text-[14px] sm:text-sm"
           >
             At Appikorn, we create powerful widgets that simplify development,
             save time, and help you build smarter applications.
@@ -67,11 +67,11 @@ export default function Widgets() {
         </h2>
         <div
           ref={frameRef}
-          className="relative bg-gray-100 flex flex-col md:flex-row rounded-3xl overflow-hidden p-10 cursor-pointer"
+          className="relative bg-gray-100 flex flex-col md:flex-row rounded-3xl overflow-hidden p-4 sm:p-10 cursor-pointer"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          <div className="max-w-md z-10 relative md:mr-8">
+          <div className="max-w-xl z-10 relative md:mr-8">
             <motion.h3
               initial={{ y: -80, opacity: 0 }}
               animate={isInView || hovered ? { y: 0, opacity: 1 } : {}}
@@ -84,7 +84,7 @@ export default function Widgets() {
               initial={{ y: -80, opacity: 0 }}
               animate={isInView || hovered ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-              className="mt-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-black"
+              className="mt-2 text-base md:text-3xl lg:text-4xl font-semibold text-black"
             >
               Empower your workflow with smarter code
             </motion.h3>
@@ -92,7 +92,7 @@ export default function Widgets() {
               initial={{ y: -60, opacity: 0 }}
               animate={isInView || hovered ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-              className="mt-4 text-gray-600 text-base"
+              className="mt-4 text-gray-600 text-[14px] sm:text-base"
             >
               Appikorn Widgets gives you access to essential tools and resources
               — helping you save time and tackle difficult tasks.
@@ -102,7 +102,7 @@ export default function Widgets() {
             initial={{ y: -60, opacity: 0 }}
             animate={isInView || hovered ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
-            className="mt-6 md:mt-0 flex-1 flex justify-center items-center"
+            className="mt-6 md:mt-0 flex-1 flex justify-center items-center sm:[50%] md:w-[60%]"
           >
             <AnimatedWidgets />
           </motion.div>

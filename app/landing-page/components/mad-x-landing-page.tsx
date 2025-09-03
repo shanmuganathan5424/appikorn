@@ -25,13 +25,13 @@ export default function MadX() {
         animate={hovered ? animateProps : {}}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
-        className="absolute bottom-0 w-full z-30"
+        className="absolute bottom-[15%] md:-bottom-[10%]  w-full z-30"
       >
         <WaveTop />
       </motion.div>
 
       {/* Headline + Content Animation */}
-      <div className="z-40 flex flex-col items-center justify-start absolute top-28">
+      <div className="z-40 flex flex-col items-center justify-start absolute top-[15%] px-4 sm:px-0">
         {/* Headline */}
         <motion.div
           initial={{ y: 80, opacity: 0 }}

@@ -46,7 +46,7 @@ export default function DropDown() {
   return (
     <section
       id="why-choose-us"
-      className="w-full px-4 sm:px-6 lg:px-12 py-16"
+      className="w-full px-0 sm:px-6 lg:px-12 py-4 sm:py-16"
       aria-labelledby="why-choose-heading"
     >
       {/* Section Heading */}
@@ -56,7 +56,7 @@ export default function DropDown() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="pb-12 text-black text-center font-bold leading-tight tracking-tight text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px]"
+        className="pb-8 sm:pb-12 text-black text-center font-bold leading-tight tracking-tight text-[24px] sm:text-[36px] md:text-[44px] lg:text-[52px]"
       >
         Why Choose Us
       </motion.h2>
@@ -70,7 +70,7 @@ export default function DropDown() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
-            className={`w-full rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center shadow-lg transform transition duration-300 hover:scale-105 ${
+            className={`w-full rounded-3xl p-4 sm:p-10 flex flex-col sm:flex-row items-center shadow-lg transform transition duration-300 hover:scale-105 ${
               card.dark
                 ? "bg-black text-white"
                 : "bg-white text-black border border-gray-200"
@@ -86,12 +86,12 @@ export default function DropDown() {
                 {card.title}
               </p>
 
-              <h3 className="text-2xl sm:text-3xl font-semibold leading-snug mb-4">
+              <h3 className="text-base sm:text-3xl font-semibold leading-snug mb-4">
                 {card.heading}
               </h3>
 
               <p
-                className={`text-base leading-relaxed ${
+                className={`text-sm sm:text-base leading-relaxed ${
                   card.dark ? "text-gray-300" : "text-gray-600"
                 }`}
               >

@@ -12,9 +12,11 @@ export default function Portfolio() {
 
   return (
     <div className="w-full min-h-screen bg-black">
-      <Section />
-      <MultiLayerSlider />
-      <ProjectLables />
+      <div className="w-full min-h-screen bg-transparent">
+        <Section />
+        <MultiLayerSlider />
+        <ProjectLables />
+      </div>
     </div>
   );
 }

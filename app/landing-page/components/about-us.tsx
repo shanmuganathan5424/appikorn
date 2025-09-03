@@ -52,7 +52,7 @@ export default function AboutUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="inline-block text-4xl md:text-6xl font-bold leading-tight"
+          className="inline-block text-[24px] sm:text-4xl md:text-6xl font-bold leading-tight"
         >
           Appikorn Software Consultancy
         </motion.h1>
@@ -62,7 +62,7 @@ export default function AboutUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="inline-block mt-4 text-gray-300 text-lg leading-relaxed"
+          className="inline-block mt-4 text-gray-300 text-[14px] sm:text-lg leading-relaxed"
         >
           Founded in <strong>2018</strong>, Appikorn Software Consultancy
           Services is based in <strong>Pondicherry, India</strong>. We

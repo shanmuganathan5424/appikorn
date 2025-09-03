@@ -59,7 +59,7 @@ export default function Home() {
       >
         <h2
           id="works-heading"
-          className="pb-12 text-black text-center font-bold leading-tight tracking-tight text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px]"
+          className="pb-8 sm:pb-12 text-black text-center font-bold leading-tight tracking-tight text-[24px] sm:text-[36px] md:text-[44px] lg:text-[52px]"
         >
           Our Works
         </h2>
@@ -70,7 +70,7 @@ export default function Home() {
       <section
         id="why-choose-us"
         aria-labelledby="why-heading"
-        className="mt-16 md:mb-40 px-4"
+        className="mt-4 sm:mt-16 md:mb-40 px-4"
       >
         <h2 id="why-heading" className="sr-only">
           Why Choose Appikorn

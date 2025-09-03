@@ -90,7 +90,7 @@ export default function MultiLayerSlider() {
     : desktopImages;
 
   return (
-<div className="w-full  py-10 sm:py-16 lg:py-20 bg-black overflow-hidden flex flex-col items-center justify-center">
+<div className="w-full h-[50%] sm:min-h-screen py-10 sm:py-16 lg:py-20 bg-black overflow-hidden flex flex-col items-center justify-center">
   <div className="w-[120%] flex flex-col items-center justify-center gap-6 sm:gap-10 md:gap-12 -rotate-[2deg] md:-rotate-[3deg]">
 
         {/* 🔹 Top Logos Row */}

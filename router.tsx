@@ -7,4 +7,5 @@ export const AppRoutes = {
   PORTFOLIO: "/portfoilio",
   TEAM: "/team",
   CONTACT: "/contact-us",
+  EXPLOREPROJECT: "/explore-project",
 };

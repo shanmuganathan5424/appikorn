@@ -6,7 +6,7 @@ type Widget = { name: string; title: string };
 
 const WidgetCard = memo(({ widget }: { widget: Widget }) => (
   <article
-    className="flex items-center gap-2 px-3 py-2 rounded-full bg-white text-black w-56 flex-shrink-0 shadow-md"
+    className="flex items-center gap-2 px-3 py-2 rounded-full bg-white text-black w-56 flex-shrink-0"
     aria-label={`${widget.name} - ${widget.title}`}
   >
     <span
@@ -74,8 +74,8 @@ export default function AnimatedWidgets() {
       <h2 id="widgets-heading" className="sr-only">
         Appikorn Widgets Showcase
       </h2>
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-100 to-transparent pointer-events-none z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-100 to-transparent pointer-events-none z-10" />
+      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-100 to-transparent pointer-events-none z-10 opacity-50 sm:opacity-100" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-100 to-transparent pointer-events-none z-10 opacity-50 sm:opacity-100" />
 
       <ScrollRow widgets={row1} direction="left" />
       <ScrollRow widgets={row2} direction="right" />

@@ -6,7 +6,7 @@ export default function Section() {
   const text = "Product Designer & Creative Strategist".split(" ");
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-center md:justify-around overflow-hidden bg-black px-6 py-16">
+    <section className="relative w-full h-[400px] sm:min-h-screen flex flex-col md:flex-row items-center justify-center md:justify-around overflow-hidden bg-black px-6 py-12 sm:py-16">
       {/* Background slide animation (desktop only) */}
       <motion.div
         initial={{ x: "-100%" }}
@@ -17,7 +17,7 @@ export default function Section() {
 
       {/* Left Text (centered on mobile) */}
       <div className="relative z-10 max-w-lg text-center md:text-left md:mr-10 lg:mr-16 flex flex-col items-center md:items-start justify-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-snug md:leading-tight">
+        <h1 className="text-[24px] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-snug md:leading-tight">
           {text.map((word, i) => (
             <motion.span
               key={i}
